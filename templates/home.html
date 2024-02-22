@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Text Field App</title>
+</head>
+<body>
+  <form method="post" action="/submit">
+    <input type="text" name="user_text" placeholder="Enter some text here" />
+    <button type="submit">Submit</button>
+  </form>
+  {% if user_text %}
+    <h2>You entered: {{ user_text }}</h2>
+  {% endif %}
+</body>
+</html>
