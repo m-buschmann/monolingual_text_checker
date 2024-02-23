@@ -58,8 +58,9 @@ def find_sensitive_terms(text, language_code='de'):
         term = Term.query.filter(Term.language == language_code, func.lower(Term.term) == func.lower(word)).first()
         if term:
             sensitive_indices.append(index)
-            sensitive_terms.append(term.term)  # Returns the term as stored in the database, is that what we want?
+            sensitive_terms.append(term.term)  #TODO: Returns the term as stored in the database, is that what we want?
 
+    # TODO: delete next line later, it's just to test the output
     # check that everything works:
     print(sensitive_indices, sensitive_terms)
     return sensitive_indices, sensitive_terms
@@ -68,7 +69,7 @@ def find_sensitive_terms(text, language_code='de'):
 @app.route('/submit', methods=['POST'])
 def submit():
     user_text = request.form['user_text']
-    # when we have the language button, we can use this line to get the language
+    # TODO: when we have the language button, we can use this line to get the language
     #language = request.form.get('language', 'german') # default to german if no language set
     
     # Find sensitive terms in the user text
