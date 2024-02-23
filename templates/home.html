@@ -2,15 +2,66 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Simple Text Field App</title>
+  <title>Monolingual Text Checker</title>
+  <style>
+    
+    .text-box {
+      width: 90%;
+      height: 200px; 
+    }
+    
+    /* Styles for the language buttons */
+    .radio-buttons {
+      display: flex;
+    }
+
+    .radio-buttons input[type="radio"] {
+      display: none;
+    }
+
+    .radio-buttons label {
+      cursor: pointer;
+      padding: 10px 20px;
+      border: 2px solid #000000;
+      margin-right: 10px;
+      background-color: #f0f0f0;
+    }
+
+    .radio-buttons input[type="radio"]:checked + label {
+      background-color: #68cda9;
+      color: #fff;
+    }
+
+    /* Styles for the "Check" button */
+    button[type="submit"] {
+      cursor: pointer;
+      padding: 10px 20px;
+      border: 2px solid #ff7f43;
+      background-color: #f0f0f0;
+      margin-top: 10px; 
+    }
+
+    button[type="submit"]:hover {
+      background-color: #ffc99e;
+    }
+  </style>
 </head>
 <body>
-  <form method="post" action="/submit">
-    <input type="text" name="user_text" placeholder="Enter some text here" />
-    <button type="submit">Submit</button>
+  <h1>Monolingual Text Checker</h1>
+  <h3>Check a text for sensitive terms</h3>
+
+  <br>
+
+  <form class="container" method="post" action="/submit">
+    <textarea class="text-box" name="user_text" placeholder="Add a text you would like to check for sensitive terms"></textarea>
+    <div class="radio-buttons">
+      <input type="radio" id="english" name="language" value="english" checked>
+      <label for="english">English</label>
+      <input type="radio" id="german" name="language" value="german">
+      <label for="german">German</label>
+    </div>
+    <br>
+    <button type="submit">Check</button>
   </form>
-  {% if user_text %}
-    <h2>You entered: {{ user_text }}</h2>
-  {% endif %}
 </body>
 </html>
