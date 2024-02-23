@@ -7,8 +7,8 @@ db = SQLAlchemy()
 class Term(db.Model):
     __tablename__ = 'terms'
     id = db.Column(db.Integer, primary_key=True)
-    term = db.Column(db.String(100, collation='NOCASE'), unique=True)
-    description = db.Column(db.String(5000, collation='NOCASE'))
+    term = db.Column(db.String(100), unique=True)
+    description = db.Column(db.String(5000))
     language = db.Column(db.String(10), nullable=False, server_default='')
     alternatives = db.relationship('Term', backref='movie', lazy=True)
     offensiveness_ratings = db.relationship('OffensivenessRating', backref='movie', lazy=True)
@@ -26,3 +26,9 @@ class AlternativeRating(db.Model):
     original_term_id = db.Column(db.Integer, db.ForeignKey('terms.id'), nullable=False)
     alternative_term_id = db.Column(db.Integer, db.ForeignKey('terms.id'), nullable=False)
     rating = db.Column(db.Integer)
+
+class AlternativeTerm(db.Model):
+    __tablename__ = 'alternative_terms'
+    id = db.Column(db.Integer, primary_key=True)
+    original_term_id = db.Column(db.Integer, db.ForeignKey('terms.id'), nullable=False)
+    alternative_term_id = db.Column(db.Integer, db.ForeignKey('terms.id'), nullable=False)
