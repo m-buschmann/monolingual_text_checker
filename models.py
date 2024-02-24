@@ -4,6 +4,21 @@ db = SQLAlchemy()
 
 
 
+
+
+class AlternativeTerm(db.Model):
+    __tablename__ = 'alternative_terms'
+    id = db.Column(db.Integer, primary_key=True)
+    original_term_id = db.Column(db.Integer, db.ForeignKey('terms.id'), nullable=False)
+    alternative_term_id = db.Column(db.Integer, db.ForeignKey('terms.id'), nullable=False)
+
+class AlternativeRating(db.Model):
+    __tablename__ = 'alternative_ratings'
+    id = db.Column(db.Integer, primary_key=True)
+    original_term_id = db.Column(db.Integer, db.ForeignKey('terms.id'), nullable=False)
+    alternative_term_id = db.Column(db.Integer, db.ForeignKey('terms.id'), nullable=False)
+    rating = db.Column(db.Integer)
+
 """class Term(db.Model):
     __tablename__ = 'terms'
     id = db.Column(db.Integer, primary_key=True)
@@ -14,11 +29,6 @@ db = SQLAlchemy()
     offensiveness_ratings = db.relationship('OffensivenessRating', backref='term', lazy=True)
     appropriate_alternative_ratings = db.relationship('AlternativeRating', backref='term', lazy=True)
    """
-class AlternativeTerm(db.Model):
-    __tablename__ = 'alternative_terms'
-    id = db.Column(db.Integer, primary_key=True)
-    original_term_id = db.Column(db.Integer, db.ForeignKey('terms.id'), nullable=False)
-    alternative_term_id = db.Column(db.Integer, db.ForeignKey('terms.id'), nullable=False)
 
 class Term(db.Model):
     __tablename__ = 'terms'
@@ -26,13 +36,21 @@ class Term(db.Model):
     term = db.Column(db.String(100), unique=True)
     description = db.Column(db.String(5000))
     language = db.Column(db.String(10), nullable=False, server_default='')
-    # Define a dynamic relationship for alternatives
-    alternative_terms = db.relationship('AlternativeTerm',
-                                        primaryjoin=id==AlternativeTerm.original_term_id,
-                                        secondaryjoin=id==AlternativeTerm.alternative_term_id,
-                                        secondary='alternative_terms',
-                                        backref=db.backref('original_term', lazy='dynamic'),
-                                        lazy='dynamic')
+
+    # Relationships
+    offensiveness_ratings = db.relationship('OffensivenessRating', backref='term', lazy=True)
+    
+    # Adjusted relationships with overlaps parameter
+    alternatives = db.relationship('AlternativeTerm', foreign_keys=[AlternativeTerm.original_term_id],
+                                   backref=db.backref('original_term', lazy='joined', overlaps="alternatives,alternative_ratings"),
+                                   lazy='dynamic', overlaps="alternative_ratings")
+    alternative_ratings = db.relationship('AlternativeRating', secondary='alternative_terms',
+                                          primaryjoin=id==AlternativeTerm.original_term_id,
+                                          secondaryjoin=AlternativeTerm.id==AlternativeRating.alternative_term_id,
+                                          backref=db.backref('term', lazy='dynamic', overlaps="alternatives,original_term"),
+                                          lazy='dynamic', overlaps="alternatives,original_term")
+
+
 
 class OffensivenessRating(db.Model):
     __tablename__ = 'offensiveness_ratings'
@@ -40,12 +58,7 @@ class OffensivenessRating(db.Model):
     term_id = db.Column(db.Integer, db.ForeignKey('terms.id'), nullable=False)
     rating = db.Column(db.Integer)
 
-class AlternativeRating(db.Model):
-    __tablename__ = 'alternative_ratings'
-    id = db.Column(db.Integer, primary_key=True)
-    original_term_id = db.Column(db.Integer, db.ForeignKey('terms.id'), nullable=False)
-    alternative_term_id = db.Column(db.Integer, db.ForeignKey('terms.id'), nullable=False)
-    rating = db.Column(db.Integer)
+
 
 """class AlternativeTerm(db.Model):
     __tablename__ = 'alternative_terms'
