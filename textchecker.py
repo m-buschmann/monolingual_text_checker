@@ -40,6 +40,22 @@ def home():
 language_map = {'de': 'german', 'en': 'english'}
 
 def find_sensitive_terms(text, language_code='de'):
+    """
+    Identifies and returns indices and the original forms of sensitive terms found in the input text,
+    based on a list of sensitive terms stored in a database. 
+    
+    Parameters:
+    - text (str): The input text in which to find sensitive terms.
+    - language_code (str): ISO language code indicating the language of the input text. Defaults to 'de' (German).
+    
+    Returns:
+    - tuple: A tuple containing two elements:
+        1. A list of indices (int) where sensitive terms were found in the input text.
+        2. A list of the original forms (str) of the sensitive terms as they are stored in the database.
+    
+    Note:
+    - assumes that sensitive terms in the database are stored in their stemmed form and lowercase    
+    """
     # Convert ISO language code to SnowballStemmer's expected language name
     stemmer_language = language_map.get(language_code)
 
