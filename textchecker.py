@@ -7,6 +7,7 @@ from flask import Flask, request, render_template
 from sqlalchemy import func, desc, select
 import nltk
 from nltk.stem import SnowballStemmer
+import nh3
 
 import os
 
@@ -49,13 +50,16 @@ def submit():
     user_text = request.form['user_text']
     language = request.form.get('language', 'german') # default to german if no language set
     
-    # Find sensitive terms in the user text
-    indices, terms = find_sensitive_terms(user_text, language)
+    # sanitize input
+    clean_text = nh3.clean(user_text)
 
-    marked_html = create_marked_html(user_text.split(" "), indices)
+    # Find sensitive terms in the user text
+    indices, terms = find_sensitive_terms(clean_text, language)
+
+    marked_html = create_marked_html(clean_text.split(" "), indices)
     
     # when we have the html, we can use this line to return the results
-    return render_template("home.html", user_text=user_text, indices=indices, terms=terms)
+    return render_template("textarea.html", user_text=clean_text, indices=indices, terms=terms, marked_html=marked_html)
 
 def find_sensitive_terms(text, language='german'):
     """
@@ -99,7 +103,7 @@ def find_sensitive_terms(text, language='german'):
     print(sensitive_indices, sensitive_terms)
     return sensitive_indices, sensitive_terms
 
-def create_marked_html(text, indices):
+def create_marked_html(text, term_indices):
     """
     inputs
         text: list of strings, can be turned into a text string by appending elements separated by a space
@@ -109,10 +113,13 @@ def create_marked_html(text, indices):
         marked_html: html containing the text in the format needed to display it with highlights
     """
 
-    marked_html = ""
-    span = "<span>{}</span>"
-    highlight= "<button class='style_sensitive_word_highlight'>{}</button>"
+    if len(term_indices) == 0:
+        return text
 
+    marked_html = ""
+    span = "{}"
+    highlight= "<mark>{}</mark>"
+    indices = term_indices.copy()
     text_to_add = ""
     next_marked = indices.pop(0)
     text_should_be_marked = True if next_marked==0 else False
@@ -127,14 +134,14 @@ def create_marked_html(text, indices):
         if next_marked == i+1 and not text_should_be_marked and text_to_add:
             # text should be marked next but isn't currently
             # create a span with the current text
-            marked_html += span.format(text_to_add.rstrip())
+            marked_html += span.format(text_to_add)
             text_to_add = ""
             next_marked = indices.pop(0) if len(indices)>0 else -1
             text_should_be_marked = True
         elif next_marked != i+1 and text_should_be_marked and text_to_add:
             # text is currently marked but should not be for the next word
             # create highlight
-            marked_html += highlight.format(text_to_add.rstrip())
+            marked_html += highlight.format(text_to_add.rstrip())+" "
             text_to_add = ""
             text_should_be_marked = False
 
@@ -145,7 +152,7 @@ def create_marked_html(text, indices):
     elif text_to_add:
         marked_html += span.format(text_to_add.rstrip())
 
-    return marked_html
+    return marked_html.rstrip()
         
 
 if __name__ == '__main__':
