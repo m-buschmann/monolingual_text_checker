@@ -37,13 +37,13 @@ def home():
     return render_template("home.html")
 
 # Map ISO language codes to SnowballStemmer's expected full language names
-language_map = {'de': 'german', 'en': 'english'}
+language_map = {'german': 'de', 'english': 'en'}
 
-def find_sensitive_terms(text, language_code='de'):
+def find_sensitive_terms(text, language='german'):
     """
     Identifies and returns indices and the original forms of sensitive terms found in the input text,
     based on a list of sensitive terms stored in a database. 
-    
+
     Parameters:
     - text (str): The input text in which to find sensitive terms.
     - language_code (str): ISO language code indicating the language of the input text. Defaults to 'de' (German).
@@ -57,10 +57,10 @@ def find_sensitive_terms(text, language_code='de'):
     - assumes that sensitive terms in the database are stored in their stemmed form and lowercase    
     """
     # Convert ISO language code to SnowballStemmer's expected language name
-    stemmer_language = language_map.get(language_code)
+    #stemmer_language = language_map.get(language_code)
 
     # Initialize the stemmer based on the resolved language name
-    stemmer = SnowballStemmer(stemmer_language)
+    stemmer = SnowballStemmer(language)
 
     # Normalize and tokenize the input text
     words = nltk.word_tokenize(text.lower())
@@ -71,7 +71,7 @@ def find_sensitive_terms(text, language_code='de'):
 
     for index, word in enumerate(stemmed_words):
         # consider the language when filtering terms
-        term = Term.query.filter(Term.language == language_code, func.lower(Term.term) == func.lower(word)).first()
+        term = Term.query.filter(Term.language == language_map.get(language), func.lower(Term.term) == func.lower(word)).first()
         if term:
             sensitive_indices.append(index)
             sensitive_terms.append(term.term)  #TODO: Returns the term as stored in the database, is that what we want?
@@ -85,15 +85,13 @@ def find_sensitive_terms(text, language_code='de'):
 @app.route('/submit', methods=['POST'])
 def submit():
     user_text = request.form['user_text']
-    # TODO: when we have the language button, we can use this line to get the language
-    #language = request.form.get('language', 'german') # default to german if no language set
+    language = request.form.get('language', 'german') # default to german if no language set
     
     # Find sensitive terms in the user text
-    indices, terms = find_sensitive_terms(user_text) #, language)
+    indices, terms = find_sensitive_terms(user_text, language)
     
     # when we have the html, we can use this line to return the results
-    #return render_template("results.html", user_text=user_text, indices=indices, terms=terms)
-    return render_template("home.html", user_text=user_text)
+    return render_template("home.html", user_text=user_text, indices=indices, terms=terms)
 
 if __name__ == '__main__':
     app.run(debug=True)
