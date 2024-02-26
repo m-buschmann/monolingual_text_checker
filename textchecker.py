@@ -4,7 +4,7 @@ import nltk
 from nltk.stem import SnowballStemmer
 import nh3
 nltk.download('punkt')
-
+from read_data import insert_data
 import os
 
 from models import *
@@ -31,6 +31,14 @@ db.create_all()
 
 # Get the directory of the current script
 current_directory = os.path.dirname(os.path.realpath(__file__))
+
+@app.cli.command('initdb')
+def initdb_command():
+    global db
+    """Creates the database tables."""
+    insert_data(db)
+    print('Initialized the database.')
+
 
 # Home page
 @app.route('/', methods=['GET'])

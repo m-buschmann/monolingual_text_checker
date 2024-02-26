@@ -66,11 +66,8 @@ def insert_data():
                         db.session.commit()
 
 
-
-def create_tables():
-    db.create_all()
-    insert_data()
-
 if __name__ == '__main__':
+
     with app.app_context():
-        create_tables()
+        db.create_all()
+        insert_data(db)
