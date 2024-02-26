@@ -2,3 +2,5 @@ flask
 flask-sqlalchemy
 requests
 datetime
+nltk
+nh3

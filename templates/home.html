@@ -2,15 +2,83 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Simple Text Field App</title>
+  <title>Monolingual Text Checker</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-  <form method="post" action="/submit">
-    <input type="text" name="user_text" placeholder="Enter some text here" />
-    <button type="submit">Submit</button>
+  <h1>Monolingual Text Checker</h1>
+  <h3>Check a text for sensitive terms</h3>
+
+  <br>
+
+  <form class="container" id="textform">
+    <div class="container" id="container">
+      <div class="backdrop" id="backdrop">
+        <div class="highlights">
+          {{- marked_html | safe -}}
+        </div>
+      </div>
+      <textarea id="textarea" name="user_text" placeholder="Add a text you would like to check for sensitive terms">{{ user_text }}</textarea>
+      
+    </div>
+    <div class="radio-buttons">
+      <input type="radio" id="english" name="language" value="english" checked>
+      <label for="english">English</label>
+      <input type="radio" id="german" name="language" value="german">
+      <label for="german">German</label>
+    </div>
+    <br>
+    <button type="submit">Check</button>
   </form>
-  {% if user_text %}
-    <h2>You entered: {{ user_text }}</h2>
-  {% endif %}
 </body>
+
+<script>
+  var backdrop = document.getElementById("backdrop");
+  var textarea = document.getElementById("textarea");
+  textarea.addEventListener("scroll",(event) => {
+    var scrollTop = textarea.scrollTop;
+    backdrop.scrollTop = scrollTop;
+  });
+
+  var container = document.getElementById("container");
+  const form = document.querySelector("#textform");
+  async function sendData() {
+    // Associate the FormData object with the form element
+    const formData = new FormData(form);
+    console.log(formData)
+
+    fetch("{{ url_for('submit') }}", {
+        method: 'POST',
+        body: formData,
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.text();
+    })
+    .then(data => {
+        
+        container.innerHTML = data;
+        // attatch new event listeners
+        backdrop = document.getElementById("backdrop");
+        textarea = document.getElementById("textarea");
+        textarea.addEventListener("scroll",(event) => {
+          var scrollTop = textarea.scrollTop;
+          backdrop.scrollTop = scrollTop;
+        });
+
+    })
+    .catch(error => {
+        console.error('There was a problem with the fetch operation:', error);
+    });
+
+  }
+
+  // Take over form submission
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    sendData();
+  });
+  </script>
 </html>
