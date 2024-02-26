@@ -8,6 +8,7 @@ from sqlalchemy import func, desc, select
 import nltk
 from nltk.stem import SnowballStemmer
 import nh3
+nltk.download('punkt')
 
 import os
 
