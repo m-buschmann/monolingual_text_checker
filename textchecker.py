@@ -56,7 +56,7 @@ def submit():
     # Find sensitive terms in the user text
     indices, terms = find_sensitive_terms(clean_text, language)
 
-    marked_html = create_marked_html(clean_text.split(" "), indices)
+    marked_html = create_marked_html(clean_text.split(" "), indices, terms)
     
     # when we have the html, we can use this line to return the results
     return render_template("textarea.html", user_text=clean_text, indices=indices, terms=terms, marked_html=marked_html)
@@ -97,13 +97,13 @@ def find_sensitive_terms(text, language='german'):
         if term:
             sensitive_indices.append(index)
             sensitive_terms.append(term)
-            
+
     # TODO: delete next line later, it's just to test the output
     # check that everything works:
     print(sensitive_indices, sensitive_terms)
     return sensitive_indices, sensitive_terms
 
-def create_marked_html(text, term_indices):
+def create_marked_html(text, term_indices, terms):
     """
     inputs
         text: list of strings, can be turned into a text string by appending elements separated by a space
@@ -118,10 +118,12 @@ def create_marked_html(text, term_indices):
 
     marked_html = ""
     span = "{}"
-    highlight= "<mark>{}</mark>"
+    highlight= "<mark  class='popup'>{}<div class='popuptext'><h3>{}</h3><p>{}<p><h4>Alternative terms</h4>{}</div></mark>"
     indices = term_indices.copy()
     text_to_add = ""
     next_marked = indices.pop(0)
+    i = 0
+    term = terms[i]
     text_should_be_marked = True if next_marked==0 else False
 
     for i,word in enumerate(text):
@@ -130,6 +132,8 @@ def create_marked_html(text, term_indices):
 
         if next_marked!=-1 and i+1>next_marked:
             next_marked = indices.pop(0) if len(indices)>0 else -1
+            i += 1
+            
 
         if next_marked == i+1 and not text_should_be_marked and text_to_add:
             # text should be marked next but isn't currently
@@ -141,7 +145,7 @@ def create_marked_html(text, term_indices):
         elif next_marked != i+1 and text_should_be_marked and text_to_add:
             # text is currently marked but should not be for the next word
             # create highlight
-            marked_html += highlight.format(text_to_add.rstrip())+" "
+            marked_html += highlight.format(text_to_add.rstrip(), term.term, term.description, "todo terms")+" "
             text_to_add = ""
             text_should_be_marked = False
 

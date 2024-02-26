@@ -52,7 +52,7 @@ box-sizing: border-box;
 
 .container, .backdrop, textarea {
     width: 90%;
-    height: 180px;
+    height: 280px;
 }
 
 .highlights, textarea {
@@ -81,6 +81,7 @@ box-sizing: border-box;
     white-space: pre-wrap;
     word-wrap: break-word;
     color: transparent;
+    pointer-events: all;
 }
 
 textarea {
@@ -94,6 +95,7 @@ textarea {
     overflow: auto;
     resize: none;
     transition: transform 1s;
+    pointer-events: none;
 }
 
 mark {
@@ -101,3 +103,60 @@ mark {
     color: transparent;
     background-color: #9cdcb2;
 }
+
+
+/* Popup container - can be anything you want */
+.popup {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* The actual popup */
+  .popup .popuptext {
+    font-size: small;
+    visibility: hidden;
+    width: 160px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    top: 120%;
+    left: 50%;
+    margin-left: -80px;
+  }
+  
+  /* Popup arrow */
+  .popup .popuptext::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+    transform: scale(1, -1);
+  }
+  
+  .popuptext h3{
+    margin:0;
+    padding:0;
+  }
+
+  .popuptext h4{
+    margin:0;
+    padding:0;
+  }
+
+  .popuptext p{
+    margin:0;
+    padding:0;
+  }

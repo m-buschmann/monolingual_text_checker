@@ -40,6 +40,18 @@
     backdrop.scrollTop = scrollTop;
   });
 
+  function showPopup(t){
+    console.log("hover");
+    console.log(t.target);
+    t.target.childNodes[1].style.visibility = "visible";
+  }
+
+  function hidePopup(t){
+    console.log("hover leave");
+    console.log(t.target);
+    t.target.childNodes[1].style.visibility = "hidden";
+  }
+
   var container = document.getElementById("container");
   const form = document.querySelector("#textform");
   async function sendData() {
@@ -68,6 +80,14 @@
           backdrop.scrollTop = scrollTop;
         });
 
+        var marks = document.querySelectorAll('.popup');
+        for (var i = 0; i < marks.length; i++) {
+
+          console.log("mark", marks[i]);
+          marks[i].addEventListener("mouseenter", showPopup, marks[i]);
+          marks[i].addEventListener("mouseleave", hidePopup, marks[i]);
+        }     
+
     })
     .catch(error => {
         console.error('There was a problem with the fetch operation:', error);
@@ -75,6 +95,12 @@
 
   }
 
+  var marks = document.querySelectorAll('.popup');
+  for (var i = 0; i < marks.length; i++) {
+    console.log("mark", marks[i]);
+    marks[i].addEventListener("mouseenter", showPopup, marks[i]);
+    marks[i].addEventListener("mouseleave", hidePopup, marks[i]);
+  }   
   // Take over form submission
   form.addEventListener("submit", (event) => {
     event.preventDefault();
