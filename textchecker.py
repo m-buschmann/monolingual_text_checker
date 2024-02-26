@@ -96,8 +96,8 @@ def find_sensitive_terms(text, language='german'):
         term = Term.query.filter(Term.language == language_map.get(language), func.lower(Term.term) == func.lower(word)).first()
         if term:
             sensitive_indices.append(index)
-            sensitive_terms.append(term.term)  #TODO: Returns the term as stored in the database, is that what we want?
-
+            sensitive_terms.append(term)
+            
     # TODO: delete next line later, it's just to test the output
     # check that everything works:
     print(sensitive_indices, sensitive_terms)
