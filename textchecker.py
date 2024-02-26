@@ -38,13 +38,11 @@ def home():
     # render home.html template
     return render_template("home.html")
 
-# Map ISO language codes to SnowballStemmer's expected full language names
-language_map = {'german': 'de', 'english': 'en'}
 
 @app.route('/submit', methods=['POST'])
 def submit():
     user_text = request.form['user_text']
-    language = request.form.get('language', 'german') # default to german if no language set
+    language = request.form.get('language', 'dgerman') # default to german if no language set
     
     # sanitize input
     clean_text = nh3.clean(user_text)
@@ -78,7 +76,8 @@ def find_sensitive_terms(text, language='german'):
     words_lower = [word.lower() for word in words]
     stemmed_words = [stemmer.stem(word) for word in words_lower]
     stemmed_text = " ".join(stemmed_words)
-    terms = Term.query.filter(Term.language == language_map.get(language)).all()
+    terms = Term.query.filter(Term.language == language)
+
 
     sensitive_indices, sensitive_terms = [], []
     split_text = []  # To store the split terms
