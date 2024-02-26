@@ -3,48 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Monolingual Text Checker</title>
-  <style>
-    
-    .text-box {
-      width: 90%;
-      height: 200px; 
-    }
-    
-    /* Styles for the language buttons */
-    .radio-buttons {
-      display: flex;
-    }
-
-    .radio-buttons input[type="radio"] {
-      display: none;
-    }
-
-    .radio-buttons label {
-      cursor: pointer;
-      padding: 10px 20px;
-      border: 2px solid #000000;
-      margin-right: 10px;
-      background-color: #f0f0f0;
-    }
-
-    .radio-buttons input[type="radio"]:checked + label {
-      background-color: #68cda9;
-      color: #fff;
-    }
-
-    /* Styles for the "Check" button */
-    button[type="submit"] {
-      cursor: pointer;
-      padding: 10px 20px;
-      border: 2px solid #ff7f43;
-      background-color: #f0f0f0;
-      margin-top: 10px; 
-    }
-
-    button[type="submit"]:hover {
-      background-color: #ffc99e;
-    }
-  </style>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
   <h1>Monolingual Text Checker</h1>
@@ -52,8 +11,16 @@
 
   <br>
 
-  <form class="container" method="post" action="/submit">
-    <textarea class="text-box" name="user_text" placeholder="Add a text you would like to check for sensitive terms">{{ user_text }}</textarea>
+  <form class="container" id="textform">
+    <div class="container" id="container">
+      <div class="backdrop" id="backdrop">
+        <div class="highlights">
+          {{- marked_html | safe -}}
+        </div>
+      </div>
+      <textarea id="textarea" name="user_text" placeholder="Add a text you would like to check for sensitive terms">{{ user_text }}</textarea>
+      
+    </div>
     <div class="radio-buttons">
       <input type="radio" id="english" name="language" value="english" checked>
       <label for="english">English</label>
@@ -64,4 +31,54 @@
     <button type="submit">Check</button>
   </form>
 </body>
+
+<script>
+  var backdrop = document.getElementById("backdrop");
+  var textarea = document.getElementById("textarea");
+  textarea.addEventListener("scroll",(event) => {
+    var scrollTop = textarea.scrollTop;
+    backdrop.scrollTop = scrollTop;
+  });
+
+  var container = document.getElementById("container");
+  const form = document.querySelector("#textform");
+  async function sendData() {
+    // Associate the FormData object with the form element
+    const formData = new FormData(form);
+    console.log(formData)
+
+    fetch("{{ url_for('submit') }}", {
+        method: 'POST',
+        body: formData,
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.text();
+    })
+    .then(data => {
+        
+        container.innerHTML = data;
+        // attatch new event listeners
+        backdrop = document.getElementById("backdrop");
+        textarea = document.getElementById("textarea");
+        textarea.addEventListener("scroll",(event) => {
+          var scrollTop = textarea.scrollTop;
+          backdrop.scrollTop = scrollTop;
+        });
+
+    })
+    .catch(error => {
+        console.error('There was a problem with the fetch operation:', error);
+    });
+
+  }
+
+  // Take over form submission
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    sendData();
+  });
+  </script>
 </html>
