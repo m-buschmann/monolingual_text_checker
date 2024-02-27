@@ -6,6 +6,9 @@ import nh3
 nltk.download('punkt')
 from read_data import insert_data
 import os
+import difflib
+from langdetect import detect
+
 
 from models import *
 
@@ -50,7 +53,9 @@ def home():
 @app.route('/submit', methods=['POST'])
 def submit():
     user_text = request.form['user_text']
-    language = request.form.get('language', 'german') # default to german if no language set
+    language = request.form.get('language', 'auto') # Default to auto-detect
+    if language == 'auto':
+        language = auto_detect_language(user_text)
     
     # sanitize input
     clean_text = nh3.clean(user_text)
@@ -63,10 +68,25 @@ def submit():
     # when we have the html, we can use this line to return the results
     return render_template("textarea.html", user_text=clean_text, indices=indices, terms=terms, marked_html=marked_html)
 
-
-from nltk.stem.snowball import SnowballStemmer
-import nltk
-import difflib
+def auto_detect_language(text):
+    """
+    Detects the language of the given text.
+    Parameters:
+    - text (str): The text for which the language needs to be detected.
+    Returns:
+    - str: The detected language ('english' or 'german').
+    """
+    try:
+        language_code = detect(text)
+        if language_code == 'en':
+            return 'english'
+        elif language_code == 'de':
+            return 'german'
+        else:
+            return 'german'  # Default to German if language cannot be detected
+    except Exception as e:
+        print(f"Error detecting language: {e}")
+        return 'unknown'
 
 def find_sensitive_terms(text, language='german'):
     stemmer = SnowballStemmer(language)
@@ -92,7 +112,7 @@ def find_sensitive_terms(text, language='german'):
                 
                 # Check if any of the words in the term are already covered
                 if not any(index in covered_indices for index in range(word_index, end_word_index)):
-                    matched_terms_details.append((word_index, end_word_index, term.term))
+                    matched_terms_details.append((word_index, end_word_index, term))
                     # Mark these indices as covered
                     covered_indices.update(range(word_index, end_word_index))
 
@@ -105,19 +125,28 @@ def find_sensitive_terms(text, language='german'):
 
                     close_matches = difflib.get_close_matches(word, [term.term for term in sorted_terms], n=1, cutoff=0.8)
                     if close_matches:
-                        term = close_matches[0]
-                        # Find if the close match term is already in matched_terms_details
-                        for matched_term in matched_terms_details:
-                            if term == matched_term[2]:
-                                # Check if the index range of the current word overlaps with the matched term
-                                if not any(index in covered_indices for index in range(matched_term[0], matched_term[1])):
-                                    matched_terms_details.append((index, index + 1, term))
-                                    covered_indices.add(index)
-                                break  # Exit the loop as we found a match
+                        close_match_term_string = close_matches[0]
+                        # Find the term object from sorted_terms that matches the close_match_term_string
+                        for possible_term_object in sorted_terms:
+                            if possible_term_object.term == close_match_term_string:
+                                term_object = possible_term_object
+                                break
                         else:
-                            # If term is not found in matched_terms_details or does not overlap, add it
-                            matched_terms_details.append((index, index + 1, term))
-                            covered_indices.add(index)
+                            term_object = None
+
+                        if term_object:
+                            # Check if this term_object is already in matched_terms_details based on object identity or other unique identifier
+                            for matched_term in matched_terms_details:
+                                if term_object == matched_term[2]:  # Assuming matched_term[2] is the term object
+                                    # Check if the index range of the current word overlaps with the matched term
+                                    if not any(index in covered_indices for index in range(matched_term[0], matched_term[1])):
+                                        matched_terms_details.append((index, index + 1, term_object))
+                                        covered_indices.add(index)
+                                    break  # Exit the loop as we found a match
+                            else:
+                                # If term_object is not found in matched_terms_details or does not overlap, add it
+                                matched_terms_details.append((index, index + 1, term_object))
+                                covered_indices.add(index)
 
     # Sort matched terms by their start index to ensure correct order
     matched_terms_details.sort(key=lambda x: x[0])
@@ -152,7 +181,28 @@ def create_marked_html(text, term_indices):
         marked_html: html containing the text in the format needed to display it with highlights
     """
 
-    if len(term_indices) == 0:
+    marked_html = ""
+    skip_next = False  # Flag to skip the next item if it's punctuation immediately after a highlighted word
+
+    for i, word in enumerate(text):
+        if skip_next:
+            # Skip this iteration if the previous word was highlighted and followed by punctuation
+            skip_next = False
+            continue
+
+        if i in term_indices or (i + 1 in term_indices and word[-1] in ",.!?;:"):
+            # Highlight this word and, if the next item is punctuation, include it in the highlight
+            if i + 1 < len(text) and text[i + 1] in ",.!?;:":  # Check if next is punctuation
+                marked_html += "<mark>{}{}</mark> ".format(word, text[i + 1])
+                skip_next = True  # Skip the next item since it's punctuation included in the current highlight
+            else:
+                marked_html += "<mark>{}</mark> ".format(word)
+        else:
+            marked_html += "{} ".format(word)
+
+    return marked_html.strip()
+
+    """if len(term_indices) == 0:
         return text
 
     marked_html = ""
@@ -190,8 +240,17 @@ def create_marked_html(text, term_indices):
     elif text_to_add:
         marked_html += span.format(text_to_add.rstrip())
 
-    return marked_html.rstrip()
-        
+    return marked_html.rstrip()"""
+
+    """marked_html = ""
+        for i, word in enumerate(text):
+            if i in term_indices:
+                # Highlight this word
+                marked_html += "<mark>{}</mark> ".format(word)
+            else:
+                marked_html += "{} ".format(word)
+
+        return marked_html.strip()"""       
 
 if __name__ == '__main__':
     app.run(debug=True)
