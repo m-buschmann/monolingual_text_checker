@@ -6,25 +6,25 @@ db = SQLAlchemy()
 class AlternativeTerm(db.Model):
     __tablename__ = 'alternative_terms'
     id = db.Column(db.Integer, primary_key=True)
-    original_term_id = db.Column(db.Integer, db.ForeignKey('terms.id'), nullable=False)
-    alternative_term_id = db.Column(db.Integer, db.ForeignKey('terms.id'), nullable=False)
+    original_term_id = db.Column(db.String(30), db.ForeignKey('terms.id'), nullable=False)
+    alternative_term_id = db.Column(db.String(30), db.ForeignKey('terms.id'), nullable=False)
 
 class OffensivenessRating(db.Model):
     __tablename__ = 'offensiveness_ratings'
     id = db.Column(db.Integer, primary_key=True)
-    term_id = db.Column(db.Integer, db.ForeignKey('terms.id'), nullable=False)
+    term_id = db.Column(db.String(30), db.ForeignKey('terms.id'), nullable=False)
     rating = db.Column(db.Integer)
 
 class AlternativeRating(db.Model):
     __tablename__ = 'appropriate_alternative_ratings'
     id = db.Column(db.Integer, primary_key=True)
-    term_id = db.Column(db.Integer, db.ForeignKey('terms.id'), nullable=False)
-    alternative_term_id = db.Column(db.Integer, db.ForeignKey('terms.id'), nullable=False)
+    term_id = db.Column(db.String(30), db.ForeignKey('terms.id'), nullable=False)
+    alternative_term_id = db.Column(db.String(30), db.ForeignKey('terms.id'), nullable=False)
     rating = db.Column(db.Integer)
 
 class Term(db.Model):
     __tablename__ = 'terms'
-    id = db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.String(30), primary_key=True)
     term = db.Column(db.String(100), unique=True)
     description = db.Column(db.String(5000))
     language = db.Column(db.String(10), nullable=False, server_default='')
