@@ -58,7 +58,7 @@ def submit():
     # Find sensitive terms in the user text
     indices, terms, split_text = find_sensitive_terms(clean_text, language)
 
-    marked_html = create_marked_html(split_text, indices)
+    marked_html = create_marked_html(split_text, indices, terms, language)
     
     # when we have the html, we can use this line to return the results
     return render_template("textarea.html", user_text=clean_text, indices=indices, terms=terms, marked_html=marked_html)
@@ -87,7 +87,7 @@ def find_sensitive_terms(text, language='german'):
                 
                 # Check if any of the words in the term are already covered
                 if not any(index in covered_indices for index in range(word_index, end_word_index)):
-                    matched_terms_details.append((word_index, end_word_index, term.term))
+                    matched_terms_details.append((word_index, end_word_index, term))
                     # Mark these indices as covered
                     covered_indices.update(range(word_index, end_word_index))
 
@@ -114,7 +114,7 @@ def find_sensitive_terms(text, language='german'):
 
 
 
-def create_marked_html(text, term_indices):
+def create_marked_html(text, term_indices, terms, language):
     """
     inputs
         text: list of strings, can be turned into a text string by appending elements separated by a space
@@ -132,7 +132,7 @@ def create_marked_html(text, term_indices):
 
     marked_html = ""
     span = "{}"
-    highlight= "<mark  class='popup'>{}<div class='popuptext'><h3>{}</h3><p>{}<p><h4>Alternative terms</h4>{}</div></mark>"
+    highlight= "<mark  class='popup'>{}{}</mark>"
     indices = term_indices.copy()
     text_to_add = ""
     next_marked = indices.pop(0)
@@ -165,7 +165,7 @@ def create_marked_html(text, term_indices):
             
             text_should_be_marked = True
         elif text_should_be_marked:
-            marked_html += highlight.format(text_to_add.rstrip(), terms[term_index].term, terms[term_index].description, "todo terms")+" "
+            marked_html += highlight.format(text_to_add.rstrip(), create_popup_html(terms[term_index], language))+" "
             term_index += 1
             text_to_add = ""
             if next_marked == i+1:
@@ -184,7 +184,43 @@ def create_marked_html(text, term_indices):
         marked_html += span.format(text_to_add.rstrip())
 
     return marked_html.rstrip()
+
+@app.route('/rate_alternative', methods=['POST'])
+def rate_alternative():
+    return 200, "rate alternative"
         
+def create_popup_html(term, language):
+    # templates
+    alternative_heading = "Alternative terms" if language=="english" else "Alternative Begriffe"
+    popup = "<div class='popuptext'><h3>{term_term}</h3><p>{term_description}<p><h4>{alternative_heading}</h4>{alternative_list}</div>"
+    alternative_list = "<ol>{list}</ol>"
+    list_item = "<li><a href=\"{term_base_url}{term_id}\">{term_term}</a> {alt_rating} <a href=\"url_for('rate_alternative', original_id='{original_id}', alternative_id='{alt_id}')\"></a></li>"
+    # get the correct description base on the language
+
+    # TODO
+    description = term.description
+
+    # get alternative terms
+    alternatives = AlternativeTerm.query.filter(AlternativeTerm.original_term_id==term.id).all()
+    
+    # for each alteranative term
+    alternatives_list = ""
+    for alt_term in alternatives:
+        # get the term object
+        alternative_term_object = Term.query.get(alt_term.alternative_term_id)
+
+        # TODO get the alternative rating
+        AlternativeRating.query.filter(AlternativeRating.term_id==term.id, AlternativeRating.alternative_term_id==alternative_term_object.id)#TODO get the average of all ratings
+        # TODO if there are no ratings set the average to the middle value
+        # sort alternatives by rating
+
+        # construct each list item
+        alternatives_list += list_item.format(term_term=alternative_term_object.term, term_base_url="https://www.machtsprache.de/term/", term_id=alternative_term_object.id, alt_rating="TODO", original_id=term.id, alt_id=alternative_term_object.id)
+    # construct the whole list
+    complete_list = ""+alternative_list.format(list=alternatives_list)
+
+    # construct the whole popup and return it
+    return popup.format(term_term=term.term, term_description=term.description, alternative_heading=alternative_heading, alternative_list=complete_list)
 
 if __name__ == '__main__':
     app.run(debug=True)
