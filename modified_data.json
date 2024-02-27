@@ -1,0 +1,4300 @@
+[
+    {
+        "lemma": "ability",
+        "lemma_lang": "en",
+        "definition": "(S.) ein Begriff f\u00fcr die Tatsache, dass Menschen in ihrem t\u00e4glichen Leben nicht durch verschiedene soziale oder Umweltfaktoren eingeschr\u00e4nkt werden.",
+        "author": "Anna",
+        "date": "6.9.22",
+        "guidelines": [
+            "Kontext",
+            "Tonfall und Haltung"
+        ],
+        "relatedterms": [
+            "ableism",
+            "disabled person",
+            "able-bodied",
+            "disability"
+        ],
+        "translations": [
+            "BeHinderung",
+            "F\u00e4higkeit",
+            "nicht-behindert"
+        ],
+        "id": 0
+    },
+    {
+        "lemma": "able-bodied",
+        "lemma_lang": "en",
+        "definition": "(Adj.) beschreibt Menschen, die nicht beHindert werden.",
+        "author": "Lina_Briks",
+        "date": "7.12.21",
+        "guidelines": [
+            "Positionierungen",
+            "Genre und Register"
+        ],
+        "relatedterms": [
+            "ability",
+            "disability"
+        ],
+        "translations": [
+            "nicht behindert",
+            "gesund"
+        ],
+        "id": 1
+    },
+    {
+        "lemma": "ableism",
+        "lemma_lang": "en",
+        "definition": "(S.) der Begriff benennt die strukturelle Diskriminieurng von Menschen mit Behinderung, denen zugeschrieben wird, dem gesellschaftlich etablierten Verst\u00e4ndnis von Normalit\u00e4t nicht zu entsprechen.",
+        "author": "Suse_Mermaids",
+        "date": "5.8.22",
+        "guidelines": [
+            "Positionierungen",
+            "Originalsprache beibehalten"
+        ],
+        "relatedterms": [
+            "ability",
+            "disability"
+        ],
+        "translations": [
+            "Ableismus",
+            "Behindertenfeindlichkeit",
+            "Diskriminierung von Menschen mit Behinderung"
+        ],
+        "id": 2
+    },
+    {
+        "lemma": "Aboriginal and Torres Strait Islander People",
+        "lemma_lang": "en",
+        "definition": "(S.) Begriff f\u00fcr indigene Bewohner:innen Australiens und der Torres-Strait-Inseln",
+        "author": "Anna",
+        "date": "6.9.21",
+        "guidelines": [
+            "Kontext",
+            "Originalsprache beibehalten"
+        ],
+        "relatedterms": [
+            "Aborigines",
+            "Indigenous"
+        ],
+        "translations": [
+            "Aborigines und Torres-Strait-Insulaner*innen",
+            "Aboriginals und Torres-Streit-Insulaner*innen"
+        ],
+        "id": 3
+    },
+    {
+        "lemma": "Aborigines",
+        "lemma_lang": "de",
+        "definition": "(S.)  verallgemeinernder Begriff f\u00fcr die ersten Bewohner:innen Australiens; Sammelbegriff f\u00fcr verschiedene Menschengruppen. I.d.R. eine Fremdbezeichnung von wei\u00dfen Menschen.",
+        "author": "Anna",
+        "date": "16.4.21",
+        "guidelines": [
+            "Kontext",
+            "Positionierungen"
+        ],
+        "relatedterms": [
+            "Aboriginal and Torres Strait Islander People",
+            "First Nations"
+        ],
+        "translations": [
+            "[Name of indigenous group/culture]",
+            "Aboriginal and Torres Strait Islander People",
+            "Indigenous Australian",
+            "Australia's First Peoples",
+            "Aborigines",
+            "Native Australians"
+        ],
+        "id": 4
+    },
+    {
+        "lemma": "Afrikaner",
+        "lemma_lang": "en",
+        "definition": "(S.) Begriff f\u00fcr Menschen im s\u00fcdlichen Afrika, die Nachfahren von wei\u00dfen, meist niederl\u00e4ndischen Siedlern sind.",
+        "author": "Anna",
+        "date": "12.8.21",
+        "guidelines": [
+            "Kontext",
+            "Positionierungen"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "Afrikaaner*in",
+            "Bur*in",
+            "Kapholl\u00e4nder*in"
+        ],
+        "id": 5
+    },
+    {
+        "lemma": "Afrodeutsche",
+        "lemma_lang": "de",
+        "definition": "(S.) Begriff von Schwarzen Deutschen f\u00fcr Schwarze Deutsche, angelehnt an Afro-Amerikanisch. Kennzeichnet das afrikanische Erbe, die Erfahrungswelt und die geschichtliche Zugeh\u00f6rigkeit von Schwarzen Menschen in Deutschland. ",
+        "author": "Anna",
+        "date": "29.9.21",
+        "guidelines": [
+            "Kontext",
+            "Positionierungen"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "Afrogerman",
+            "Afro-German",
+            "Black German"
+        ],
+        "id": 6
+    },
+    {
+        "lemma": "Ageism",
+        "lemma_lang": "de",
+        "definition": "(S.) ein Begriff f\u00fcr die strukturelle Diskrimminierung von einzelnen Personen oder Personengruppen aufgrund ihres Alters.",
+        "author": "claudia",
+        "date": "8.9.22",
+        "guidelines": [
+            "Kontext",
+            "Genre und Register"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "Ageism",
+            "Alterdiskriminierung"
+        ],
+        "id": 7
+    },
+    {
+        "lemma": "Agency",
+        "lemma_lang": "en",
+        "definition": "(S.) ein Begriff, der in Bezug auf politische Communitys oder politische Aktivit\u00e4ten einer Einzelperson bedeutet, dass ihr Handlungsspielraum Wirkkraft hat und sie in der Lage sind, freie Entscheidungen zu treffen.",
+        "author": "Anna",
+        "date": "29.4.21",
+        "guidelines": [
+            "Genre und Register",
+            "Tonfall und Haltung"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "Handlungsf\u00e4higkeit",
+            "Handlungsmacht",
+            "Beh\u00f6rde",
+            "eigenst\u00e4ndiges Handlungsverm\u00f6gen",
+            "Einfluss auf etwas haben",
+            "Interessengruppe"
+        ],
+        "id": 8
+    },
+    {
+        "lemma": "Ally",
+        "lemma_lang": "en",
+        "definition": "(S.) Begriff f\u00fcr das politische Handeln einer Person, die Anliegen von Anderen zu den eigenen Anliegen macht - ohne dabei paternalistisch zu sein.",
+        "author": "te_as",
+        "date": "27.4.21",
+        "guidelines": [
+            "Genre und Register",
+            "Originalsprache beibehalten"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "Verb\u00fcndete*r",
+            "Ally"
+        ],
+        "id": 9
+    },
+    {
+        "lemma": "alman",
+        "lemma_lang": "de",
+        "definition": "",
+        "author": "Kat",
+        "date": "6.8.23",
+        "guidelines": [
+            "Kontext",
+            "Originalsprache beibehalten"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "alman",
+            "white German",
+            "gammon",
+            "Jerry"
+        ],
+        "id": 10
+    },
+    {
+        "lemma": "ancestors",
+        "lemma_lang": "en",
+        "definition": "(S.) Begriff f\u00fcr diejenigen, die vorher kamen; diejenigen, von denen eine Person abstammt.",
+        "author": "cmilsch",
+        "date": "15.6.21",
+        "guidelines": [
+            "Kontext",
+            "Positionierungen"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "Vorfahren",
+            "Ahnen"
+        ],
+        "id": 11
+    },
+    {
+        "lemma": "Andere",
+        "lemma_lang": "de",
+        "definition": "(S.) Begriff, der im Kontext von Diskriminierung, besagt, dass eine Person oder Entit\u00e4t als anders konstruiert und durch ihre Abweichung von der \u201cNorm\u201d definiert wird.",
+        "author": "Anna",
+        "date": "22.10.21",
+        "guidelines": [
+            "Positionierungen",
+            "Genre und Register"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "Other"
+        ],
+        "id": 12
+    },
+    {
+        "lemma": "Anglo",
+        "lemma_lang": "en",
+        "definition": "",
+        "author": "CJS",
+        "date": "18.10.23",
+        "guidelines": [
+            "Kontext",
+            "Tonfall und Haltung"
+        ],
+        "relatedterms": [],
+        "translations": [],
+        "id": 13
+    },
+    {
+        "lemma": "anti-disfiguredness",
+        "lemma_lang": "en",
+        "definition": "",
+        "author": "Anna",
+        "date": "14.12.23",
+        "guidelines": [],
+        "relatedterms": [],
+        "translations": [],
+        "id": 14
+    },
+    {
+        "lemma": "antisemitism",
+        "lemma_lang": "en",
+        "definition": "(S.) der Begriff steht f\u00fcr eine diskriminierende Weltanschauung, die in der Existenz der Juden und J\u00fcdinnen die Ursachen sozialer, politischer, religi\u00f6ser und kultureller Probleme sieht.",
+        "author": "alex",
+        "date": "8.7.22",
+        "guidelines": [
+            "Kontext",
+            "Positionierungen"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "Antisemitismus"
+        ],
+        "id": 15
+    },
+    {
+        "lemma": "Apache",
+        "lemma_lang": "en",
+        "definition": "",
+        "author": "alex",
+        "date": "24.6.22",
+        "guidelines": [],
+        "relatedterms": [
+            "I******r",
+            "Indigenous",
+            "Indian"
+        ],
+        "translations": [
+            "Apache",
+            "I******r"
+        ],
+        "id": 16
+    },
+    {
+        "lemma": "Ashkenormativity",
+        "lemma_lang": "en",
+        "definition": "",
+        "author": "Jake",
+        "date": "13.10.21",
+        "guidelines": [
+            "Originalsprache beibehalten"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "Aschkenormativit\u00e4t"
+        ],
+        "id": 17
+    },
+    {
+        "lemma": "Askari",
+        "lemma_lang": "en",
+        "definition": "(S.) ein Begriff f\u00fcr afrikanische Soldaten, die sich den Kolonialtruppen anschlossen.",
+        "author": "Anna",
+        "date": "6.9.22",
+        "guidelines": [
+            "Kontext",
+            "Genre und Register"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "Askari",
+            "Kolonialsoldat"
+        ],
+        "id": 18
+    },
+    {
+        "lemma": "asylum seekers",
+        "lemma_lang": "en",
+        "definition": "(S.) der Begriff bezeichnet eine Person, die gewaltsam aus ihrem Heimatland vertrieben wurde und in einem anderen Land um Zuflucht sucht.",
+        "author": "Suse_Mermaids",
+        "date": "29.8.22",
+        "guidelines": [
+            "Kontext",
+            "Positionierungen"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "Asylsuchende"
+        ],
+        "id": 19
+    },
+    {
+        "lemma": "Aufkl\u00e4rungsarbeit",
+        "lemma_lang": "de",
+        "definition": "(S.) Begriff f\u00fcr die systematische Vermittlung von Informationen zu einem bestimmten Thema, z.B. Sexualit\u00e4t oder Diskriminierung.",
+        "author": "em-es",
+        "date": "26.7.21",
+        "guidelines": [
+            "Kontext",
+            "Genre und Register"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "awareness-raising work",
+            "sensitization"
+        ],
+        "id": 20
+    },
+    {
+        "lemma": "bamboo ceiling",
+        "lemma_lang": "en",
+        "definition": "",
+        "author": "claudia",
+        "date": "9.3.23",
+        "guidelines": [],
+        "relatedterms": [],
+        "translations": [
+            "Bambusdecke"
+        ],
+        "id": 21
+    },
+    {
+        "lemma": "BAME",
+        "lemma_lang": "en",
+        "definition": "(S.) Abk\u00fcrzung f\u00fcr Schwarze Menschen und People of Color. Der Begriff findet vor allem in Gro\u00dfbritannien Verwendung.",
+        "author": "Anna",
+        "date": "15.11.21",
+        "guidelines": [
+            "Kontext",
+            "Originalsprache beibehalten"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "BIPOC",
+            "Schwarze Menschen und People of Color",
+            "schwarze Menschen, asiatische Menschen oder andere Minderheiten",
+            "Menschen mit Rassismuserfahrung"
+        ],
+        "id": 22
+    },
+    {
+        "lemma": "barbarian",
+        "lemma_lang": "en",
+        "definition": "(S.) Begriff f\u00fcr Personen aus einer anderen Kultur, deren Verhalten als unzivilisiert und minderwertig dargestellt wird.",
+        "author": "Lucy",
+        "date": "22.9.22",
+        "guidelines": [
+            "Kontext",
+            "Positionierungen"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "Barbar*in"
+        ],
+        "id": 23
+    },
+    {
+        "lemma": "beggar",
+        "lemma_lang": "en",
+        "definition": "(S.) Begriff f\u00fcr eine Person, die bettelt.",
+        "author": "Lucy",
+        "date": "13.4.21",
+        "guidelines": [
+            "Genre und Register",
+            "Verletzende Sprache"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "bettelnde Person",
+            "Bettelnde",
+            "Bittler*in"
+        ],
+        "id": 24
+    },
+    {
+        "lemma": "beHindert",
+        "lemma_lang": "de",
+        "definition": "(Adj.) beschreibt, dass einige Menschen von sozialen Strukturen behindert werden.",
+        "author": "Anna",
+        "date": "30.11.21",
+        "guidelines": [
+            "Kontext",
+            "Kreative L\u00f6sungen"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "dis/abled"
+        ],
+        "id": 25
+    },
+    {
+        "lemma": "Behinderte",
+        "lemma_lang": "de",
+        "definition": "(S.) Begriff, der eine Person auf ein Identit\u00e4tsmerkmal reduziert, das alle anderen Eigenschaften dominiert. ",
+        "author": "Sikagro1",
+        "date": "15.3.21",
+        "guidelines": [
+            "Positionierungen",
+            "Verschiedene Schreibweisen"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "disabled person",
+            "person with a disability",
+            "differently abled",
+            "People with handicap"
+        ],
+        "id": 26
+    },
+    {
+        "lemma": "beloved community",
+        "lemma_lang": "en",
+        "definition": "",
+        "author": "Anna",
+        "date": "1.8.23",
+        "guidelines": [
+            "Kontext",
+            "Originalsprache beibehalten"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "beloved community"
+        ],
+        "id": 27
+    },
+    {
+        "lemma": "Betroffene(r)",
+        "lemma_lang": "de",
+        "definition": "",
+        "author": "em-es",
+        "date": "10.5.23",
+        "guidelines": [],
+        "relatedterms": [],
+        "translations": [],
+        "id": 28
+    },
+    {
+        "lemma": "Bias",
+        "lemma_lang": "en",
+        "definition": "(S.) Vorurteile gegen eine Person oder Gruppe, eine Art von Ungerechtigkeit.",
+        "author": "Jasmin",
+        "date": "9.5.21",
+        "guidelines": [
+            "Genre und Register",
+            "Originalsprache beibehalten"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "Voreingenommenheit",
+            "Vorurteil",
+            "Befangenheit",
+            "Bias",
+            "Schieflage"
+        ],
+        "id": 29
+    },
+    {
+        "lemma": "biodeutsch",
+        "lemma_lang": "de",
+        "definition": "(Adj.) beschreibt wei\u00dfe Deutsche mit wei\u00dfen deutschen Vorfahren, manchmal ironisch gemeint.",
+        "author": "lisa",
+        "date": "26.7.21",
+        "guidelines": [
+            "Genre und Register",
+            "Kreative L\u00f6sungen"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "ethnic German",
+            "white German"
+        ],
+        "id": 30
+    },
+    {
+        "lemma": "BIPOC",
+        "lemma_lang": "en",
+        "definition": "(S.) Abk\u00fcrzung f\u00fcr Black (Schwarze Menschen), Indigenous (Indigene), People of Color.",
+        "author": "Kat",
+        "date": "13.5.21",
+        "guidelines": [
+            "Kontext",
+            "Originalsprache beibehalten"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "BIPOC",
+            "Menschen mit Rassismuserfahrung",
+            "Selbstbezeichnung von/f\u00fcr Menschen mit Rassismus-Erfahrungen",
+            "rassifizierte Menschen"
+        ],
+        "id": 31
+    },
+    {
+        "lemma": "biracial",
+        "lemma_lang": "en",
+        "definition": "(Adj.) beschreibt eine Person, deren Elternteile sich in Bezug auf Race unterschiedlich positionieren.",
+        "author": "Anna",
+        "date": "29.10.21",
+        "guidelines": [
+            "Positionierungen",
+            "Originalsprache beibehalten"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "biracial",
+            "mixed Schwarze",
+            "mixed Person"
+        ],
+        "id": 32
+    },
+    {
+        "lemma": "Black African",
+        "lemma_lang": "en",
+        "definition": "(S.) Begriff f\u00fcr eine politische Positionierung. ",
+        "author": "Anna",
+        "date": "14.3.21",
+        "guidelines": [
+            "Positionierungen",
+            "Verletzende Sprache"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "Schwarze*r Afrikaner*in",
+            "Schwarzafrikaner"
+        ],
+        "id": 33
+    },
+    {
+        "lemma": "black market",
+        "lemma_lang": "en",
+        "definition": "(S.) Begriff f\u00fcr illegalen Warenhandel, der die Farbe Schwarz mit etwas Negativem gleichsetzt ",
+        "author": "alex",
+        "date": "9.5.22",
+        "guidelines": [
+            "Verletzende Sprache",
+            "Kreative L\u00f6sungen"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "illegaler Warenhandel",
+            "Schwarzmarkt"
+        ],
+        "id": 34
+    },
+    {
+        "lemma": "Black person",
+        "lemma_lang": "en",
+        "definition": "(S.) Ein politischer Begriff, je nach Kontext eine Selbstbezeichnung von Schwarzen Menschen oder eine rassifizierende Zuschreibung.",
+        "author": "Anna",
+        "date": "28.10.21",
+        "guidelines": [
+            "Positionierungen",
+            "Verletzende Sprache"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "Schwarze Person",
+            "Schwarze*r",
+            "farbige Person"
+        ],
+        "id": 35
+    },
+    {
+        "lemma": "Blackfacing",
+        "lemma_lang": "en",
+        "definition": "(S.) Begriff f\u00fcr eine rassistische Theaterpraxis, bei der sich wei\u00dfe Menschen das Gesicht mit schwarzer Farbe bemalen, um auf groteske und \u00fcberzeichnete Weise Schwarze Menschen darzustellen. ",
+        "author": "Anna",
+        "date": "26.5.21",
+        "guidelines": [
+            "Genre und Register",
+            "Originalsprache beibehalten"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "Blackfacing",
+            "Schwarzschminkerei"
+        ],
+        "id": 36
+    },
+    {
+        "lemma": "blackfella",
+        "lemma_lang": "en",
+        "definition": "(S.) Begriff, den einige indigene Australier:innen als Selbstbezeichnung nutzen.",
+        "author": "lisa",
+        "date": "19.8.21",
+        "guidelines": [
+            "Kontext",
+            "Originalsprache beibehalten"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "blackfella"
+        ],
+        "id": 37
+    },
+    {
+        "lemma": "Blacklist",
+        "lemma_lang": "en",
+        "definition": "",
+        "author": "Anna",
+        "date": "1.4.23",
+        "guidelines": [
+            "Kontext",
+            "Verletzende Sprache"
+        ],
+        "relatedterms": [
+            "black market",
+            "Schwarzfahren"
+        ],
+        "translations": [
+            "Negativliste",
+            "Verbotsliste",
+            "schwarze Liste"
+        ],
+        "id": 38
+    },
+    {
+        "lemma": "Blackness",
+        "lemma_lang": "en",
+        "definition": "(S.) Begriff f\u00fcr den Zustand des Schwarzseins als politische Position. Wird als Selbstbezeichnung erm\u00e4chtigend verwendet, insbesondere wenn es gro\u00df geschrieben wird.",
+        "author": "lisa",
+        "date": "11.3.21",
+        "guidelines": [
+            "Positionierungen",
+            "Verletzende Sprache"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "Schwarzsein",
+            "Schw\u00e4rze",
+            "N***r"
+        ],
+        "id": 39
+    },
+    {
+        "lemma": "blind f\u00fcr etwas sein",
+        "lemma_lang": "de",
+        "definition": "beschreibt, etwas nicht sehen zu k\u00f6nnen oder nicht in der Lage zu sein, bestimmte Dinge zu erkennen. Kann diskriminierend verwendet werden.",
+        "author": "Anna",
+        "date": "8.9.21",
+        "guidelines": [
+            "Positionierungen",
+            "Verletzende Sprache"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "unaware of",
+            "oblivious to",
+            "blind to"
+        ],
+        "id": 40
+    },
+    {
+        "lemma": "bossy",
+        "lemma_lang": "en",
+        "definition": "(Adj.) beschreibt dominantes Verhalten, kann gegenderte Konnotationen haben.",
+        "author": "Lucy",
+        "date": "28.1.22",
+        "guidelines": [
+            "Kontext",
+            "Tonfall und Haltung"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "bestimmerisch",
+            "bevormundend",
+            "dominant",
+            "herrisch"
+        ],
+        "id": 41
+    },
+    {
+        "lemma": "brown people",
+        "lemma_lang": "en",
+        "definition": "(S.) Politischer Begriff, den einige People of Color als Selbstbezeichnung benutzen.",
+        "author": "Kat",
+        "date": "13.4.21",
+        "guidelines": [
+            "Kontext",
+            "Positionierungen"
+        ],
+        "relatedterms": [
+            "coloured",
+            "person of colour"
+        ],
+        "translations": [
+            "Person of Color",
+            "Maori",
+            "Braune Menschen",
+            "braune Person",
+            "dunkelh\u00e4utige Menschen"
+        ],
+        "id": 42
+    },
+    {
+        "lemma": "Bur*in",
+        "lemma_lang": "de",
+        "definition": "(S.) Begriff f\u00fcr die Nachfahren niederl\u00e4ndischer Siedler:innen in S\u00fcdafrika, abgeleitet von \u201cBauer\u201d in Afrikaans. Hat manchmal negative Konnotationen.",
+        "author": "Anna",
+        "date": "6.9.21",
+        "guidelines": [
+            "Kontext"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "Afrikaaner",
+            "Boer"
+        ],
+        "id": 43
+    },
+    {
+        "lemma": "Buschleute",
+        "lemma_lang": "de",
+        "definition": "(S.) ein rassistischer Begriff f\u00fcr indigene Bev\u00f6lkerungen in verschiedenen Teilen des globalen S\u00fcdens.",
+        "author": "alex",
+        "date": "6.9.22",
+        "guidelines": [
+            "Kontext",
+            "Verletzende Sprache"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "bushmen"
+        ],
+        "id": 44
+    },
+    {
+        "lemma": "Camp",
+        "lemma_lang": "en",
+        "definition": "(Adj.) beschreibt einen k\u00fcnstlerischen Stil, der sich durch \u00dcbertreibung und pointierte Ironie auszeichnet. Steht oft mit queerer Kultur in Verbindung.",
+        "author": "Anna",
+        "date": "26.7.21",
+        "guidelines": [
+            "Kontext",
+            "Originalsprache beibehalten"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "camp",
+            "Lager",
+            "Partei",
+            "tuntig"
+        ],
+        "id": 45
+    },
+    {
+        "lemma": "cancel culture",
+        "lemma_lang": "en",
+        "definition": "(S.) Begriff f\u00fcr eine Praxis \u00f6ffentlicher Missbilligung, um sozialen Druck auszu\u00fcben.",
+        "author": "st",
+        "date": "17.4.21",
+        "guidelines": [
+            "Originalsprache beibehalten"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "Cancel Culture",
+            "Abwendungskultur",
+            "Kulturabsagen"
+        ],
+        "id": 46
+    },
+    {
+        "lemma": "Caucasian",
+        "lemma_lang": "en",
+        "definition": "",
+        "author": "CJS",
+        "date": "19.11.23",
+        "guidelines": [
+            "Kontext",
+            "Tonfall und Haltung"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "wei\u00df",
+            "kaukasisch"
+        ],
+        "id": 47
+    },
+    {
+        "lemma": "chicana",
+        "lemma_lang": "en",
+        "definition": "(S.) der Begriff beschreibt eine US-Amerikanerin, deren Familie aus Mexiko oder Zentralamerika in die USA eingewandert ist.",
+        "author": "Anna",
+        "date": "1.8.22",
+        "guidelines": [
+            "Kontext",
+            "Originalsprache beibehalten"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "Chicana",
+            "Mexikanisch-US-amerikanisch",
+            "mexikanisch-amerikanisch"
+        ],
+        "id": 48
+    },
+    {
+        "lemma": "chief",
+        "lemma_lang": "en",
+        "definition": "(S.) ein kolonialer Begriff f\u00fcr politische F\u00fchrungspersonen im globalen S\u00fcden.",
+        "author": "Anna",
+        "date": "14.3.21",
+        "guidelines": [
+            "Kontext",
+            "Verletzende Sprache"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "chief",
+            "politische F\u00fchrungsperson",
+            "Oberhaupt",
+            "H\u00e4uptling"
+        ],
+        "id": 49
+    },
+    {
+        "lemma": "clan elders",
+        "lemma_lang": "en",
+        "definition": "(S.) Begriff f\u00fcr politische und spirituelle F\u00fchrungspersonen in bestimmten Gesellschaften des globalen S\u00fcdens.",
+        "author": "Mariana",
+        "date": "11.3.21",
+        "guidelines": [
+            "Kontext",
+            "Positionierungen"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "Clan \u00c4lteste"
+        ],
+        "id": 50
+    },
+    {
+        "lemma": "cognitive disability",
+        "lemma_lang": "en",
+        "definition": "",
+        "author": "Anna",
+        "date": "21.6.23",
+        "guidelines": [],
+        "relatedterms": [],
+        "translations": [
+            "Menschen mit Lernschwierigkeiten",
+            "geistige Behinderung"
+        ],
+        "id": 51
+    },
+    {
+        "lemma": "coily (hair)",
+        "lemma_lang": "en",
+        "definition": "",
+        "author": "livhey",
+        "date": "13.10.23",
+        "guidelines": [],
+        "relatedterms": [],
+        "translations": [
+            "engere Korkenzieherlocken",
+            "lockig"
+        ],
+        "id": 52
+    },
+    {
+        "lemma": "color",
+        "lemma_lang": "en",
+        "definition": "(S.) Begriff, der in Bezug auf Menschen als Ersatz f\u00fcr Race verwendet werden kann. Hat m\u00f6glicherweise biologistische Untert\u00f6ne.",
+        "author": "Anna",
+        "date": "4.5.21",
+        "guidelines": [
+            "Kontext",
+            "Positionierungen"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "Farbe",
+            "(Haut-)Schattierung",
+            "Color",
+            "Lage",
+            "farbig"
+        ],
+        "id": 53
+    },
+    {
+        "lemma": "color blindness",
+        "lemma_lang": "en",
+        "definition": "(S.) der Begriff bedeutet, dass (i.d.R.) eine Person Farben nur eingeschr\u00e4nkt wahrnimmt oder die Existenz der sozial konstruierten Kategorie Race nicht anerkennt",
+        "author": "Anna",
+        "date": "31.5.22",
+        "guidelines": [
+            "Kontext",
+            "Verletzende Sprache"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "Farbenblindheit"
+        ],
+        "id": 54
+    },
+    {
+        "lemma": "colorism",
+        "lemma_lang": "en",
+        "definition": "(S.) Begriff f\u00fcr die Diskriminierung aufgrund der tats\u00e4chlichen Hautfarbe (oder Haut-Schattierung), wobei People of Color mit dunklerem Hautton am st\u00e4rksten diskriminiert werden. Orientiert sich an einer wei\u00dfen Norm.",
+        "author": "Anna",
+        "date": "27.5.21",
+        "guidelines": [
+            "Positionierungen",
+            "Originalsprache beibehalten"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "Colorism",
+            "Kolorismus"
+        ],
+        "id": 55
+    },
+    {
+        "lemma": "coloured",
+        "lemma_lang": "en",
+        "definition": "(Adj.) soll Menschen beschreiben, die nicht wei\u00df sind, meistens keine Selbstbezeichnung.\n\nein rassistische Zuschreibung, mit der wei\u00dfe Menschen unterlegene \u201cAndere\u201d erfanden.",
+        "author": "alex",
+        "date": "23.4.21",
+        "guidelines": [
+            "Kontext",
+            "Verletzende Sprache"
+        ],
+        "relatedterms": [
+            "brown people",
+            "person of colour"
+        ],
+        "translations": [
+            "People of Color (POC)",
+            "of Colour",
+            "befarbt",
+            "coloured",
+            "farbig"
+        ],
+        "id": 56
+    },
+    {
+        "lemma": "Community",
+        "lemma_lang": "en",
+        "definition": "(S.) Begriff f\u00fcr eine Gruppe, die z.B. \u00e4hnliche Erfahrungen teilt. Minorisierte Gruppen verwenden diesen Begriff verst\u00e4rkt f\u00fcr gemeinsame politische Zwecke.",
+        "author": "Kat",
+        "date": "2.7.21",
+        "guidelines": [
+            "Originalsprache beibehalten",
+            "Kreative L\u00f6sungen"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "Community",
+            "Solidargemeinschaft"
+        ],
+        "id": 57
+    },
+    {
+        "lemma": "community of inquiry",
+        "lemma_lang": "en",
+        "definition": "",
+        "author": "Anna",
+        "date": "23.6.22",
+        "guidelines": [],
+        "relatedterms": [],
+        "translations": [],
+        "id": 58
+    },
+    {
+        "lemma": "cracker",
+        "lemma_lang": "en",
+        "definition": "(S.) In Bezug auf Menschen ist dies ein negativ belegter Begriff f\u00fcr wei\u00dfe Menschen, vor allem im US-amerikanischen Kontext gebr\u00e4uchlich.",
+        "author": "Dejla",
+        "date": "16.4.21",
+        "guidelines": [
+            "Kontext",
+            "Originalsprache beibehalten"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "Cracker",
+            "Kartoffel",
+            "Prahler"
+        ],
+        "id": 59
+    },
+    {
+        "lemma": "craftsmanship",
+        "lemma_lang": "en",
+        "definition": "(S.) der Begriff beschreibt die Fertigkeit, die eine Person bei der Herstellung von Dingen einsetzt, bezieht sich insbesondere auf Handarbeit. Der englische Begriff beinhaltet das Wort \u201cMann\u201d.",
+        "author": "Lucy",
+        "date": "19.1.22",
+        "guidelines": [
+            "Positionierungen",
+            "Kreative L\u00f6sungen"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "Handwerkskunst"
+        ],
+        "id": 60
+    },
+    {
+        "lemma": "Creole",
+        "lemma_lang": "en",
+        "definition": "",
+        "author": "mila",
+        "date": "4.5.23",
+        "guidelines": [],
+        "relatedterms": [],
+        "translations": [
+            "Kreol*in"
+        ],
+        "id": 61
+    },
+    {
+        "lemma": "cripnormativity",
+        "lemma_lang": "en",
+        "definition": "(S.) Begriff f\u00fcr das gesellschaftliche Verst\u00e4ndnis von akzeptierten oder \u201cnormalen\u201d Formen von Behinderung.\n\nweist Parallelen zu bereits etablierten Konzepten wie Heteronormativit\u00e4t oder Cisgendernormativit\u00e4t auf.",
+        "author": "Kat",
+        "date": "13.10.21",
+        "guidelines": [
+            "Positionierungen",
+            "Originalsprache beibehalten"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "Normatives Verst\u00e4ndnis von Behinderung"
+        ],
+        "id": 62
+    },
+    {
+        "lemma": "cross-racial",
+        "lemma_lang": "en",
+        "definition": "verwandt mit racialized, racial diversity, Race",
+        "author": "cmilsch",
+        "date": "11.3.21",
+        "guidelines": [
+            "Originalsprache beibehalten"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "cross-racial",
+            "ethnisch divers"
+        ],
+        "id": 63
+    },
+    {
+        "lemma": "darkness",
+        "lemma_lang": "en",
+        "definition": "(S.) Begriff, der in Bezug auf Menschen auf die tats\u00e4chliche Farbe oder Schattierung ihrer Haut verweisen kann. Beinhaltet das Fehlen von Licht oder Helligkeit und hat meist negative Konnotationen.",
+        "author": "Lucy",
+        "date": "11.2.21",
+        "guidelines": [
+            "Kontext",
+            "Positionierungen"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "Dunkelheit "
+        ],
+        "id": 64
+    },
+    {
+        "lemma": "deaf",
+        "lemma_lang": "en",
+        "definition": "",
+        "author": "Kat",
+        "date": "21.6.23",
+        "guidelines": [],
+        "relatedterms": [],
+        "translations": [
+            "geh\u00f6rlos"
+        ],
+        "id": 65
+    },
+    {
+        "lemma": "decolonise",
+        "lemma_lang": "en",
+        "definition": "(v.) Beschreibt Aktivit\u00e4ten und Denkweisen, die sich gegen Kolonialismus und koloniale Spuren richten.",
+        "author": "Adri",
+        "date": "21.4.21",
+        "guidelines": [
+            "Genre und Register"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "dekolonisieren",
+            "entkolonisieren"
+        ],
+        "id": 66
+    },
+    {
+        "lemma": "der Vergleich hinkt",
+        "lemma_lang": "de",
+        "definition": "idiomatischer Ausdruck f\u00fcr einen fehlerhaften Vergleich, hat ableistische Konnotationen",
+        "author": "Anna",
+        "date": "11.5.22",
+        "guidelines": [
+            "Kontext",
+            "Kreative L\u00f6sungen"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "the comparison is flawed"
+        ],
+        "id": 67
+    },
+    {
+        "lemma": "Desintegration",
+        "lemma_lang": "de",
+        "definition": "(S.) Begriff f\u00fcr eine politische Haltung der Ablehnung, sich an die Dominanzgesellschaft anpassen zu m\u00fcssen. Dr\u00fcckt ein Streben nach radikaler Vielfalt aus.",
+        "author": "Anna",
+        "date": "23.4.21",
+        "guidelines": [
+            "Kontext",
+            "Originalsprache beibehalten"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "disassimilation",
+            "disintegration",
+            "de-integration",
+            "Desintegration"
+        ],
+        "id": 68
+    },
+    {
+        "lemma": "deutschnational",
+        "lemma_lang": "de",
+        "definition": "(Adj.) beschreibt Bestrebungen Gemeinsamkeiten innerhalb der deutschen Nation zu betonen; eng mit der deutschen Nationalstaatbildung im fr\u00fchen 19. Jahrhundert verbunden.",
+        "author": "Anna",
+        "date": "29.9.21",
+        "guidelines": [],
+        "relatedterms": [],
+        "translations": [],
+        "id": 69
+    },
+    {
+        "lemma": "disability",
+        "lemma_lang": "en",
+        "definition": "",
+        "author": "Desz",
+        "date": "6.9.22",
+        "guidelines": [],
+        "relatedterms": [
+            "ability",
+            "able-bodied",
+            "disabled person",
+            "ableism"
+        ],
+        "translations": [
+            "Behinderung",
+            "Einschr\u00e4nkung"
+        ],
+        "id": 70
+    },
+    {
+        "lemma": "disabled person",
+        "lemma_lang": "en",
+        "definition": "beschreibt eine Person, die k\u00f6rperliche, seelische, geistige oder Sinnesbeeintr\u00e4chtigungen hat, die eine gleichberechtigte Teilhabe an der Gesellschaft verhindern. ",
+        "author": "Anna",
+        "date": "24.9.21",
+        "guidelines": [
+            "Positionierungen",
+            "Verletzende Sprache"
+        ],
+        "relatedterms": [
+            "ability",
+            "disability"
+        ],
+        "translations": [
+            "Mensch mit Behinderung",
+            "behinderte Person",
+            "Mensch mit Einschr\u00e4nkung",
+            "Mensch mit BeHinderung"
+        ],
+        "id": 71
+    },
+    {
+        "lemma": "diversity",
+        "lemma_lang": "en",
+        "definition": "(S.) Begriff f\u00fcr Verschiedenheit, Unterschiedlichkeit oder Heterogenit\u00e4t von Menschen. Wird oft in Bezug auf die Einbeziehung von Menschen mit verschiedene Erfahrungen verwendet.",
+        "author": "Lucy",
+        "date": "7.5.21",
+        "guidelines": [
+            "Genre und Register"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "Vielfalt",
+            "Diversit\u00e4t",
+            "Vielf\u00e4ltigkeit",
+            "diversity"
+        ],
+        "id": 72
+    },
+    {
+        "lemma": "Dominanzgesellschaft",
+        "lemma_lang": "de",
+        "definition": "(S.) Begriff f\u00fcr den Teil der Gesellschaft, der eine Machtposition innehat.",
+        "author": "Anna",
+        "date": "26.10.21",
+        "guidelines": [
+            "Kontext"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "dominant society"
+        ],
+        "id": 73
+    },
+    {
+        "lemma": "Empowerment",
+        "lemma_lang": "en",
+        "definition": "(S.) Begriff f\u00fcr den Prozess sich selbst zu erm\u00e4chtigen oder die Handlungsmacht anderer zu f\u00f6rdern.",
+        "author": "Adri",
+        "date": "21.4.21",
+        "guidelines": [
+            "Kontext",
+            "Originalsprache beibehalten"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "Erm\u00e4chtigung",
+            "Selbsterm\u00e4chtigung",
+            "Empowerment",
+            "Selbstbem\u00e4chtigung",
+            "St\u00e4rkung "
+        ],
+        "id": 74
+    },
+    {
+        "lemma": "enslavement",
+        "lemma_lang": "en",
+        "definition": "(S.) Begriff f\u00fcr den Akt, mit dem Menschen in einer Machtpositon andere Menschen zu Unterlegenen machen, sie als Eigentum behandeln und i.d.R. f\u00fcr sich arbeiten lassen. ",
+        "author": "aderickson",
+        "date": "23.6.21",
+        "guidelines": [
+            "Verletzende Sprache",
+            "Kreative L\u00f6sungen"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "die Versklavung",
+            "Sklaverei"
+        ],
+        "id": 75
+    },
+    {
+        "lemma": "Entdecken",
+        "lemma_lang": "de",
+        "definition": "(V.) Ausdruck f\u00fcr den Vorgang, etwas zum ersten Mal zu finden - im Kolonialismus f\u00e4lschlicherweise verwendet, um das erste Mal zu beschreiben, dass wei\u00dfe Menschen etwas fanden.",
+        "author": "Anna",
+        "date": "7.6.21",
+        "guidelines": [
+            "Tonfall und Haltung",
+            "Verletzende Sprache"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "Discover",
+            "find",
+            "unearth"
+        ],
+        "id": 76
+    },
+    {
+        "lemma": "Entwicklungsland",
+        "lemma_lang": "de",
+        "definition": "(S.) Begriff f\u00fcr ein Land, das sich in einem Ver\u00e4nderungsprozess im Sinne eines Verbesserungsprozesses befinet. Wird oft mit \u201cR\u00fcckst\u00e4ndigkeit\u201d in Verbindung gebracht.",
+        "author": "Anna",
+        "date": "7.6.21",
+        "guidelines": [
+            "Kontext",
+            "Tonfall und Haltung"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "Global South",
+            "developing country"
+        ],
+        "id": 77
+    },
+    {
+        "lemma": "Erasure",
+        "lemma_lang": "en",
+        "definition": "(S.) Begriff f\u00fcr einen Prozess, durch den Dinge oder Personen (-gruppen) unsichtbar gemacht werden.",
+        "author": "Dejla",
+        "date": "14.5.21",
+        "guidelines": [
+            "Kontext",
+            "Genre und Register"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "Ausl\u00f6schung",
+            "Unsichtbarmachung",
+            "Erasure",
+            "L\u00f6schung",
+            "Ausradierung",
+            "Ausblendung"
+        ],
+        "id": 78
+    },
+    {
+        "lemma": "Erfahrungswissen",
+        "lemma_lang": "de",
+        "definition": "(S.) Begriff f\u00fcr eine bestimmte Art von Wissen, das auf pers\u00f6nlichen Erfahrungen basiert.",
+        "author": "Anna",
+        "date": "30.9.21",
+        "guidelines": [
+            "Kontext"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "experiential knowledge",
+            "knowledge gained from experience"
+        ],
+        "id": 79
+    },
+    {
+        "lemma": "Erinnerungskultur",
+        "lemma_lang": "de",
+        "definition": "(S.) der Begriff beschreibt den Umgang mit Geschichte und Vergangenheit im kollektiven Rahmen. In Deutschland wird er vor allem mit der Zeit des Nationalsozialismus und dem Zweiten Weltkrieg in Verbindung gebracht.",
+        "author": "alex",
+        "date": "8.7.22",
+        "guidelines": [
+            "Kontext",
+            "Genre und Register"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "Erinnerungskultur",
+            "politics of remembrance",
+            "memory and memorializing cultures",
+            "commemorative culture",
+            "culture of memory"
+        ],
+        "id": 80
+    },
+    {
+        "lemma": "Eskimo",
+        "lemma_lang": "en",
+        "definition": "(S.) eine Fremdbezeichnung von europ\u00e4ischen Siedler*innen f\u00fcr Personen aus den n\u00f6rdlichen Regionen von Sibirien bis Amerika (Alaska und Nord-Kanada) bezeichnet",
+        "author": "Suse_Mermaids",
+        "date": "18.8.22",
+        "guidelines": [
+            "Positionierungen",
+            "Verletzende Sprache"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "Eskimo",
+            "Indigen",
+            "Inuit",
+            "Yupik"
+        ],
+        "id": 81
+    },
+    {
+        "lemma": "ethnicity",
+        "lemma_lang": "en",
+        "definition": "(S.) Begriff f\u00fcr eine Identit\u00e4tskategorie, die eine gemeinsame Zugeh\u00f6rigkeit signalisiert, z. B. auf der Grundlage von Kultur, Sprache, Geschichte, Tradition oder Race. ",
+        "author": "alex",
+        "date": "28.4.21",
+        "guidelines": [
+            "Kontext",
+            "Verletzende Sprache"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "Ethnie",
+            "kulturelle Identit\u00e4t",
+            "Ethnizit\u00e4t",
+            "Volkszugeh\u00f6rigkeit"
+        ],
+        "id": 82
+    },
+    {
+        "lemma": "Expansionspolitik",
+        "lemma_lang": "de",
+        "definition": "(S.) Begriff f\u00fcr eine politische Agenda, die dazu dient, das eigene Land zu vergr\u00f6\u00dfern oder den Einflussbereich \u00fcber die eigenen nationalen Grenzen hinaus auszudehnen.",
+        "author": "Anna",
+        "date": "29.9.21",
+        "guidelines": [
+            "Genre und Register"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "expansionist politics",
+            "expansionist policy"
+        ],
+        "id": 83
+    },
+    {
+        "lemma": "fachm\u00e4nnisch",
+        "lemma_lang": "de",
+        "definition": "(Adj.) beschreibt das Besitzen genauer Kenntnisse in einem bestimmten Fach; der Begriff beinhaltet das Wort \u201cMann\u201d.",
+        "author": "Lucy",
+        "date": "22.9.22",
+        "guidelines": [
+            "Positionierungen",
+            "Tonfall und Haltung"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "professional",
+            "skilled"
+        ],
+        "id": 84
+    },
+    {
+        "lemma": "farbig",
+        "lemma_lang": "de",
+        "definition": "(Adj.) dient im deutschen Kontext in Bezug auf Menschen als eine diskriminierende Fremdzuschreibung f\u00fcr People of Color.",
+        "author": "Anna",
+        "date": "18.10.21",
+        "guidelines": [
+            "Kontext",
+            "Positionierungen"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "Person of Color",
+            "colored"
+        ],
+        "id": 85
+    },
+    {
+        "lemma": "fat",
+        "lemma_lang": "en",
+        "definition": "",
+        "author": "Anna",
+        "date": "11.12.23",
+        "guidelines": [],
+        "relatedterms": [],
+        "translations": [
+            "fett",
+            "mehrgewichtig"
+        ],
+        "id": 86
+    },
+    {
+        "lemma": "fett",
+        "lemma_lang": "de",
+        "definition": "",
+        "author": "NadineKampa",
+        "date": "30.6.23",
+        "guidelines": [],
+        "relatedterms": [],
+        "translations": [
+            "fat",
+            "enormous, obese"
+        ],
+        "id": 87
+    },
+    {
+        "lemma": "First Nations",
+        "lemma_lang": "en",
+        "definition": "(S.) Begriff f\u00fcr die indigene Bev\u00f6lkerung einer bestimmten Region.",
+        "author": "Anna",
+        "date": "16.4.21",
+        "guidelines": [
+            "Kontext",
+            "Originalsprache beibehalten"
+        ],
+        "relatedterms": [
+            "Aborigines",
+            "red-skinned"
+        ],
+        "translations": [
+            "Amerikanische Ersteinwohner*innen",
+            "Indigene V\u00f6lker ",
+            "Autochtone"
+        ],
+        "id": 88
+    },
+    {
+        "lemma": "First World Country",
+        "lemma_lang": "en",
+        "definition": "",
+        "author": "claudia",
+        "date": "17.5.23",
+        "guidelines": [],
+        "relatedterms": [],
+        "translations": [
+            "Land im globalen Norden",
+            "Industrieland"
+        ],
+        "id": 89
+    },
+    {
+        "lemma": "FLINTA*",
+        "lemma_lang": "de",
+        "definition": "(S.) Abk\u00fcrzung f\u00fcr Frauen, Lesben, inter Personen, nicht-bin\u00e4re Menschen, trans Personen, agender Personen und generell alle Menschen, die sich mit den genannten Geschlechtsidentit\u00e4ten oder keiner identifizieren.",
+        "author": "ma_leen_",
+        "date": "2.7.21",
+        "guidelines": [
+            "Verschiedene Schreibweisen",
+            "Kreative L\u00f6sungen"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "cis-women and QUILTBAG",
+            "LGBTIQA* "
+        ],
+        "id": 90
+    },
+    {
+        "lemma": "foreign",
+        "lemma_lang": "en",
+        "definition": "(Adj.) bedeutet, von woanders zu kommen. Kann in Bezug auf Menschen diskriminierende Konnotationen haben.",
+        "author": "cmilsch",
+        "date": "15.8.21",
+        "guidelines": [
+            "Kontext",
+            "Tonfall und Haltung"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "fremd",
+            "ausl\u00e4ndisch"
+        ],
+        "id": 91
+    },
+    {
+        "lemma": "Freak",
+        "lemma_lang": "en",
+        "definition": "",
+        "author": "Kat",
+        "date": "9.10.23",
+        "guidelines": [],
+        "relatedterms": [],
+        "translations": [],
+        "id": 92
+    },
+    {
+        "lemma": "Fremdbezeichnung",
+        "lemma_lang": "de",
+        "definition": "(S.) Begriff der besagt, dass eine Gruppen- oder Personenbeschreibung nicht von den betreffenden selbst gew\u00e4hlt wurde.",
+        "author": "Anna",
+        "date": "3.11.21",
+        "guidelines": [
+            "Kontext",
+            "Genre und Register"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "external designation",
+            "exonym"
+        ],
+        "id": 93
+    },
+    {
+        "lemma": "Fremdenfeindlichkeit",
+        "lemma_lang": "de",
+        "definition": "(S.) Begriff f\u00fcr Abneigung oder Vorurteile gegen\u00fcber Menschen, die als von anderswo kommend positioniert werden.",
+        "author": "cmilsch",
+        "date": "11.3.21",
+        "guidelines": [
+            "Kontext",
+            "Tonfall und Haltung"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "Xenophobia",
+            "hostility towards foreigners"
+        ],
+        "id": 94
+    },
+    {
+        "lemma": "Fremdenpass",
+        "lemma_lang": "de",
+        "definition": "",
+        "author": "Anna",
+        "date": "8.10.21",
+        "guidelines": [
+            "Kontext",
+            "Genre und Register"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "alien passport"
+        ],
+        "id": 95
+    },
+    {
+        "lemma": "Fugitivity",
+        "lemma_lang": "en",
+        "definition": "",
+        "author": "Kat",
+        "date": "18.10.23",
+        "guidelines": [
+            "Kontext"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "Flucht",
+            "Flucht versklavter Menschen",
+            "Fluchterfahrung"
+        ],
+        "id": 96
+    },
+    {
+        "lemma": "Gastarbeiter*in",
+        "lemma_lang": "de",
+        "definition": "(S.) euphemistischer Begriff f\u00fcr Personen, die in den 1950er und 60er Jahren nach Deutschland kamen, um den Bedarf des Arbeitsmarktes zu decken.",
+        "author": "Anna",
+        "date": "7.6.21",
+        "guidelines": [
+            "Kontext",
+            "Originalsprache beibehalten"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "Gastarbeiter*in",
+            "migrant worker",
+            "itinerant labor groups",
+            "guest worker",
+            "foreign worker"
+        ],
+        "id": 97
+    },
+    {
+        "lemma": "Geb\u00e4rdensprache",
+        "lemma_lang": "de",
+        "definition": "(S.) Begriff f\u00fcr eine visuell-manuelle Sprache, die i.d.R. von Geh\u00f6rlosen und stark schwerh\u00f6rigen Menschen benutzt wird.",
+        "author": "Anna",
+        "date": "26.8.21",
+        "guidelines": [],
+        "relatedterms": [],
+        "translations": [
+            "sign language"
+        ],
+        "id": 98
+    },
+    {
+        "lemma": "Geb\u00e4rmutter",
+        "lemma_lang": "de",
+        "definition": "(S.) Begriff f\u00fcr den Uterus, das Organ, in dem sich ein F\u00f6tus entwickelt",
+        "author": "Kat",
+        "date": "14.3.22",
+        "guidelines": [
+            "Tonfall und Haltung",
+            "Verletzende Sprache"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "uterus",
+            "womb"
+        ],
+        "id": 99
+    },
+    {
+        "lemma": "Gegenwartsbew\u00e4ltigung",
+        "lemma_lang": "de",
+        "definition": "(S.) Begriff f\u00fcr die kritische Auseinandersetzung mit der Gegenwart. \u00c4hnlich wie Vergangenheitsbew\u00e4ltigung, aber mit Bezug auf das Jetzt.",
+        "author": "Anna",
+        "date": "5.4.21",
+        "guidelines": [
+            "Kontext",
+            "Originalsprache beibehalten"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "dealing with the present",
+            "Overcoming the Present",
+            "present coping"
+        ],
+        "id": 100
+    },
+    {
+        "lemma": "gender",
+        "lemma_lang": "en",
+        "definition": "(S.) ein Begriff f\u00fcr eine Identit\u00e4tskategorie; eine gesellschaftliche Konstruktion, die performativ dargestellt wird und z. B. als weiblich, m\u00e4nnlich oder queer interpretiert werden kann.",
+        "author": "Suse_Mermaids",
+        "date": "5.9.22",
+        "guidelines": [
+            "Kontext",
+            "Genre und Register"
+        ],
+        "relatedterms": [
+            "Heteronormativity",
+            "Geschlecht"
+        ],
+        "translations": [
+            "Gender",
+            "Geschlecht"
+        ],
+        "id": 101
+    },
+    {
+        "lemma": "Genderismus",
+        "lemma_lang": "de",
+        "definition": "(S.) Begriff f\u00fcr eine Erweiterung von Sexismus; meint alle Diskriminierungen, die \u00fcber Gender stattfinden, also auch Diskriminierung gegen trans*, inter* und genderfreie Personen.",
+        "author": "Anna",
+        "date": "29.4.21",
+        "guidelines": [
+            "Kontext"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "the gender binary",
+            "grammatical gender"
+        ],
+        "id": 102
+    },
+    {
+        "lemma": "gentile",
+        "lemma_lang": "en",
+        "definition": "",
+        "author": "Desz",
+        "date": "23.11.23",
+        "guidelines": [],
+        "relatedterms": [],
+        "translations": [],
+        "id": 103
+    },
+    {
+        "lemma": "Geschlecht",
+        "lemma_lang": "de",
+        "definition": "(S.) ein Begriff f\u00fcr die Gesamtheit der Merkmale, mit denen Menschen in Bezug auf ihre Reproduktionsf\u00e4higkeit als m\u00e4nnlich oder weiblich eingeordnet werden.",
+        "author": "Suse_Mermaids",
+        "date": "6.10.22",
+        "guidelines": [
+            "Kontext",
+            "Genre und Register"
+        ],
+        "relatedterms": [
+            "gender",
+            "Heteronormativity",
+            "intersex"
+        ],
+        "translations": [
+            "Gender",
+            "sex"
+        ],
+        "id": 104
+    },
+    {
+        "lemma": "global south",
+        "lemma_lang": "en",
+        "definition": "(S.) Politischer Begriff, der h\u00e4ufig f\u00fcr Regionen in Afrika, Asien, Lateinamerika und Ozeanien verwendet wird, um ihre weniger privilegierte Position im globalen Machtsystem zu beschreiben. Wird als Alternative zu den (ab-)wertenden Bezeichnungen \u201eEntwicklungsl\u00e4nder\u201c und \u201eentwickelte L\u00e4nder\u201c verwendet.",
+        "author": "Lin",
+        "date": "15.4.21",
+        "guidelines": [
+            "Genre und Register",
+            "Tonfall und Haltung"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "Globaler S\u00fcden"
+        ],
+        "id": 105
+    },
+    {
+        "lemma": "gossip",
+        "lemma_lang": "en",
+        "definition": "(S.) Begriff f\u00fcr m\u00fc\u00dfiges Gerede oder Ger\u00fcchte, die sich oft auf pers\u00f6nliche oder private Angelegenheiten von anderen beziehn.\n\n(V.) Ausdruck f\u00fcr die Beteiligung an m\u00fc\u00dfigem Gerede oder der Verbreitung von Ger\u00fcchten.",
+        "author": "Anna",
+        "date": "25.1.22",
+        "guidelines": [
+            "Kontext",
+            "Tonfall und Haltung"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "Gerede",
+            "Klatsch"
+        ],
+        "id": 106
+    },
+    {
+        "lemma": "H\u0101fu",
+        "lemma_lang": "en",
+        "definition": "",
+        "author": "KaSch",
+        "date": "23.8.23",
+        "guidelines": [],
+        "relatedterms": [],
+        "translations": [],
+        "id": 107
+    },
+    {
+        "lemma": "half-caste",
+        "lemma_lang": "en",
+        "definition": "(S.) Beleidigender Begriff f\u00fcr ein Kind, dessen Eltern sich in Bezug auf Race unterschiedlich positionieren.",
+        "author": "Lucy",
+        "date": "13.4.21",
+        "guidelines": [
+            "Positionierungen",
+            "Verletzende Sprache"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "Mischling"
+        ],
+        "id": 108
+    },
+    {
+        "lemma": "Handlungsmacht",
+        "lemma_lang": "de",
+        "definition": "(S.) Begriff f\u00fcr die F\u00e4higkeit oder die St\u00e4rke, eine Entscheidung zu treffen oder eine Handlung vorzunehmen.",
+        "author": "Anna",
+        "date": "23.9.21",
+        "guidelines": [
+            "Genre und Register"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "Agency"
+        ],
+        "id": 109
+    },
+    {
+        "lemma": "Handlungsraum",
+        "lemma_lang": "de",
+        "definition": "(S.) Begriff f\u00fcr den Bereich, in dem eine Handlung Wirkung zeigt. ",
+        "author": "Desz",
+        "date": "28.7.21",
+        "guidelines": [
+            "Genre und Register"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "Sphere of Influence"
+        ],
+        "id": 110
+    },
+    {
+        "lemma": "H\u00e4uptling",
+        "lemma_lang": "de",
+        "definition": "(S.) Kolonialer Begriff f\u00fcr politische F\u00fchrungsperson im globalen S\u00fcden.",
+        "author": "Anna",
+        "date": "7.6.21",
+        "guidelines": [
+            "Positionierungen",
+            "Verletzende Sprache"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "clan elder",
+            "chief",
+            "chieftain"
+        ],
+        "id": 111
+    },
+    {
+        "lemma": "headwrap",
+        "lemma_lang": "en",
+        "definition": "",
+        "author": "livhey",
+        "date": "14.10.23",
+        "guidelines": [
+            "Kontext",
+            "Originalsprache beibehalten"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "headwrap",
+            "gele",
+            "Kopftuch"
+        ],
+        "id": 112
+    },
+    {
+        "lemma": "Heimat",
+        "lemma_lang": "de",
+        "definition": "(S.) Begriff f\u00fcr den Ort, der als zu Hause oder passender Lebensraum verstanden wird. Kann kontextuell eine enge Verbindung zu nationalsozialister Ideologie aufweisen.",
+        "author": "Timur2",
+        "date": "5.2.21",
+        "guidelines": [
+            "Kontext",
+            "Originalsprache beibehalten"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "Heimat",
+            "Home",
+            "Homeland",
+            "Home country",
+            "Community"
+        ],
+        "id": 113
+    },
+    {
+        "lemma": "Heteronormativity",
+        "lemma_lang": "en",
+        "definition": "(S.) Begriff f\u00fcr ein bin\u00e4res Geschlechtersystem, in dem zwei Geschlechter (Mann/Frau) als vermeintliche Norm anerkannt werden. \n\nbestimmt auch, was als vermeintlich normale Sexualit\u00e4t gilt.",
+        "author": "Happymonster",
+        "date": "2.11.21",
+        "guidelines": [
+            "Genre und Register"
+        ],
+        "relatedterms": [
+            "gender",
+            "Geschlecht"
+        ],
+        "translations": [
+            "Heteronormativit\u00e4t"
+        ],
+        "id": 114
+    },
+    {
+        "lemma": "Hetzjagd",
+        "lemma_lang": "de",
+        "definition": "(S.) Begriff f\u00fcr die Jagd jeder Art von Wild mit Hunden, der im deutschen Kontext manchmal in Bezug auf rassistische \u00dcbergriffe, die ein Element von Verfolgung oder Hinterherlaufen beinhalten, verwendet wird. ",
+        "author": "Kat",
+        "date": "13.5.21",
+        "guidelines": [
+            "Kontext",
+            "Genre und Register"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "racially motivated attacks",
+            "smear campaign",
+            "witch hunt",
+            "hunt"
+        ],
+        "id": 115
+    },
+    {
+        "lemma": "Ho******t",
+        "lemma_lang": "en",
+        "definition": "(S.) eine rassistische Fremdbezeichnung, die Kolonist*innen zuerst f\u00fcr die Khoikhoi und sp\u00e4ter f\u00fcr verschiedene kolonisierte Gruppen nutzten.",
+        "author": "alex",
+        "date": "6.9.22",
+        "guidelines": [
+            "Kontext",
+            "Verletzende Sprache"
+        ],
+        "relatedterms": [],
+        "translations": [],
+        "id": 116
+    },
+    {
+        "lemma": "homeland",
+        "lemma_lang": "en",
+        "definition": "",
+        "author": "Anna",
+        "date": "26.7.23",
+        "guidelines": [],
+        "relatedterms": [],
+        "translations": [],
+        "id": 117
+    },
+    {
+        "lemma": "homeless person",
+        "lemma_lang": "en",
+        "definition": "(S.) Begriff f\u00fcr eine Person, die nicht an einem festen Wohnsitz lebt.",
+        "author": "astang",
+        "date": "15.3.21",
+        "guidelines": [
+            "Kontext",
+            "Tonfall und Haltung"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "Wohnungslose Person",
+            "Obdachlose",
+            "Wohnungslose"
+        ],
+        "id": 118
+    },
+    {
+        "lemma": "Homestead",
+        "lemma_lang": "en",
+        "definition": "",
+        "author": "Anna",
+        "date": "6.9.21",
+        "guidelines": [
+            "Kontext",
+            "Tonfall und Haltung"
+        ],
+        "relatedterms": [],
+        "translations": [],
+        "id": 119
+    },
+    {
+        "lemma": "human race ",
+        "lemma_lang": "en",
+        "definition": "",
+        "author": "pucki",
+        "date": "18.1.24",
+        "guidelines": [],
+        "relatedterms": [],
+        "translations": [
+            "Menschheit"
+        ],
+        "id": 120
+    },
+    {
+        "lemma": "immigrant",
+        "lemma_lang": "en",
+        "definition": "(S.) Begriff f\u00fcr eine Person, die aus einem Land in ein anderes Land gekommen ist, um dort zu leben.",
+        "author": "Suse_Mermaids",
+        "date": "29.8.22",
+        "guidelines": [
+            "Kontext",
+            "Positionierungen"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "Einwanderer",
+            "Zuwanderer"
+        ],
+        "id": 121
+    },
+    {
+        "lemma": "Indian",
+        "lemma_lang": "en",
+        "definition": "",
+        "author": "Anna",
+        "date": "4.5.23",
+        "guidelines": [
+            "Kontext",
+            "Positionierungen"
+        ],
+        "relatedterms": [
+            "I******r",
+            "Native American",
+            "Apache"
+        ],
+        "translations": [
+            "Indigen",
+            "Indianisch",
+            "I******r",
+            "Indisch"
+        ],
+        "id": 122
+    },
+    {
+        "lemma": "I******r",
+        "lemma_lang": "de",
+        "definition": "(S.) Diskriminierender Begriff f\u00fcr indigene Nordamerikaner:innen, der seinen Ursprung in der Kolonialzeit hat.",
+        "author": "Lucy",
+        "date": "8.3.21",
+        "guidelines": [
+            "Kontext",
+            "Verletzende Sprache"
+        ],
+        "relatedterms": [
+            "Apache",
+            "Indian"
+        ],
+        "translations": [
+            "native American",
+            "American I****n"
+        ],
+        "id": 123
+    },
+    {
+        "lemma": "indigeneity",
+        "lemma_lang": "en",
+        "definition": "",
+        "author": "Kat",
+        "date": "21.4.23",
+        "guidelines": [],
+        "relatedterms": [],
+        "translations": [],
+        "id": 124
+    },
+    {
+        "lemma": "Indigenous",
+        "lemma_lang": "en",
+        "definition": "",
+        "author": "Lucy",
+        "date": "28.1.22",
+        "guidelines": [],
+        "relatedterms": [
+            "Aboriginal and Torres Strait Islander People",
+            "Apache"
+        ],
+        "translations": [
+            "Indigen"
+        ],
+        "id": 125
+    },
+    {
+        "lemma": "Integration",
+        "lemma_lang": "de",
+        "definition": "(S.) Begriff, der in politischen Kontexten die Eingliederung in eine bestehende Gesellschaft beschreibt. Wird manchmal euphemistisch f\u00fcr Assimilation verwendet.",
+        "author": "Anna",
+        "date": "23.4.21",
+        "guidelines": [
+            "Kontext",
+            "Genre und Register"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "integration",
+            "inpatriation"
+        ],
+        "id": 126
+    },
+    {
+        "lemma": "interracial",
+        "lemma_lang": "en",
+        "definition": "(Adj.) beschreibt z.B. Beziehungen zwischen Personen, die sich in Bezug auf Race unterschiedlich positionieren",
+        "author": "Anna",
+        "date": "3.3.22",
+        "guidelines": [
+            "Kontext",
+            "Originalsprache beibehalten"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "Schwarz-wei\u00df",
+            "interracial"
+        ],
+        "id": 127
+    },
+    {
+        "lemma": "Intersectionality",
+        "lemma_lang": "en",
+        "definition": "(S.) Begriff, um auszudr\u00fccken, dass sich verschiedene Diskriminierungsformen \u00fcberschneiden k\u00f6nnen, z.B. sind Schwarze Frauen von Rassismus und Sexismus betroffen.",
+        "author": "Dejla",
+        "date": "13.5.21",
+        "guidelines": [
+            "Kontext",
+            "Genre und Register"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "Intersektionalit\u00e4t"
+        ],
+        "id": 128
+    },
+    {
+        "lemma": "intersex",
+        "lemma_lang": "en",
+        "definition": "(S.) Begriff f\u00fcr eine Person, die mit einer Kombination von biologischen Merkmalen geboren wird, die als m\u00e4nnlich und weiblich interpretiert werden.",
+        "author": "Suse_Mermaids",
+        "date": "5.10.22",
+        "guidelines": [
+            "Kontext",
+            "Positionierungen"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "intergeschlechtlich",
+            "intersexuell"
+        ],
+        "id": 129
+    },
+    {
+        "lemma": "Kartoffel",
+        "lemma_lang": "de",
+        "definition": "(S.) umgangssprachlicher Begriff f\u00fcr eine typisch deutsche (wei\u00dfe) Person. ",
+        "author": "Anna",
+        "date": "5.7.21",
+        "guidelines": [
+            "Kontext",
+            "Tonfall und Haltung"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "Potato",
+            "Kartoffel",
+            "white German",
+            "Gammon",
+            "Cracker"
+        ],
+        "id": 130
+    },
+    {
+        "lemma": "kinky (hair)",
+        "lemma_lang": "en",
+        "definition": "",
+        "author": "livhey",
+        "date": "13.10.23",
+        "guidelines": [],
+        "relatedterms": [],
+        "translations": [],
+        "id": 131
+    },
+    {
+        "lemma": "Kolonialschuldl\u00fcge",
+        "lemma_lang": "de",
+        "definition": "(S.) ein Begriff, mit dem sich Deutsche nach dem Ersten Weltkrieg von den Vorw\u00fcrfen freisprechen wollten, eine besonders gewaltt\u00e4tige Kolonialmacht gewesen zu sein. ",
+        "author": "alex",
+        "date": "23.8.22",
+        "guidelines": [
+            "Kontext",
+            "Genre und Register"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "colonial guilt lie"
+        ],
+        "id": 132
+    },
+    {
+        "lemma": "Kr\u00fcppel",
+        "lemma_lang": "de",
+        "definition": "(S.) urspr\u00fcnglich ein abwertender Begriff f\u00fcr Menschen mit Behinderung; wird heute von einigen aus der Behinderten Community als wiederangeeignete Selbstbezeichnung verwendet.",
+        "author": "Kat",
+        "date": "22.7.21",
+        "guidelines": [
+            "Kontext",
+            "Positionierungen"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "Crip"
+        ],
+        "id": 133
+    },
+    {
+        "lemma": "Leitkultur",
+        "lemma_lang": "de",
+        "definition": "(S.) Begriff f\u00fcr normierte kulturelle Praxis, die eine Abweichung von der Norm ausschlie\u00dft; kann mit v\u00f6lkischem Denken und kulturellen \u00dcberlegenheitsfantasien zusammenh\u00e4ngen.",
+        "author": "klange",
+        "date": "5.2.21",
+        "guidelines": [
+            "Kontext",
+            "Genre und Register"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "dominant national culture",
+            "dominant culture",
+            "hegemonic culture",
+            "mainstream culture",
+            "Defining Culture",
+            "Hegemony",
+            "dominant discourse",
+            "guiding culture",
+            "core culture"
+        ],
+        "id": 134
+    },
+    {
+        "lemma": "light-skinned",
+        "lemma_lang": "en",
+        "definition": "(Adj.) beschreibt die Haufarbe (oder Haut-Schattierung) einer Person. Je nach Kontext kann sich die Beschreibung auf eine wei\u00dfe Person beziehen oder auf eine Person of Color mit hellerer Hautfarbe.",
+        "author": "cmilsch",
+        "date": "24.5.21",
+        "guidelines": [
+            "Kontext",
+            "Genre und Register"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "mit heller(er) Haut",
+            "hellh\u00e4utig",
+            "schwarzer mensch mit hellerer haut (meist aus einer Mixed-race Beziehung enstanden (in diesem fall eine schwarze und eine wei\u00dfe Person)) "
+        ],
+        "id": 135
+    },
+    {
+        "lemma": "lightness",
+        "lemma_lang": "en",
+        "definition": "(S.) Begriff, der in Bezug auf Menschen ihre Hautfarbe (oder Haut-Schattierung) meint. Kann sich aber auch auf Helligkeit oder Leichtigkeit beziehen.",
+        "author": "Lucy",
+        "date": "11.2.21",
+        "guidelines": [
+            "Kontext",
+            "Positionierungen"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "Hellh\u00e4utigkeit",
+            "Leichtigkeit"
+        ],
+        "id": 136
+    },
+    {
+        "lemma": "madam",
+        "lemma_lang": "en",
+        "definition": "(S.) h\u00f6flicher Begriff f\u00fcr eine Frau, kann im Englishen auch die Inhaberin eines Bordells meinen.",
+        "author": "Lucy",
+        "date": "28.1.22",
+        "guidelines": [
+            "Kontext",
+            "Tonfall und Haltung"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "Dame"
+        ],
+        "id": 137
+    },
+    {
+        "lemma": "mankind",
+        "lemma_lang": "en",
+        "definition": "(S.) der Begriff beschreibt die Gesamtheit aller Menschen.",
+        "author": "Lucy",
+        "date": "19.1.22",
+        "guidelines": [
+            "Positionierungen",
+            "Kreative L\u00f6sungen"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "Menschheit"
+        ],
+        "id": 138
+    },
+    {
+        "lemma": "Mansplain",
+        "lemma_lang": "en",
+        "definition": "(S.) Eine Wortkreuzung aus den englischen Begriffen \u201cman\u201d und \u201cexplain\u201d. Steht f\u00fcr herablassendes Erkl\u00e4ren - oft in Bezug auf M\u00e4nner, die Frauen etwas erkl\u00e4ren.",
+        "author": "Anna",
+        "date": "3.7.21",
+        "guidelines": [
+            "Originalsprache beibehalten",
+            "Kreative L\u00f6sungen"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "herrkl\u00e4ren",
+            "mansplain"
+        ],
+        "id": 139
+    },
+    {
+        "lemma": "manspreading",
+        "lemma_lang": "en",
+        "definition": "(V.) Die Handlung, viel physischen Raum einzunehmen - bezieht sich h\u00e4ufig auf m\u00e4nnlich sozialisierte Personen. (z. B. breitbeinig in der U-Bahn sitzen und der Person neben sich kaum Platz lassen.) \n\n(S.) Begriff f\u00fcr diese Handlung.",
+        "author": "Anna",
+        "date": "5.8.21",
+        "guidelines": [
+            "Originalsprache beibehalten"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "manspreading"
+        ],
+        "id": 140
+    },
+    {
+        "lemma": "Master",
+        "lemma_lang": "en",
+        "definition": "(S.) Im kolonialen Kontext ein Begriff f\u00fcr eine Person, die versklavte Menschen besitzt oder eine Plantage, auf der versklavte Menschen zur Arbeit gezwungen werden.",
+        "author": "Anna",
+        "date": "14.3.21",
+        "guidelines": [
+            "Kontext",
+            "Originalsprache beibehalten"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "Master",
+            "Herr",
+            "Herrschende",
+            "Meister*in"
+        ],
+        "id": 141
+    },
+    {
+        "lemma": "mastery",
+        "lemma_lang": "en",
+        "definition": "(S.) der Begriff bedeutet, die Macht oder Kontrolle \u00fcber etwas zu haben und ist implizit m\u00e4nnlich, da der Begriff \u201cMaster\u201d enthalten ist.",
+        "author": "Lucy",
+        "date": "19.1.22",
+        "guidelines": [
+            "Kontext",
+            "Positionierungen"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "K\u00f6nnen",
+            "Beherrschung"
+        ],
+        "id": 142
+    },
+    {
+        "lemma": "mauscheln",
+        "lemma_lang": "de",
+        "definition": "(V.) dr\u00fcckt im Deutschen unehrliches Handeln aus. Da es sich um einen Begriff mit jiddischen Wurzeln handelt (Bedeutung: Moses), tr\u00e4gt seine Verwendung im deutschen Sinne zur Schaffung eines antisemitischen Stereotyps bei.",
+        "author": "Anna",
+        "date": "29.4.21",
+        "guidelines": [
+            "Kontext",
+            "Tonfall und Haltung"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "wheeling and dealing",
+            "to fiddle"
+        ],
+        "id": 143
+    },
+    {
+        "lemma": "Mehrheitsgesellschaft",
+        "lemma_lang": "de",
+        "definition": "(S.) Begriff f\u00fcr den Teil der Gesellschaft, der zahlenm\u00e4\u00dfig die Mehrheit ausmacht und die kulturellen Normen definieren und repr\u00e4sentieren kann; das Gegenteil von marginalisierten Gruppen.",
+        "author": "Lucy",
+        "date": "10.5.21",
+        "guidelines": [
+            "Kontext",
+            "Genre und Register"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "majority society",
+            "dominant society",
+            "mainstream society"
+        ],
+        "id": 144
+    },
+    {
+        "lemma": "mensch",
+        "lemma_lang": "de",
+        "definition": "(Pronomen) eine genderfreie Alternative f\u00fcr \u201cman\u201d.\n",
+        "author": "ma_leen_",
+        "date": "2.7.21",
+        "guidelines": [
+            "Kontext",
+            "Genre und Register"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "one",
+            "people"
+        ],
+        "id": 145
+    },
+    {
+        "lemma": "microaggression",
+        "lemma_lang": "en",
+        "definition": "(S.) Begriff f\u00fcr subtile und implizite Handlungen und Aussagen, die marginalisierte Gruppen verletzen.\n",
+        "author": "Kat",
+        "date": "4.10.21",
+        "guidelines": [
+            "Genre und Register",
+            "Tonfall und Haltung"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "Mikroaggression",
+            "rassistische Sticheleien",
+            "geh\u00e4ssige Sticheleien"
+        ],
+        "id": 146
+    },
+    {
+        "lemma": "Middle East",
+        "lemma_lang": "en",
+        "definition": "(S.) Begriff f\u00fcr eine geografische Region, die h\u00e4ufig die arabische Halbinsel, Gebiete im \u00f6stlichen und s\u00fcdlichen Mittelmeerraum, Nordafrika und manchmal den Iran umfasst",
+        "author": "Anna",
+        "date": "6.5.22",
+        "guidelines": [
+            "Kontext",
+            "Positionierungen"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "Mittlerer Osten",
+            "Morgenland"
+        ],
+        "id": 147
+    },
+    {
+        "lemma": "migrants",
+        "lemma_lang": "en",
+        "definition": "(S.)  Der Begriff beschreibt Personen, die von einem Ort zum anderen ziehen, insbesondere um Arbeit oder bessere Lebensbedingungen zu finden.",
+        "author": "Suse_Mermaids",
+        "date": "5.8.22",
+        "guidelines": [
+            "Kontext",
+            "Tonfall und Haltung"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "Einwanderer",
+            "Gastarbeiter*innen",
+            "Migrant*innen",
+            "Zugewanderte"
+        ],
+        "id": 148
+    },
+    {
+        "lemma": "Migrationshintergrund",
+        "lemma_lang": "de",
+        "definition": "(S.) Begriff f\u00fcr die Herkunft von Menschen, deren Eltern als Migrant:innen gelten nicht \"urspr\u00fcnglich\" Deutsche. Wird haupts\u00e4chlich f\u00fcr Personen benutzt, die als nicht-wei\u00df gelesen werden.",
+        "author": "Anna",
+        "date": "7.6.21",
+        "guidelines": [
+            "Kontext",
+            "Positionierungen"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "immigration background",
+            "migrant background",
+            "international heritage"
+        ],
+        "id": 149
+    },
+    {
+        "lemma": "Migrationsvordergrund",
+        "lemma_lang": "de",
+        "definition": "(S.) Begriff dient Menschen  meist als augenzwinkernde Selbstbezeichnung, deren Migrationshintergrund durch ihr Handeln, Sprechen oder die erlebte Rassifizierung sichtbar ist. ",
+        "author": "Anna",
+        "date": "30.7.21",
+        "guidelines": [
+            "Kontext",
+            "Genre und Register"
+        ],
+        "relatedterms": [],
+        "translations": [],
+        "id": 150
+    },
+    {
+        "lemma": "mistress",
+        "lemma_lang": "en",
+        "definition": "(S.) Begriff f\u00fcr eine Frau, die eine Machposition inne hat oder die eine sexuelle Beziehung mit einem verheirateten Mann hat.",
+        "author": "Lucy",
+        "date": "28.1.22",
+        "guidelines": [
+            "Kontext",
+            "Tonfall und Haltung"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "Gebieterin",
+            "Geliebte",
+            "Frauchen",
+            "Herrin"
+        ],
+        "id": 151
+    },
+    {
+        "lemma": "mixed-race",
+        "lemma_lang": "en",
+        "definition": "(Adj.) beschreibt Vorfahren zu haben, die sich in Bezug auf Race unterschiedlich positionieren.",
+        "author": "Lina_Briks",
+        "date": "14.4.21",
+        "guidelines": [
+            "Kontext",
+            "Positionierungen"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "Mixed",
+            "Gemischt rassig"
+        ],
+        "id": 152
+    },
+    {
+        "lemma": "M**r",
+        "lemma_lang": "de",
+        "definition": "(S.) rassistischer und veralteter Begriff, um eine Schwarze Person zu beschreiben.\n",
+        "author": "Anna",
+        "date": "23.4.21",
+        "guidelines": [
+            "Verschiedene Schreibweisen",
+            "Verletzende Sprache"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "M**r",
+            "M*****h "
+        ],
+        "id": 153
+    },
+    {
+        "lemma": "Mongoloid",
+        "lemma_lang": "en",
+        "definition": "",
+        "author": "Anna",
+        "date": "17.10.23",
+        "guidelines": [
+            "Kontext",
+            "Verletzende Sprache"
+        ],
+        "relatedterms": [],
+        "translations": [],
+        "id": 154
+    },
+    {
+        "lemma": "multi-ethnic nations",
+        "lemma_lang": "en",
+        "definition": "(S.) Begriff f\u00fcr Nationen, die sich aus mehreren ethnischen Gruppen zusammensetzen.\n",
+        "author": "Anna",
+        "date": "14.4.21",
+        "guidelines": [
+            "Kontext",
+            "Genre und Register"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "Vielv\u00f6lkerstaaten"
+        ],
+        "id": 155
+    },
+    {
+        "lemma": "Muttermund",
+        "lemma_lang": "de",
+        "definition": "",
+        "author": "Kat",
+        "date": "14.3.22",
+        "guidelines": [
+            "Tonfall und Haltung",
+            "Verletzende Sprache"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "cervix"
+        ],
+        "id": 156
+    },
+    {
+        "lemma": "nation",
+        "lemma_lang": "en",
+        "definition": "(S.) Begriff f\u00fcr eine gro\u00dfe Gruppe von Menschen, die durch verschiedene Faktoren miteinander verbunden sind, z. B. gemeinsame Abstammung, Geschichte, Kultur oder Sprache, und die evtl. ein bestimmtes Land oder Gebiet bewohnen.",
+        "author": "Anna",
+        "date": "19.10.22",
+        "guidelines": [
+            "Kontext",
+            "Genre und Register"
+        ],
+        "relatedterms": [],
+        "translations": [],
+        "id": 157
+    },
+    {
+        "lemma": "Native American",
+        "lemma_lang": "en",
+        "definition": "(S.) Begriff f\u00fcr Menschen, die schon vor dem Siedlungskolonialismus in Nordamerika lebten.",
+        "author": "klange",
+        "date": "5.2.21",
+        "guidelines": [
+            "Positionierungen",
+            "Originalsprache beibehalten"
+        ],
+        "relatedterms": [
+            "natives",
+            "red-skinned",
+            "Indian"
+        ],
+        "translations": [
+            "Indigene",
+            "Uramerikaner:in",
+            "Native American",
+            "Stammesamerikaner:in",
+            "I******r",
+            "amerikanische Ureinwohner"
+        ],
+        "id": 158
+    },
+    {
+        "lemma": "natives",
+        "lemma_lang": "en",
+        "definition": "(S.) ein Begriff f\u00fcr Menschen, die an einem bestimmten Ort geboren wurden. Bezeiht sich im kolonialen Kontext auf die Bewohner*innen eines Landes, die dort bereits vor der Kolonisierung lebten. Kann sich auf Race beziehen.",
+        "author": "alex",
+        "date": "8.7.22",
+        "guidelines": [
+            "Kontext",
+            "Positionierungen"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "Urbev\u00f6lkerung",
+            "lokale Bev\u00f6lkerung",
+            "einheimisch",
+            "Eingeborene"
+        ],
+        "id": 159
+    },
+    {
+        "lemma": "negreeting",
+        "lemma_lang": "en",
+        "definition": "",
+        "author": "Kat",
+        "date": "18.2.23",
+        "guidelines": [],
+        "relatedterms": [],
+        "translations": [],
+        "id": 160
+    },
+    {
+        "lemma": "N***o",
+        "lemma_lang": "en",
+        "definition": "(S.) Historischer Begriff f\u00fcr als Schwarz gelesene Personen, der in den meisten Kontexten heutzutage als rassistisch verstanden wird.",
+        "author": "Anna",
+        "date": "5.4.21",
+        "guidelines": [
+            "Positionierungen",
+            "Verschiedene Schreibweisen"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "N-Wort",
+            "Schwarze*r",
+            "N***r"
+        ],
+        "id": 161
+    },
+    {
+        "lemma": "n****r",
+        "lemma_lang": "en",
+        "definition": "",
+        "author": "livhey",
+        "date": "27.11.23",
+        "guidelines": [],
+        "relatedterms": [],
+        "translations": [],
+        "id": 162
+    },
+    {
+        "lemma": "N****r",
+        "lemma_lang": "en",
+        "definition": "(S.) rassistischer Begriff f\u00fcr Schwarze Menschen.",
+        "author": "Anna",
+        "date": "10.1.21",
+        "guidelines": [
+            "Positionierungen",
+            "Verletzende Sprache"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "N***r"
+        ],
+        "id": 163
+    },
+    {
+        "lemma": "Nordafrikanischer Intensivt\u00e4ter",
+        "lemma_lang": "de",
+        "definition": "(S.) Polizeiinterner Begriff f\u00fcr wiederholt straft\u00e4tige Personen, die als muslimisch oder ausl\u00e4ndisch gelesen werden. Bezieht sich haupts\u00e4chlich auf junge M\u00e4nner. Enth\u00e4lt gruppendiskriminierende und rassistische Konnotationen. (Wird oft als Nafri abgek\u00fcrzt.)",
+        "author": "Nawfal",
+        "date": "30.4.21",
+        "guidelines": [
+            "Kontext",
+            "Verletzende Sprache"
+        ],
+        "relatedterms": [],
+        "translations": [],
+        "id": 164
+    },
+    {
+        "lemma": "nurse",
+        "lemma_lang": "en",
+        "definition": "(S.) Begriff f\u00fcr eine Person in einem Pflegeberuf; kann gegenderte Konnotationen haben.",
+        "author": "Lucy",
+        "date": "19.1.22",
+        "guidelines": [
+            "Kontext",
+            "Kreative L\u00f6sungen"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "(Kranken)pfleger*in",
+            "Krankenschwester"
+        ],
+        "id": 165
+    },
+    {
+        "lemma": "obdachlos",
+        "lemma_lang": "de",
+        "definition": "(Adj.) Beschreibt eine Person ohne festen Wohnsitz.",
+        "author": "Jake",
+        "date": "15.4.21",
+        "guidelines": [
+            "Kontext",
+            "Positionierungen"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "homeless",
+            "houseless",
+            "without housing",
+            "unhoused",
+            "unsheltered"
+        ],
+        "id": 166
+    },
+    {
+        "lemma": "one",
+        "lemma_lang": "en",
+        "definition": "unbestimmtes Pronomen ohne Geschlechtszuschreibung, bedeutet \"eine Person\".",
+        "author": "Lucy",
+        "date": "28.1.22",
+        "guidelines": [
+            "Kontext",
+            "Kreative L\u00f6sungen"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "mensch",
+            "eine Person",
+            "frau",
+            "man*",
+            "man"
+        ],
+        "id": 167
+    },
+    {
+        "lemma": "oriental",
+        "lemma_lang": "en",
+        "definition": "(S.) ist eine problematische europ\u00e4ische Bezeichnung f\u00fcr L\u00e4nder, die im Osten von Europa liegen. \n\n(Adj.) beschreibt Eigenschaften, die den Gebieten \u00f6stlich von Europa zugeschrieben werden. Beinhaltet Fantasien \u00fcber die Menschen dieser Regionen, ihr Essen, ihren Kleidungstsil und ihre Verhaltensweisen.",
+        "author": "Lucy",
+        "date": "22.9.22",
+        "guidelines": [
+            "Kontext",
+            "Verletzende Sprache"
+        ],
+        "relatedterms": [],
+        "translations": [],
+        "id": 168
+    },
+    {
+        "lemma": "Ossi",
+        "lemma_lang": "de",
+        "definition": "(S.) Begriff f\u00fcr eine Person aus der ehemaligen DDR, der vor allem in den westdeutschen Bundesl\u00e4ndern negativ konnotiert ist. Gegenst\u00fcck zu Wessi.",
+        "author": "Lucy",
+        "date": "11.2.21",
+        "guidelines": [
+            "Kontext",
+            "Originalsprache beibehalten"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "East German",
+            "Ossi"
+        ],
+        "id": 169
+    },
+    {
+        "lemma": "Ostjude",
+        "lemma_lang": "de",
+        "definition": "(S.) Der Begriff wurde urspr\u00fcnglich im 19. Jahrhundert gepr\u00e4gt, um zwischen assimilierten Juden in Zentraleuropa und Juden aus Osteuropa zu unterscheiden. Wird von Nationalsozialist:innen und Antisemit:innen genutzt, um negative Stereotype zu verbreiten.",
+        "author": "Jake",
+        "date": "13.10.21",
+        "guidelines": [
+            "Kontext",
+            "Positionierungen"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "Eastern European Jew"
+        ],
+        "id": 170
+    },
+    {
+        "lemma": "Other",
+        "lemma_lang": "en",
+        "definition": "(S.) Begriff, der im Kontext von Diskriminierung, besagt, dass eine Person oder Entit\u00e4t als anders konstruiert und durch ihre Abweichung von der \u201cNorm\u201d definiert wird.",
+        "author": "Anna",
+        "date": "5.4.21",
+        "guidelines": [
+            "Kontext",
+            "Originalsprache beibehalten"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "Other",
+            "das Andere",
+            "divers",
+            "Etc."
+        ],
+        "id": 171
+    },
+    {
+        "lemma": "Othering",
+        "lemma_lang": "en",
+        "definition": "(V.) Der Prozess, in dem eine Person oder Entit\u00e4t durch Zuschreibungen anders gemacht (zum \u201cOther\u201d gemacht) wird.  \n\n(S.) Begriff f\u00fcr diese Praxis. ",
+        "author": "Anna",
+        "date": "13.4.21",
+        "guidelines": [
+            "Kontext",
+            "Genre und Register"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "othering",
+            "Andersmarkierung",
+            "Andern",
+            "anders machen"
+        ],
+        "id": 172
+    },
+    {
+        "lemma": "Otherness",
+        "lemma_lang": "en",
+        "definition": "(S.) Begriff f\u00fcr die Eigenschaft \u201cAnders\u201d (\u201cOther\u201d) zu sein. Definiert durch (zugeschriebene) Abweichung von der \u201cNorm\u201d.",
+        "author": "Lin",
+        "date": "15.4.21",
+        "guidelines": [
+            "Genre und Register",
+            "Originalsprache beibehalten"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "Otherness",
+            "Anderssein",
+            "Alterit\u00e4t"
+        ],
+        "id": 173
+    },
+    {
+        "lemma": "Otto Normalverbraucher",
+        "lemma_lang": "de",
+        "definition": "(S.) Begriff f\u00fcr eine fiktive Person, die den Durchschnittsb\u00fcrger bezeichnen soll, der als m\u00e4nnlich und typisch Deutsch aufgefasst wird. ",
+        "author": "Anna",
+        "date": "26.7.21",
+        "guidelines": [
+            "Kontext",
+            "Tonfall und Haltung"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "your average Joe",
+            "average consumer",
+            "Joe Public"
+        ],
+        "id": 174
+    },
+    {
+        "lemma": "pale",
+        "lemma_lang": "en",
+        "definition": "(Adj.) beschreibt in Bezug auf Menschen die Schattierung ihrer Haut.",
+        "author": "Lucy",
+        "date": "22.9.22",
+        "guidelines": [
+            "Kontext",
+            "Positionierungen"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "bleich"
+        ],
+        "id": 175
+    },
+    {
+        "lemma": "partner",
+        "lemma_lang": "en",
+        "definition": "(S.) Begriff f\u00fcr eine Person, mit der eine andere Person in einer intimen / romantischen Beziehung ist. Dient im Englischen h\u00e4ufig als genderfreie Variante f\u00fcr eine Beziehungsperson.",
+        "author": "Anna",
+        "date": "26.5.21",
+        "guidelines": [
+            "Kontext",
+            "Positionierungen"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "Partner:in",
+            "Beziehungsperson"
+        ],
+        "id": 176
+    },
+    {
+        "lemma": "patron",
+        "lemma_lang": "en",
+        "definition": "(S.) Begriff f\u00fcr eine Person oder eine Organisation, die eine andere unterst\u00fctzt; kann gegenderte Konnotationen haben.",
+        "author": "Anna",
+        "date": "9.2.22",
+        "guidelines": [
+            "Kontext",
+            "Genre und Register"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "Patronat",
+            "Schirmfrau",
+            "Schirmherr",
+            "Schirmherr*in",
+            "mit freundlicher Unterst\u00fctzung von..."
+        ],
+        "id": 177
+    },
+    {
+        "lemma": "peoplehood",
+        "lemma_lang": "en",
+        "definition": "(S.) Begriff f\u00fcr eine Community, die sich in Bezug auf Race oder Nationalit\u00e4t gleich identifiziert; bezieht sich oft auf einen legalen Status oder Rechte.",
+        "author": "Kat",
+        "date": "22.11.22",
+        "guidelines": [
+            "Kontext",
+            "Genre und Register"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "Community",
+            "Volkszugeh\u00f6rigkeit",
+            "Gruppenzugeh\u00f6rigkeit"
+        ],
+        "id": 178
+    },
+    {
+        "lemma": "person of colour",
+        "lemma_lang": "en",
+        "definition": "(S.) Ein Begriff, der als Selbstbezeichnung und Sammelbegriff f\u00fcr Menschen, die nicht wei\u00df sind, dient.",
+        "author": "alex",
+        "date": "28.4.21",
+        "guidelines": [
+            "Positionierungen",
+            "Originalsprache beibehalten"
+        ],
+        "relatedterms": [
+            "coloured",
+            "brown people"
+        ],
+        "translations": [
+            "Person of Color (PoC)",
+            "People of Colour (PoC)",
+            "Schwarze Person",
+            "Person mit einem afrikanischen/indischen etc. Hintergrund"
+        ],
+        "id": 179
+    },
+    {
+        "lemma": "Pflanzkanacken",
+        "lemma_lang": "de",
+        "definition": "",
+        "author": "Lesley_Garbett",
+        "date": "16.7.21",
+        "guidelines": [
+            "Originalsprache beibehalten",
+            "Kreative L\u00f6sungen"
+        ],
+        "relatedterms": [],
+        "translations": [],
+        "id": 180
+    },
+    {
+        "lemma": "prostitute",
+        "lemma_lang": "en",
+        "definition": "(S.) Begriff f\u00fcr eine Person, die gegen eine Bezahlung sexuelle Handlungen ausf\u00fchrt; kann gegenderte Konnotationen haben.",
+        "author": "Lucy",
+        "date": "28.1.22",
+        "guidelines": [
+            "Kontext",
+            "Tonfall und Haltung"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "Sexarbeiter*in",
+            "Prostituierte"
+        ],
+        "id": 181
+    },
+    {
+        "lemma": "Queer",
+        "lemma_lang": "en",
+        "definition": "(Adj.) Wurde in der Vergangenheit als Beleidigung f\u00fcr Personen verwendet, die nicht als heterosexuell wahrgenommen wurden. Nach einem selbsterm\u00e4chtigenden Wideraneignungsprozess beschreibt der Begriff Handlungen, Personen oder Dinge, die sie der Norm widersetzen - oft, aber nicht immer, in Bezug auf Sexualit\u00e4t.\n\n(V.) bezeichnet eine Art des Handelns, dass sich bewusst gegen Normen wendet, oft, aber nicht immer, in Bezug auf Sexualit\u00e4t.",
+        "author": "Anna",
+        "date": "27.10.21",
+        "guidelines": [
+            "Originalsprache beibehalten"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "Queer",
+            "homosexuell",
+            "komisch"
+        ],
+        "id": 182
+    },
+    {
+        "lemma": "Queerfeindlichkeit",
+        "lemma_lang": "de",
+        "definition": "(S.) Begriff f\u00fcr eine abneigende oder vorurteilsbelastete Haltung gegen\u00fcber queeren Menschen oder Praktiken",
+        "author": "Lucy",
+        "date": "28.3.22",
+        "guidelines": [
+            "Kontext",
+            "Tonfall und Haltung"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "anti-queer discrimination",
+            "hostility to queerness",
+            "homophobia"
+        ],
+        "id": 183
+    },
+    {
+        "lemma": "queering",
+        "lemma_lang": "en",
+        "definition": "(V.) bezeichnet eine Art des Handelns, dass sich bewusst gegen Normen wendet, oft, aber nicht immer, in Bezug auf Sexualit\u00e4t.",
+        "author": "JT",
+        "date": "10.6.21",
+        "guidelines": [
+            "Kontext",
+            "Originalsprache beibehalten"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "queeren"
+        ],
+        "id": 184
+    },
+    {
+        "lemma": "Race",
+        "lemma_lang": "en",
+        "definition": "(S.) In Bezug auf Menschen ist Race eine Identit\u00e4tskategorie.",
+        "author": "Timur2",
+        "date": "5.2.21",
+        "guidelines": [
+            "Kontext",
+            "Originalsprache beibehalten"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "Race",
+            "Rassifizierung",
+            "\"Rasse\"",
+            "Ethnie",
+            "Hautfarbe",
+            "Rasse"
+        ],
+        "id": 185
+    },
+    {
+        "lemma": "race privilege",
+        "lemma_lang": "en",
+        "definition": "",
+        "author": "Suse_Mermaids",
+        "date": "2.9.22",
+        "guidelines": [],
+        "relatedterms": [],
+        "translations": [
+            "rassifizierte Privilegien"
+        ],
+        "id": 186
+    },
+    {
+        "lemma": "racelessness",
+        "lemma_lang": "en",
+        "definition": "(S.) Der Begriff dr\u00fcckt das fehlen von Race aus. Kann (im europ\u00e4ischen Kontext) f\u00fcr eine Tabuisierung des Themas Rassismus stehen.",
+        "author": "Anna",
+        "date": "17.6.21",
+        "guidelines": [
+            "Kontext",
+            "Originalsprache beibehalten"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "\u201aRassenlosigkeit\u2018 bzw. Rassismuslosigkeit",
+            "racelessness",
+            "Rassenlosigkeit"
+        ],
+        "id": 187
+    },
+    {
+        "lemma": "racial",
+        "lemma_lang": "en",
+        "definition": "(Adj.) beschreibt, das etwas auf Race Bezug nimmt.",
+        "author": "Anna",
+        "date": "12.8.22",
+        "guidelines": [
+            "Kontext",
+            "Kreative L\u00f6sungen"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "rassistisch",
+            "rassisch"
+        ],
+        "id": 188
+    },
+    {
+        "lemma": "racial diversity",
+        "lemma_lang": "en",
+        "definition": "(S.) Beschreibender Begriff, der Vielfalt in Bezug auf Race ausdr\u00fcckt.",
+        "author": "Anna",
+        "date": "17.3.21",
+        "guidelines": [
+            "Kontext",
+            "Originalsprache beibehalten"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "racial diversity",
+            "Vielfalt",
+            "Ethnie",
+            "Rassenvielfalt"
+        ],
+        "id": 189
+    },
+    {
+        "lemma": "racial identity",
+        "lemma_lang": "en",
+        "definition": "",
+        "author": "Anna",
+        "date": "14.2.23",
+        "guidelines": [],
+        "relatedterms": [],
+        "translations": [],
+        "id": 190
+    },
+    {
+        "lemma": "racial justice",
+        "lemma_lang": "en",
+        "definition": "",
+        "author": "Anna",
+        "date": "13.2.23",
+        "guidelines": [
+            "Genre und Register",
+            "Originalsprache beibehalten"
+        ],
+        "relatedterms": [
+            "racial segregation",
+            "racial",
+            "biracial"
+        ],
+        "translations": [],
+        "id": 191
+    },
+    {
+        "lemma": "racial order",
+        "lemma_lang": "en",
+        "definition": "",
+        "author": "Anna",
+        "date": "14.2.23",
+        "guidelines": [],
+        "relatedterms": [],
+        "translations": [],
+        "id": 192
+    },
+    {
+        "lemma": "racial project",
+        "lemma_lang": "en",
+        "definition": "",
+        "author": "Anna",
+        "date": "14.2.23",
+        "guidelines": [],
+        "relatedterms": [],
+        "translations": [
+            "Race-Projekt"
+        ],
+        "id": 193
+    },
+    {
+        "lemma": "racial segregation",
+        "lemma_lang": "en",
+        "definition": "(S.) der Begriff beschreibt die Praxis, Menschen anhand von Race voneinander zu trennen, ihnen werden bestimmte Wohngebiete, Insitutionen und Einrichtungen zugewiesen, auf die sie sich beschr\u00e4nken sollen. ",
+        "author": "Anna",
+        "date": "8.7.22",
+        "guidelines": [
+            "Kontext",
+            "Tonfall und Haltung"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "Ethnische Segregation",
+            "Rassentrennung"
+        ],
+        "id": 194
+    },
+    {
+        "lemma": "racial theory",
+        "lemma_lang": "en",
+        "definition": "",
+        "author": "Anna",
+        "date": "14.2.23",
+        "guidelines": [],
+        "relatedterms": [],
+        "translations": [
+            "Theorien \u00fcber Race"
+        ],
+        "id": 195
+    },
+    {
+        "lemma": "racialized",
+        "lemma_lang": "en",
+        "definition": "(Adj.) beschreibt im Kontext von Rassismus, dass einer Person eine Race zugeschrieben wird.",
+        "author": "te_as",
+        "date": "21.4.21",
+        "guidelines": [
+            "Kontext",
+            "Genre und Register"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "rassifiziert",
+            "ethnisiert"
+        ],
+        "id": 196
+    },
+    {
+        "lemma": "Rassismuskritik, rassismuskritisch",
+        "lemma_lang": "de",
+        "definition": "",
+        "author": "rika31",
+        "date": "2.1.24",
+        "guidelines": [],
+        "relatedterms": [],
+        "translations": [
+            "against racial discrimination",
+            "anti-racism"
+        ],
+        "id": 197
+    },
+    {
+        "lemma": "Reclamation",
+        "lemma_lang": "en",
+        "definition": "",
+        "author": "Suse_Mermaids",
+        "date": "13.6.23",
+        "guidelines": [],
+        "relatedterms": [],
+        "translations": [
+            "Wiederaneignung",
+            "empowernde R\u00fcckbesinnung"
+        ],
+        "id": 198
+    },
+    {
+        "lemma": "red-skinned",
+        "lemma_lang": "en",
+        "definition": "(Adj.) ein rassistischer Begriff f\u00fcr indigenen Bev\u00f6lkerungsgruppen in den USA und Kanada.",
+        "author": "Anna",
+        "date": "14.10.22",
+        "guidelines": [
+            "Genre und Register",
+            "Verletzende Sprache"
+        ],
+        "relatedterms": [
+            "Native American",
+            "First Nations"
+        ],
+        "translations": [
+            "Person of Color",
+            "rote ",
+            "Indigen",
+            "Rothaut"
+        ],
+        "id": 199
+    },
+    {
+        "lemma": "refugee",
+        "lemma_lang": "en",
+        "definition": "",
+        "author": "Anna",
+        "date": "26.7.21",
+        "guidelines": [
+            "Kontext",
+            "Positionierungen"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "Gefl\u00fcchtete",
+            "Fl\u00fcchtende",
+            "Fl\u00fcchtling"
+        ],
+        "id": 200
+    },
+    {
+        "lemma": "residential school",
+        "lemma_lang": "en",
+        "definition": "(S.) Begriff f\u00fcr ein Schulsystem (z. B. in Kanada) mit dem nominellen Ziel, indigene Kinder zu erziehen, das aber eigentlich - oft gewaltvoll - kolonialen Zwecken diente.",
+        "author": "Suse_Mermaids",
+        "date": "18.8.22",
+        "guidelines": [
+            "Kontext",
+            "Originalsprache beibehalten"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "Residential School",
+            "Internat"
+        ],
+        "id": 201
+    },
+    {
+        "lemma": "respectability",
+        "lemma_lang": "en",
+        "definition": "(S.) Begriff f\u00fcr Lebens- oder Verhaltensmuster, die als anst\u00e4ndig gelten.",
+        "author": "Desz",
+        "date": "27.9.22",
+        "guidelines": [
+            "Kontext",
+            "Tonfall und Haltung"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "Respektabilit\u00e4t (source: Duden)"
+        ],
+        "id": 202
+    },
+    {
+        "lemma": "Runaway advertisement",
+        "lemma_lang": "en",
+        "definition": "",
+        "author": "Kat",
+        "date": "19.10.23",
+        "guidelines": [],
+        "relatedterms": [],
+        "translations": [
+            "Vermissten Anzeige",
+            "Fahndungssteckbrief",
+            "Ausrei\u00dfer Notiz"
+        ],
+        "id": 203
+    },
+    {
+        "lemma": "S.W.A.N.A.",
+        "lemma_lang": "en",
+        "definition": "(S.) der Begriff steht f\u00fcr S\u00fcdwestasien und Nordafrika. Er wird verwendet, um die Region, die gemeinhin als Naher Osten bezeichnet wird, geografisch zu beschrieben und nicht als \"politische Region\", wie sie von der westlichen Welt definiert wird.",
+        "author": "claudia",
+        "date": "28.9.22",
+        "guidelines": [
+            "Positionierungen",
+            "Genre und Register"
+        ],
+        "relatedterms": [
+            "Middle East",
+            "oriental"
+        ],
+        "translations": [
+            "S.W.A.N.A.",
+            "S\u00fcdwestasien und Nordafrika"
+        ],
+        "id": 204
+    },
+    {
+        "lemma": "Saltwater",
+        "lemma_lang": "en",
+        "definition": "",
+        "author": "Kat",
+        "date": "14.1.24",
+        "guidelines": [],
+        "relatedterms": [],
+        "translations": [],
+        "id": 205
+    },
+    {
+        "lemma": "Schutztruppe",
+        "lemma_lang": "de",
+        "definition": "(S.) Begriff f\u00fcr milit\u00e4rische Einheiten in deutschen Kolonien. I.d.R. handelte es sich um Menschen aus kolonisierten Regionen.",
+        "author": "Anna",
+        "date": "26.7.21",
+        "guidelines": [
+            "Kontext",
+            "Originalsprache beibehalten"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "German Colonial Troops",
+            "Schutztruppe",
+            "Colonial Troops",
+            "Protection Squad"
+        ],
+        "id": 206
+    },
+    {
+        "lemma": "Schwarzafrikaner",
+        "lemma_lang": "de",
+        "definition": "(S.) Veralteter und rassistisch konnotierter Begriff f\u00fcr Personen, die als Schwarz gelesen werden.",
+        "author": "Anna",
+        "date": "24.9.21",
+        "guidelines": [
+            "Kontext",
+            "Verletzende Sprache"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "Black African"
+        ],
+        "id": 207
+    },
+    {
+        "lemma": "Schwarzfahren",
+        "lemma_lang": "de",
+        "definition": "(S.) Begriff f\u00fcr die Nutzung des \u00f6ffentlichen Nahverkehrs ohne daf\u00fcr einen Fahrschein zu kaufen; setzt im Deutschen die Farbe Schwarz mit etwas Negativem gleich",
+        "author": "Anna",
+        "date": "22.3.22",
+        "guidelines": [
+            "Kontext",
+            "Verletzende Sprache"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "fare evasion"
+        ],
+        "id": 208
+    },
+    {
+        "lemma": "Selbstbezeichnung",
+        "lemma_lang": "de",
+        "definition": "(S.) Begriff f\u00fcr die eigene Entscheidung einer Gruppe oder Person, ihre Identit\u00e4t oder gesellschaftliche Positionierung zu beschreiben. Gegenteil von Fremdbezeichnung. ",
+        "author": "Anna",
+        "date": "3.11.21",
+        "guidelines": [
+            "Kontext",
+            "Positionierungen"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "self-definition",
+            "self-designation"
+        ],
+        "id": 209
+    },
+    {
+        "lemma": "seminal",
+        "lemma_lang": "en",
+        "definition": "(Adj.) beschreibt B\u00fccher, Werke, Ereignisse und Erfahrungen, die einen gro\u00dfen Einfluss auf ein bestimmtes Feld haben, und bezieht sich au\u00dferdem auf Sperma.",
+        "author": "Lucy",
+        "date": "19.1.22",
+        "guidelines": [
+            "Kontext",
+            "Positionierungen"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "grundlegend",
+            "zukunftstr\u00e4chtig",
+            "bahnbrechend"
+        ],
+        "id": 210
+    },
+    {
+        "lemma": "settler colonialism",
+        "lemma_lang": "en",
+        "definition": "",
+        "author": "Anna",
+        "date": "6.6.23",
+        "guidelines": [],
+        "relatedterms": [],
+        "translations": [],
+        "id": 211
+    },
+    {
+        "lemma": "shrill",
+        "lemma_lang": "en",
+        "definition": "(Adj.) beschreibt einen durchdringenden Ton oder eine hohe Stimme; kann geschlechtsspezifische Konnotationen haben.",
+        "author": "Lucy",
+        "date": "28.1.22",
+        "guidelines": [
+            "Kontext",
+            "Tonfall und Haltung"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "kreischend",
+            "schrill"
+        ],
+        "id": 212
+    },
+    {
+        "lemma": "Silencing",
+        "lemma_lang": "en",
+        "definition": "(S.) Begriff f\u00fcr die Handlung, andere nicht sprechen zu lassen oder unh\u00f6rbar zu machen.",
+        "author": "Kat",
+        "date": "22.7.21",
+        "guidelines": [
+            "Kontext",
+            "Genre und Register"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "zum Schweigen bringen"
+        ],
+        "id": 213
+    },
+    {
+        "lemma": "skin color",
+        "lemma_lang": "en",
+        "definition": "(S.) Begriff f\u00fcr ein k\u00f6rperliches Merkaml von Menschen oder Synonym f\u00fcr die sozial konstruierte Kategorie Race.",
+        "author": "Anna",
+        "date": "7.2.22",
+        "guidelines": [
+            "Kontext",
+            "Verletzende Sprache"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "Hautfarbe",
+            "Race"
+        ],
+        "id": 214
+    },
+    {
+        "lemma": "Sklav:in",
+        "lemma_lang": "de",
+        "definition": "(S.) Begriff f\u00fcr Menschen, die versklavt wurden (im Englischen nicht gegendert). Kann als dehumanisierend verstanden werden.",
+        "author": "Anna",
+        "date": "8.9.21",
+        "guidelines": [
+            "Kontext",
+            "Positionierungen"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "enslaved person",
+            "slave"
+        ],
+        "id": 215
+    },
+    {
+        "lemma": "slavery",
+        "lemma_lang": "en",
+        "definition": "(S.) ein Begriff f\u00fcr den Zustand, von anderen Menschen versklavt zu werden, sowie f\u00fcr Praktiken oder Systeme, die bestimmte Menschen als Besitz betrachten und f\u00fcr den eigenen Profit ausbeuten.",
+        "author": "Suse_Mermaids",
+        "date": "10.8.22",
+        "guidelines": [
+            "Kontext",
+            "Verletzende Sprache"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "die Versklavung"
+        ],
+        "id": 216
+    },
+    {
+        "lemma": "slaves",
+        "lemma_lang": "en",
+        "definition": "(S.) Begriff f\u00fcr Menschen, die versklavt wurden (im Englischen nicht gegendert). Kann als dehumanisierend verstanden werden.",
+        "author": "Anna",
+        "date": "4.5.21",
+        "guidelines": [
+            "Kontext",
+            "Positionierungen"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "versklavte Menschen",
+            "Sklavinnen"
+        ],
+        "id": 217
+    },
+    {
+        "lemma": "Sonderweg",
+        "lemma_lang": "de",
+        "definition": "(S.) Der Begriff bezieht sich auf die kontrovers diskutierte Theorie, dass die historische Entwicklung zur freiheitlich-demokratischen Grundordnung Deutschlands sich vom europ\u00e4ischen Regelfall unterscheiden w\u00fcrde.",
+        "author": "alex",
+        "date": "23.8.22",
+        "guidelines": [
+            "Kontext",
+            "Originalsprache beibehalten"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "Sonderweg"
+        ],
+        "id": 218
+    },
+    {
+        "lemma": "source community",
+        "lemma_lang": "en",
+        "definition": "(S.) Begriff f\u00fcr die Community, aus der etwas hervorgeht.",
+        "author": "Wie",
+        "date": "18.5.21",
+        "guidelines": [
+            "Kontext",
+            "Positionierungen"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "Herkunftsgesellschaft",
+            "Ursprungsgemeinschaft"
+        ],
+        "id": 219
+    },
+    {
+        "lemma": "spinster",
+        "lemma_lang": "en",
+        "definition": "(S.) veralteter und abwertender Begriff f\u00fcr eine unverheiratete Frau.",
+        "author": "Lucy",
+        "date": "28.1.22",
+        "guidelines": [
+            "Kontext",
+            "Genre und Register"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "unverheiratete Frau",
+            "Junggesellin",
+            "alte Jungfer"
+        ],
+        "id": 220
+    },
+    {
+        "lemma": "spirit",
+        "lemma_lang": "en",
+        "definition": "",
+        "author": "Anna",
+        "date": "3.3.23",
+        "guidelines": [
+            "Kontext",
+            "Kreative L\u00f6sungen"
+        ],
+        "relatedterms": [],
+        "translations": [],
+        "id": 221
+    },
+    {
+        "lemma": "stumm",
+        "lemma_lang": "de",
+        "definition": "(Adj.) beschreibt das eine Person, ein Tier oder ein Gegenstand lautlos ist, kann diskriminierende Konnotationen in Bezug auf menschliche F\u00e4higkeiten oder BeHinderung haben.",
+        "author": "Anna",
+        "date": "1.2.22",
+        "guidelines": [
+            "Positionierungen",
+            "Tonfall und Haltung"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "mute",
+            "speech disability"
+        ],
+        "id": 222
+    },
+    {
+        "lemma": "S\u00fc\u00dfkartoffel",
+        "lemma_lang": "de",
+        "definition": "",
+        "author": "Kat",
+        "date": "21.2.24",
+        "guidelines": [],
+        "relatedterms": [],
+        "translations": [],
+        "id": 223
+    },
+    {
+        "lemma": "Take Back the Narrative",
+        "lemma_lang": "en",
+        "definition": "",
+        "author": "claudia",
+        "date": "6.3.23",
+        "guidelines": [],
+        "relatedterms": [],
+        "translations": [
+            "sich die eigene Geschichte zur\u00fcckholen",
+            "das Narrativ \u00fcber die eigene Geschichte/Lebensgeschichte)zur\u00fcckerobern"
+        ],
+        "id": 224
+    },
+    {
+        "lemma": "tar baby",
+        "lemma_lang": "en",
+        "definition": "",
+        "author": "Lucy",
+        "date": "13.12.23",
+        "guidelines": [],
+        "relatedterms": [],
+        "translations": [
+            "tar baby",
+            "Teerbaby"
+        ],
+        "id": 225
+    },
+    {
+        "lemma": "taub",
+        "lemma_lang": "de",
+        "definition": "(Adj.) Beschreibt Personen, die nicht oder nur wenig h\u00f6ren k\u00f6nnen.",
+        "author": "Anna",
+        "date": "1.7.21",
+        "guidelines": [
+            "Kontext",
+            "Positionierungen"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "deaf",
+            "people with hearing loss",
+            "hard of hearing"
+        ],
+        "id": 226
+    },
+    {
+        "lemma": "terra nullius",
+        "lemma_lang": "en",
+        "definition": "(S.) Ein lateinischer Begriff f\u00fcr Land, das niemandem geh\u00f6rt. Von Kolonisatoren oft in Bezug auf das Land verwendet, das sie sich aneignen wollten.",
+        "author": "lisa",
+        "date": "5.7.21",
+        "guidelines": [
+            "Kontext",
+            "Genre und Register"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "Terra nullius",
+            "Niemandsland"
+        ],
+        "id": 227
+    },
+    {
+        "lemma": "they",
+        "lemma_lang": "en",
+        "definition": "Genderfreies Pronomen, kann auch im Singular verwendet werden.",
+        "author": "Lina_Briks",
+        "date": "14.4.21",
+        "guidelines": [
+            "Kontext",
+            "Kreative L\u00f6sungen"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "dey",
+            "Mensch",
+            "[Name der Person]",
+            "ens",
+            "jen/jens (langes e, von \"jene/r\")",
+            "sier/xier"
+        ],
+        "id": 228
+    },
+    {
+        "lemma": "Third World",
+        "lemma_lang": "en",
+        "definition": "(S.) Urspr\u00fcnglich ein Begriff f\u00fcr L\u00e4nder, die w\u00e4hrend des Kalten Krieges nicht direkt mit einer der Superm\u00e4chte verbunden waren. Dient nun h\u00e4ufig zur Beschreibung von L\u00e4ndern des globalen S\u00fcdens und hat negative Konnotationen.",
+        "author": "Adri",
+        "date": "21.4.21",
+        "guidelines": [
+            "Kontext",
+            "Tonfall und Haltung"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "Dritte Welt",
+            "Entwicklungsl\u00e4nder"
+        ],
+        "id": 229
+    },
+    {
+        "lemma": "toter Winkel",
+        "lemma_lang": "de",
+        "definition": "(S.) Begriff f\u00fcr einen Bereich, der au\u00dferhalb des Blickfeldes einer Person liegt.",
+        "author": "Anna",
+        "date": "8.9.21",
+        "guidelines": [
+            "Kontext",
+            "Genre und Register"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "blank spot",
+            "blind spot"
+        ],
+        "id": 230
+    },
+    {
+        "lemma": "Trans",
+        "lemma_lang": "en",
+        "definition": "",
+        "author": "Kat",
+        "date": "14.12.23",
+        "guidelines": [],
+        "relatedterms": [],
+        "translations": [
+            "Trans",
+            "Trans*",
+            "Transgender",
+            "Transsexuell"
+        ],
+        "id": 231
+    },
+    {
+        "lemma": "tribe",
+        "lemma_lang": "en",
+        "definition": "(S.) umstrittener Begriff, der in vielen Kontexten verwendet wird, um menschliche soziale Gruppen zu bezeichnen; kann koloniale Konnotationen haben.",
+        "author": "Anna",
+        "date": "15.8.22",
+        "guidelines": [
+            "Kontext",
+            "Tonfall und Haltung"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "Nation",
+            "Stamm",
+            "Volk",
+            "Gesellschaft",
+            "die eigenen Leute",
+            "Gemeinschaft",
+            "Gruppe"
+        ],
+        "id": 232
+    },
+    {
+        "lemma": "two spirit",
+        "lemma_lang": "en",
+        "definition": "(S.) Begriff f\u00fcr ein Gender-Konzept der Anishinaabeg (einer indigenen Gruppe aus Nordamerika). Bezeichnet, das zwei Seelen in einem K\u00f6rper leben.",
+        "author": "Anna",
+        "date": "29.4.21",
+        "guidelines": [
+            "Kontext",
+            "Genre und Register"
+        ],
+        "relatedterms": [],
+        "translations": [],
+        "id": 233
+    },
+    {
+        "lemma": "Vergangenheitsbew\u00e4ltigung",
+        "lemma_lang": "de",
+        "definition": "(S.) Begriff f\u00fcr den aktiven Prozess, sich sinnvoll mit einer schwierigen Vergangenheit auseinanderzusetzen. Wird oft speziell im Zusammenhang mit der deutschen Aufarbeitung des Zweiten Weltkriegs / des Holocausts verwendet.",
+        "author": "astang",
+        "date": "15.3.21",
+        "guidelines": [
+            "Kontext",
+            "Originalsprache beibehalten"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "coming to terms with the past",
+            "confronting the past",
+            "coping with the past",
+            "dealing with the past",
+            "getting to grips with the past",
+            "overcoming the past"
+        ],
+        "id": 234
+    },
+    {
+        "lemma": "Versklavung",
+        "lemma_lang": "de",
+        "definition": "(S.) Begriff f\u00fcr den Akt Menschen zu Sklav:innen zu machen - zu knechten und auszubeuten.",
+        "author": "aderickson",
+        "date": "23.6.21",
+        "guidelines": [
+            "Kontext",
+            "Positionierungen"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "enslavement"
+        ],
+        "id": 235
+    },
+    {
+        "lemma": "Volk",
+        "lemma_lang": "de",
+        "definition": "(S.) Begriff, der ab dem 19. Jahrhundert in Deutschland f\u00fcr eine gesamte Nation stand, die eine Kultur teilt (also z.B. Sprache, Glaube, Erfahrungsraum). Die Idee vom deutschen Volk ist exklusiv und der Begriff besonders seit dem Nationalsozialismus negativ behaftet.",
+        "author": "Timur",
+        "date": "14.4.21",
+        "guidelines": [
+            "Kontext",
+            "Originalsprache beibehalten"
+        ],
+        "relatedterms": [
+            "peoplehood",
+            "nation"
+        ],
+        "translations": [
+            "people",
+            "Volk",
+            "nation",
+            "race"
+        ],
+        "id": 236
+    },
+    {
+        "lemma": "v\u00f6lkisches Denken",
+        "lemma_lang": "de",
+        "definition": "beschreibt nationalistisches Denken, das besonders w\u00e4hrend des Nationalsozialismus \u00dcberschneidungen mit rassistischem Denken entwickelte.",
+        "author": "Anna",
+        "date": "19.11.21",
+        "guidelines": [
+            "Kontext",
+            "Tonfall und Haltung"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "Parochial mentality"
+        ],
+        "id": 237
+    },
+    {
+        "lemma": "Wessi",
+        "lemma_lang": "de",
+        "definition": "(S.) Begriff f\u00fcr eine Person aus Westdeutschland, der h\u00e4ufig Privileg und Reichtum ausdr\u00fccken soll. Gegenteil von Ossi. ",
+        "author": "Anna",
+        "date": "26.7.21",
+        "guidelines": [
+            "Kontext",
+            "Positionierungen"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "West German",
+            "Wessi",
+            "Westerner"
+        ],
+        "id": 238
+    },
+    {
+        "lemma": "Westtante",
+        "lemma_lang": "de",
+        "definition": "(S.) Begriff f\u00fcr eine Verwandte von DDR B\u00fcrger:innen mit Wohnsitz in Westdeutschland. Mit dem Begriff wird h\u00e4ufig eine Person mit Privilegien assoziiert, die diese nutzen kann, um Familienmitgliedern in Ostdeutschland n\u00fctzliche Dinge zu schicken (Lebensmittel, Kleidung, usw.).",
+        "author": "Anna",
+        "date": "20.7.21",
+        "guidelines": [
+            "Kontext",
+            "Tonfall und Haltung"
+        ],
+        "relatedterms": [],
+        "translations": [],
+        "id": 239
+    },
+    {
+        "lemma": "white",
+        "lemma_lang": "en",
+        "definition": "(Adj.) beschreibt eine politische Position von Menschen im Kontext von Rassismus, die besagt, dass sie einen vergleichsweise einfachen Zugang zu gesellschaftlichen Ressourcen wie Arbeit oder Bildung haben.",
+        "author": "Anna",
+        "date": "22.10.21",
+        "guidelines": [
+            "Positionierungen",
+            "Verschiedene Schreibweisen"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "wei\u00df"
+        ],
+        "id": 240
+    },
+    {
+        "lemma": "white (racial) anxiety",
+        "lemma_lang": "en",
+        "definition": "(S.) Begriff f\u00fcr die Angst von wei\u00dfen Menschen, Privilegien abgeben und ihr Selbstverst\u00e4ndnis hinterfragen zu m\u00fcssen.",
+        "author": "zazie",
+        "date": "1.6.21",
+        "guidelines": [
+            "Kontext",
+            "Genre und Register"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "Wei\u00dfe Angst",
+            "Angst der Wei\u00dfen"
+        ],
+        "id": 241
+    },
+    {
+        "lemma": "White Adjacency",
+        "lemma_lang": "en",
+        "definition": "(S.) Begriff f\u00fcr eine Person of Color, die \u00e4hnliche gesellschaftliche Vorteile erh\u00e4lt wie wei\u00df gelesene Menschen.",
+        "author": "claudia",
+        "date": "8.9.22",
+        "guidelines": [
+            "Kontext",
+            "Positionierungen"
+        ],
+        "relatedterms": [],
+        "translations": [],
+        "id": 242
+    },
+    {
+        "lemma": "white entitlement",
+        "lemma_lang": "en",
+        "definition": "(S.) Begriff f\u00fcr anma\u00dfendes Verhalten und Denken wei\u00dfer Menschen, dass ihnen wei\u00dfe Privilegien zustehen.",
+        "author": "Anna",
+        "date": "16.4.21",
+        "guidelines": [
+            "Kontext",
+            "Genre und Register"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "wei\u00dfes Dominanzverhalten"
+        ],
+        "id": 243
+    },
+    {
+        "lemma": "white flight",
+        "lemma_lang": "en",
+        "definition": "",
+        "author": "claudia",
+        "date": "9.3.23",
+        "guidelines": [],
+        "relatedterms": [],
+        "translations": [],
+        "id": 244
+    },
+    {
+        "lemma": "white fragility",
+        "lemma_lang": "en",
+        "definition": "(S.) Begriff f\u00fcr die Angst und \u00dcberforderung wei\u00dfer Menschen, mit (eigenem) Rassismus konfrontiert zu werden.",
+        "author": "Anna",
+        "date": "16.4.21",
+        "guidelines": [
+            "Kontext",
+            "Originalsprache beibehalten"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "wei\u00dfe Fragilit\u00e4t",
+            "white fragility",
+            "wei\u00dfe Empfindlichkeit",
+            "wei\u00dfe \u00dcberempfindlichkeit ",
+            "\u00fcberweisze empfindlichkeit"
+        ],
+        "id": 245
+    },
+    {
+        "lemma": "white gaze",
+        "lemma_lang": "en",
+        "definition": "(S.) Begriff daf\u00fcr, dass wei\u00dfe Menschen und die von ihnen produzierten Medien oft eine von Wei\u00dfsein gepr\u00e4gte Blickweise haben. Kann dazu dienen, nicht-wei\u00dfe Perspektiven auszuschlie\u00dfen oder zu stereotypisieren.",
+        "author": "zazie",
+        "date": "1.6.21",
+        "guidelines": [
+            "Kontext",
+            "Originalsprache beibehalten"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "white gaze"
+        ],
+        "id": 246
+    },
+    {
+        "lemma": "white privilege",
+        "lemma_lang": "en",
+        "definition": "(S.) Begriff f\u00fcr die (strukturellen) Vorteile, die wei\u00dfe Menschen in rassistischen Systemen gegen\u00fcber als nicht-wei\u00df wahrgenommenen Menschen genie\u00dfen.",
+        "author": "Lucy",
+        "date": "2.12.21",
+        "guidelines": [
+            "Kontext",
+            "Originalsprache beibehalten"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "wei\u00dfe Privilegien",
+            "white privilege"
+        ],
+        "id": 247
+    },
+    {
+        "lemma": "white supremacy",
+        "lemma_lang": "en",
+        "definition": "(S.) Begriff f\u00fcr die rassistische \u00dcberzeugung, dass wei\u00dfe Menschen \u00fcberlegen sind. Diese \u00dcberzeugung hat ein systemisches Ausma\u00df.",
+        "author": "Dejla",
+        "date": "16.4.21",
+        "guidelines": [
+            "Kontext",
+            "Originalsprache beibehalten"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "wei\u00dfer Herrschaftsanspruch",
+            "wei\u00dfer \u00dcberlegenheitsanspruch",
+            "wei\u00dfe Vorherrschaft",
+            "white supremacy",
+            "wei\u00dfe \u00dcberlegenheit",
+            "wei\u00dfe Suprematie"
+        ],
+        "id": 248
+    },
+    {
+        "lemma": "Whiteness",
+        "lemma_lang": "en",
+        "definition": "(S.) Begriff f\u00fcr den Zustand des Wei\u00dfseins als politische Position und die einhergehenden Privilegien. ",
+        "author": "aderickson",
+        "date": "23.6.21",
+        "guidelines": [
+            "Kontext",
+            "Genre und Register"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "Wei\u00dfsein"
+        ],
+        "id": 249
+    },
+    {
+        "lemma": "whitesplaining",
+        "lemma_lang": "en",
+        "definition": "(V.) Die Handlung, herablassende Erkl\u00e4rungen zu geben - i.d.R. von einer wei\u00dfen Person gegen\u00fcber einer Schwarzen Person zu Fragen des Rassismus.\n\n(S.) Begriff f\u00fcr diese Art zu handeln.",
+        "author": "Anna",
+        "date": "16.4.21",
+        "guidelines": [
+            "Kontext",
+            "Originalsprache beibehalten"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "wei\u00df-sagen ",
+            "whitesplaining"
+        ],
+        "id": 250
+    },
+    {
+        "lemma": "Wiedergutmachung",
+        "lemma_lang": "de",
+        "definition": "",
+        "author": "Lucy",
+        "date": "14.2.23",
+        "guidelines": [],
+        "relatedterms": [],
+        "translations": [
+            "making amends",
+            "redress",
+            "reparations"
+        ],
+        "id": 251
+    },
+    {
+        "lemma": "woke",
+        "lemma_lang": "en",
+        "definition": "(Adj.) Beschreibt Bewusstsein f\u00fcr politisch sensible Themen.",
+        "author": "ma_leen_",
+        "date": "2.7.21",
+        "guidelines": [
+            "Genre und Register",
+            "Originalsprache beibehalten"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "woke",
+            "bewusst ",
+            "aufgeweckt"
+        ],
+        "id": 252
+    },
+    {
+        "lemma": "yeke",
+        "lemma_lang": "en",
+        "definition": "",
+        "author": "Jake",
+        "date": "13.10.21",
+        "guidelines": [
+            "Kontext",
+            "Positionierungen"
+        ],
+        "relatedterms": [],
+        "translations": [
+            "J\u00fcdischdeutsche*r",
+            "Jude deutscher Herkunft"
+        ],
+        "id": 253
+    },
+    {
+        "lemma": "Zig****r*in",
+        "lemma_lang": "de",
+        "definition": "",
+        "author": "Lucy",
+        "date": "22.9.22",
+        "guidelines": [],
+        "relatedterms": [],
+        "translations": [
+            "Romani",
+            "g*psy",
+            "Roma and Sinti"
+        ],
+        "id": 254
+    }
+]
