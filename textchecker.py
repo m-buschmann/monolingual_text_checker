@@ -58,7 +58,7 @@ def submit():
     # Find sensitive terms in the user text
     indices, terms, split_text = find_sensitive_terms(clean_text, language)
 
-    marked_html = create_marked_html(split_text, indices)
+    marked_html = create_marked_html(split_text, indices, terms)
     
     # when we have the html, we can use this line to return the results
     return render_template("textarea.html", user_text=clean_text, indices=indices, terms=terms, marked_html=marked_html)
@@ -87,7 +87,7 @@ def find_sensitive_terms(text, language='german'):
                 
                 # Check if any of the words in the term are already covered
                 if not any(index in covered_indices for index in range(word_index, end_word_index)):
-                    matched_terms_details.append((word_index, end_word_index, term.term))
+                    matched_terms_details.append((word_index, end_word_index, term))
                     # Mark these indices as covered
                     covered_indices.update(range(word_index, end_word_index))
 
@@ -114,7 +114,7 @@ def find_sensitive_terms(text, language='german'):
 
 
 
-def create_marked_html(text, term_indices):
+def create_marked_html(text, term_indices, terms):
     """
     inputs
         text: list of strings, can be turned into a text string by appending elements separated by a space
@@ -179,6 +179,7 @@ def create_marked_html(text, term_indices):
 
     # add the last part of the text if there is something to add
     if text_should_be_marked and text_to_add:
+        print(text_to_add, terms, term_index, terms[term_index])
         marked_html += highlight.format(text_to_add.rstrip(), terms[term_index].term, terms[term_index].description, "todo terms")
     elif text_to_add:
         marked_html += span.format(text_to_add.rstrip())
