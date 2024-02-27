@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, url_for
 from sqlalchemy import func, desc, select
 import nltk
 from nltk.stem import SnowballStemmer
@@ -148,7 +148,7 @@ def create_marked_html(text, term_indices, terms, language):
         if next_marked!=-1 and i+1>next_marked:
             print("1")
             next_marked = indices.pop(0) if len(indices)>0 else -1
-            term_index += 1
+            #term_index += 1
             # current text is currently should be marked
             # create highlight
 
@@ -172,10 +172,6 @@ def create_marked_html(text, term_indices, terms, language):
                 text_should_be_marked = True
             else:
                 text_should_be_marked = False
-            
-        
-            
-
 
     # add the last part of the text if there is something to add
     if text_should_be_marked and text_to_add:
@@ -185,8 +181,9 @@ def create_marked_html(text, term_indices, terms, language):
 
     return marked_html.rstrip()
 
-@app.route('/rate_alternative', methods=['POST'])
+@app.route('/rate_alternative')
 def rate_alternative():
+    
     return 200, "rate alternative"
         
 def create_popup_html(term, language):
@@ -194,7 +191,7 @@ def create_popup_html(term, language):
     alternative_heading = "Alternative terms" if language=="english" else "Alternative Begriffe"
     popup = "<div class='popuptext'><h3>{term_term}</h3><p>{term_description}<p><h4>{alternative_heading}</h4>{alternative_list}</div>"
     alternative_list = "<ol>{list}</ol>"
-    list_item = "<li><a href=\"{term_base_url}{term_id}\">{term_term}</a> {alt_rating} <a href=\"url_for('rate_alternative', original_id='{original_id}', alternative_id='{alt_id}')\"></a></li>"
+    list_item = "<li><a href=\"{term_base_url}{term_id}\">{term_term}</a> {alt_rating} <a href=\"{rate_url}\">Rate</a></li>"
     # get the correct description base on the language
 
     # TODO
@@ -204,7 +201,9 @@ def create_popup_html(term, language):
     alternatives = AlternativeTerm.query.filter(AlternativeTerm.original_term_id==term.id).all()
     
     # for each alteranative term
-    alternatives_list = ""
+    alternatives_list = []
+    alt_mean_rating_list = []
+
     for alt_term in alternatives:
         # get the term object
         alternative_term_object = Term.query.get(alt_term.alternative_term_id)
@@ -212,12 +211,22 @@ def create_popup_html(term, language):
         # TODO get the alternative rating
         AlternativeRating.query.filter(AlternativeRating.term_id==term.id, AlternativeRating.alternative_term_id==alternative_term_object.id)#TODO get the average of all ratings
         # TODO if there are no ratings set the average to the middle value
-        # sort alternatives by rating
 
+        # get the average rating for the term
+        avg = AlternativeRating.query.filter(AlternativeRating.term_id==term.id, AlternativeRating.alternative_term_id==alternative_term_object.id).with_entities(func.avg(AlternativeRating.rating)).first()
+        
+        print("avg", avg)
+        # avg_rating = np.array(avg).flatten()[0]
+        alt_mean_rating_list.append(avg[0])
+
+        # sort alternatives by rating
+        # get the url for the rate function
+        rate_url = url_for('rate_alternative', original_id=term.id, alternative_id=alternative_term_object.id)
         # construct each list item
-        alternatives_list += list_item.format(term_term=alternative_term_object.term, term_base_url="https://www.machtsprache.de/term/", term_id=alternative_term_object.id, alt_rating="TODO", original_id=term.id, alt_id=alternative_term_object.id)
+        alternatives_list.append(list_item.format(rate_url=rate_url, term_term=alternative_term_object.term, term_base_url="https://www.machtsprache.de/term/", term_id=alternative_term_object.id, alt_rating="TODO", original_id=term.id, alt_id=alternative_term_object.id))
     # construct the whole list
-    complete_list = ""+alternative_list.format(list=alternatives_list)
+    
+    complete_list = ""+alternative_list.format(list="".join(alternatives_list))
 
     # construct the whole popup and return it
     return popup.format(term_term=term.term, term_description=term.description, alternative_heading=alternative_heading, alternative_list=complete_list)

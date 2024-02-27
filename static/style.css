@@ -121,7 +121,7 @@ mark {
   .popup .popuptext {
     font-size: small;
     visibility: hidden;
-    width: 160px;
+    width: 300px;
     background-color: #555;
     color: #fff;
     text-align: center;
@@ -131,7 +131,7 @@ mark {
     z-index: 1;
     top: 120%;
     left: 50%;
-    margin-left: -80px;
+    margin-left: -150px;
   }
   
   /* Popup arrow */
