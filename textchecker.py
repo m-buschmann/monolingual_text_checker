@@ -6,6 +6,7 @@ import nh3
 nltk.download('punkt')
 from read_data import insert_data
 import os
+import difflib
 
 from models import *
 
@@ -77,6 +78,7 @@ def find_sensitive_terms(text, language='german'):
 
     matched_terms_details = []
     covered_indices = set()  # Keep track of indices already covered by a match
+    #close_matches_messages = []  # List to store messages for close matches
 
     for term in sorted_terms:
         stemmed_term = " ".join([stemmer.stem(word) for word in term.term.split()])
@@ -91,6 +93,17 @@ def find_sensitive_terms(text, language='german'):
                     matched_terms_details.append((word_index, end_word_index, term.term))
                     # Mark these indices as covered
                     covered_indices.update(range(word_index, end_word_index))
+
+    # Check for approximate matches (e.g. for typos or british vs. american spelling)
+    for index, word in enumerate(stemmed_words):
+        close_matches = difflib.get_close_matches(word, [term.term for term in terms], n=1, cutoff=0.8)
+        if close_matches:
+            term = close_matches[0]
+            if term not in matched_terms_details:
+                matched_terms_details.append((index, index + 1, term))
+                covered_indices.add(index)
+                # Add message for the close match
+                #close_matches_messages.append(f"Close match found: {word} -> {term}")
 
     # Sort matched terms by their start index to ensure correct order
     matched_terms_details.sort(key=lambda x: x[0])
