@@ -50,7 +50,7 @@ def home():
 @app.route('/submit', methods=['POST'])
 def submit():
     user_text = request.form['user_text']
-    language = request.form.get('language', 'dgerman') # default to german if no language set
+    language = request.form.get('language', 'german') # default to german if no language set
     
     # sanitize input
     clean_text = nh3.clean(user_text)
@@ -72,7 +72,7 @@ def find_sensitive_terms(text, language='german'):
     stemmed_text = " ".join(stemmed_words)
     
     # Fetch terms from the database and sort them by word count (descending) -> first check for the longest terms
-    terms = Term.query.filter(Term.language == language).all()
+    terms = Term.query.filter().all()
     sorted_terms = sorted(terms, key=lambda t: len(t.term.split()), reverse=True)
 
     matched_terms_details = []
