@@ -7,6 +7,7 @@ nltk.download('punkt')
 from read_data import insert_data
 import os
 import difflib
+from langdetect import detect
 
 from models import *
 
@@ -51,8 +52,10 @@ def home():
 @app.route('/submit', methods=['POST'])
 def submit():
     user_text = request.form['user_text']
-    language = request.form.get('language', 'german') # default to german if no language set
-    
+    language = request.form.get('language', 'auto') # Default to auto-detect
+    if language == 'auto':
+        language = auto_detect_language(user_text)
+
     # sanitize input
     clean_text = nh3.clean(user_text)
 
@@ -64,6 +67,27 @@ def submit():
     # when we have the html, we can use this line to return the results
     return render_template("textarea.html", user_text=clean_text, indices=indices, terms=terms, marked_html=marked_html)
 
+def auto_detect_language(text):
+    """
+    Detects the language of the given text.
+
+    Parameters:
+    - text (str): The text for which the language needs to be detected.
+
+    Returns:
+    - str: The detected language ('english' or 'german').
+    """
+    try:
+        language_code = detect(text)
+        if language_code == 'en':
+            return 'english'
+        elif language_code == 'de':
+            return 'german'
+        else:
+            return 'german'  # Default to German if language cannot be detected
+    except Exception as e:
+        print(f"Error detecting language: {e}")
+        return 'unknown'
 
 def find_sensitive_terms(text, language='german'):
     stemmer = SnowballStemmer(language)
