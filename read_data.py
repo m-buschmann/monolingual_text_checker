@@ -12,62 +12,46 @@ db.init_app(app)
 def insert_data():
     with open('modified_data.json', 'r', encoding='utf-8') as f:
         data = json.load(f)
-        # First, insert all terms
+        
+        # Insert terms
         for item in data:
-            if item['lemma_lang'] == 'de':
-                language_item = "german"
-            else:
-                language_item = "english"
-            alternatives_json = json.dumps(item.get('translations', []))
+            language = "german" if item['lemma_lang'] == 'de' else "english"
             try:
                 term = Term(
                     id=item['id'],
                     term=item['lemma'],
                     description=item['definition'],
-                    language=language_item,
-                    alternatives_list=alternatives_json
+                    language=language,
+                    alternatives_list=json.dumps(item.get('translations', []))
                 )
                 db.session.add(term)
-                
-                # Immediately create an OffensivenessRating entry with an empty rating for this term
-                offensiveness_rating = OffensivenessRating(term_id=term.id, rating=None)
-                db.session.add(offensiveness_rating)
-
+                db.session.add(OffensivenessRating(term_id=term.id, rating=None))
                 db.session.commit()
             except IntegrityError:
-                print(f"Ignoring duplicate term: {item['lemma']}")
                 db.session.rollback()
 
-        # After all terms are inserted, link alternative terms and create ratings in both directions
+        # After inserting terms, create a dictionary for quick access to terms by name
+        terms_dict = {term.term: term for term in Term.query.all()}
+
+        # Identify alternative terms based on shared translations
         for item in data:
-            original_term = Term.query.filter_by(term=item['lemma']).first()
-            if original_term:
-                for alt_term_name in item.get('translations', []):
-                    alt_term = Term.query.filter_by(term=alt_term_name).first()
-                    if alt_term and original_term.id != alt_term.id:  # Check to ensure not linking term to itself
-                        # Create or verify link from original to alternative
-                        existing_link = AlternativeTerm.query.filter_by(original_term_id=original_term.id, alternative_term_id=alt_term.id).first()
-                        if not existing_link:
-                            alt_link = AlternativeTerm(original_term_id=original_term.id, alternative_term_id=alt_term.id)
-                            db.session.add(alt_link)
-                            # Create a corresponding entry in appropriate_alternative_ratings
-                            new_rating = AlternativeRating(term_id=original_term.id, alternative_term_id=alt_term.id, rating=None)
-                            db.session.add(new_rating)
-
-                        # Create or verify link in the opposite direction, from alternative to original
-                        reverse_existing_link = AlternativeTerm.query.filter_by(original_term_id=alt_term.id, alternative_term_id=original_term.id).first()
-                        if not reverse_existing_link:
-                            reverse_alt_link = AlternativeTerm(original_term_id=alt_term.id, alternative_term_id=original_term.id)
-                            db.session.add(reverse_alt_link)
-                            # Create a corresponding entry in appropriate_alternative_ratings in the reverse direction
-                            reverse_new_rating = AlternativeRating(term_id=alt_term.id, alternative_term_id=original_term.id, rating=None)
-                            db.session.add(reverse_new_rating)
-
-                        db.session.commit()
-
+            if item['lemma'] in terms_dict:
+                original_term = terms_dict[item['lemma']]
+                for translation in item.get('translations', []):
+                    for other_item in data:
+                        if translation in other_item.get('translations', []) and other_item['lemma'] != item['lemma'] and other_item['lemma'] in terms_dict:
+                            alternative_term = terms_dict[other_item['lemma']]
+                            # Avoid duplicates and self-references
+                            if original_term.id != alternative_term.id and not AlternativeTerm.query.filter_by(original_term_id=original_term.id, alternative_term_id=alternative_term.id).first():
+                                db.session.add(AlternativeTerm(original_term_id=original_term.id, alternative_term_id=alternative_term.id))
+                                db.session.add(AlternativeRating(term_id=original_term.id, alternative_term_id=alternative_term.id, rating=None))
+                                db.session.add(AlternativeTerm(original_term_id=alternative_term.id, alternative_term_id=original_term.id))
+                                db.session.add(AlternativeRating(term_id=alternative_term.id, alternative_term_id=original_term.id, rating=None))
+                db.session.commit()
 
 if __name__ == '__main__':
-
     with app.app_context():
         db.create_all()
-        insert_data(db)
+        insert_data()
+
+
