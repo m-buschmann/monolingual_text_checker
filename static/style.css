@@ -95,7 +95,8 @@ textarea {
     overflow: auto;
     resize: none;
     transition: transform 1s;
-    pointer-events: none;
+
+    pointer-events: all;
 }
 
 mark {

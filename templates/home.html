@@ -29,12 +29,23 @@
     </div>
     <br>
     <button type="submit">Check</button>
+    <button id="edit_text">Edit text</button>
   </form>
+
 </body>
 
 <script>
   var backdrop = document.getElementById("backdrop");
+
+  
+
   var textarea = document.getElementById("textarea");
+  var edit_button= document.getElementById("edit_text");
+  edit_button.addEventListener("click", (event) =>{
+    console.log(textarea);
+    textarea.style.pointerEvents = "all";
+  });
+
   textarea.addEventListener("scroll",(event) => {
     var scrollTop = textarea.scrollTop;
     backdrop.scrollTop = scrollTop;
@@ -51,6 +62,23 @@
     console.log(t.target);
     t.target.childNodes[1].style.visibility = "hidden";
   }
+  
+  // const overlay = document.getElementById("overlay");
+  // overlay.addEventListener("mouseover", function(event) {
+  //       const target = event.target;
+        
+  //       // Check if the mouseover target is a mark
+  //       if (target.classList.contains("mark")) {
+  //           // Show the popup
+  //           showPopup(event);
+  //       }
+  //   });
+
+  // // Add event listeners to handle mouseout events to hide the popup
+  // overlay.addEventListener("mouseout", function(event) {
+  //     hidePopup(event);
+  // });
+
 
   var container = document.getElementById("container");
   const form = document.querySelector("#textform");
@@ -74,11 +102,34 @@
         container.innerHTML = data;
         // attatch new event listeners
         backdrop = document.getElementById("backdrop");
-        textarea = document.getElementById("textarea");
-        textarea.addEventListener("scroll",(event) => {
-          var scrollTop = textarea.scrollTop;
+        var textarea2 = document.getElementById("textarea");
+        textarea2.addEventListener("scroll",(event) => {
+          var scrollTop = textarea2.scrollTop;
           backdrop.scrollTop = scrollTop;
         });
+        edit_button.addEventListener("click", (event) =>{
+          console.log(textarea2);
+          //textarea2.style.pointerEvents = "all";
+          textarea2.style.pointerEvents = "all";
+          textarea2.style.setProperty("background-color", "blue", "important");
+        });
+        
+
+        // const overlay = document.getElementById("overlay");
+        // overlay.addEventListener("mouseover", function(event) {
+        //       const target = event.target;
+              
+        //       // Check if the mouseover target is a mark
+        //       if (target.classList.contains("mark")) {
+        //           // Show the popup
+        //           showPopup(event);
+        //       }
+        //   });
+
+        // // Add event listeners to handle mouseout events to hide the popup
+        // overlay.addEventListener("mouseout", function(event) {
+        //     hidePopup(event);
+        // });
 
         var marks = document.querySelectorAll('.popup');
         for (var i = 0; i < marks.length; i++) {
@@ -87,6 +138,8 @@
           marks[i].addEventListener("mouseenter", showPopup, marks[i]);
           marks[i].addEventListener("mouseleave", hidePopup, marks[i]);
         }     
+        textarea2.style.pointerEvents = "none";
+        textarea2.style.setProperty("background-color", "red");
 
     })
     .catch(error => {
