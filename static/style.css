@@ -150,5 +150,7 @@ mark {
 
 /* Style for the permanent text shown */ 
 h1, h3 {
-    margin-left: 40px; 
+    font-family: Courier New, monospace;
+    margin-left: 40px;
+    color:  #1e5166;
 }
