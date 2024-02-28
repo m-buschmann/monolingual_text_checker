@@ -4,4 +4,3 @@ requests
 datetime
 nltk
 nh3
-langdetect
