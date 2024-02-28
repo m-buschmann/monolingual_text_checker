@@ -101,68 +101,82 @@ def find_sensitive_terms(text, language='german'):
 
     matched_terms_details = []
     covered_indices = set()  # Keep track of indices already covered by a match
+    print(stemmed_text)
 
     for term in sorted_terms:
         stemmed_term = " ".join([stemmer.stem(word) for word in term.term.split()])
-        if stemmed_term in stemmed_text:
-            term_index = stemmed_text.find(stemmed_term)
-            if term_index != -1:
-                word_index = len(stemmed_text[:term_index].split())
-                end_word_index = word_index + len(stemmed_term.split())
-                
-                # Check if any of the words in the term are already covered
-                if not any(index in covered_indices for index in range(word_index, end_word_index)):
-                    matched_terms_details.append((word_index, end_word_index, term))
-                    # Mark these indices as covered
-                    covered_indices.update(range(word_index, end_word_index))
+        
+        start_pos = 0
+        while True:
+            print("stemmed_term", stemmed_term)
+            term_index = stemmed_text.find(stemmed_term, start_pos)
+            if term_index == -1:
+                break
+            word_index = len(stemmed_text[:term_index].split())
+            end_word_index = word_index + len(stemmed_term.split())
+            print(term.term, term_index, word_index, end_word_index, covered_indices)
+
+            print([index in covered_indices for index in range(word_index, end_word_index)])
+            # Check if any of the words in the term are already covered
+            if not any(index in covered_indices for index in range(word_index, end_word_index)):
+                print("here", term.term)
+                matched_terms_details.append((word_index, end_word_index, term))
+                # Mark these indices as covered
+                covered_indices.update(range(word_index, end_word_index))
+
+            print("details:", matched_terms_details)
+            start_pos = term_index + len(stemmed_term)  # Update start_pos to search for next occurrence
 
 
+            # Check for approximate matches for typos or different spellings
+            for index, word in enumerate(stemmed_words):
+                if index in covered_indices:  # Skip if index is already covered
+                    continue
+                possible_terms = [stemmer.stem(term.term) for term in sorted_terms]
+                close_matches = difflib.get_close_matches(word, [term.term for term in sorted_terms], n=1, cutoff=0.8)
+                if close_matches:
+                    close_match_stemmed = close_matches[0]
+                    # Find the term object from sorted_terms that matches the close_match_term_string
+                    for possible_term_object in sorted_terms:
+                        if stemmer.stem(term.term) == close_match_stemmed:
+                            term_object = possible_term_object
+                            break
+                    else:
+                        term_object = None
 
-                # Check for approximate matches for typos or different spellings
-                for index, word in enumerate(stemmed_words):
-                    if index in covered_indices:  # Skip if index is already covered
-                        continue
-
-                    close_matches = difflib.get_close_matches(word, [term.term for term in sorted_terms], n=1, cutoff=0.8)
-                    if close_matches:
-                        close_match_term_string = close_matches[0]
-                        # Find the term object from sorted_terms that matches the close_match_term_string
-                        for possible_term_object in sorted_terms:
-                            if possible_term_object.term == close_match_term_string:
-                                term_object = possible_term_object
-                                break
+                    if term_object:
+                        # Check if this term_object is already in matched_terms_details based on object identity
+                        for matched_term in matched_terms_details:
+                            #print(matched_term)
+                            if term_object == matched_term[2]:  # matched_term[2] is the term object
+                                # Check if the index range of the current word overlaps with the matched term
+                                if not any(index in covered_indices for index in range(matched_term[0], matched_term[1])):
+                                    matched_terms_details.append((index, index + 1, term_object))
+                                    covered_indices.add(index)
+                                break  # Exit the loop as we found a match
                         else:
-                            term_object = None
-
-                        if term_object:
-                            # Check if this term_object is already in matched_terms_details based on object identity or other unique identifier
-                            for matched_term in matched_terms_details:
-                                if term_object == matched_term[2]:  # Assuming matched_term[2] is the term object
-                                    # Check if the index range of the current word overlaps with the matched term
-                                    if not any(index in covered_indices for index in range(matched_term[0], matched_term[1])):
-                                        matched_terms_details.append((index, index + 1, term_object))
-                                        covered_indices.add(index)
-                                    break  # Exit the loop as we found a match
-                            else:
-                                # If term_object is not found in matched_terms_details or does not overlap, add it
-                                matched_terms_details.append((index, index + 1, term_object))
-                                covered_indices.add(index)
-
+                            # If term_object is not found in matched_terms_details or does not overlap, add it
+                            matched_terms_details.append((index, index + 1, term_object))
+                            covered_indices.add(index)
+    print("details2:",matched_terms_details)
     # Sort matched terms by their start index to ensure correct order
     matched_terms_details.sort(key=lambda x: x[0])
 
     # Generate the final split text in the correct order, merging terms as needed
     split_text, sensitive_indices, sensitive_terms = [], [], []
     last_index = 0
+    reduce_index_by = 0
     for start_index, end_index, term in matched_terms_details:
+        
         # Add words before the matched term
         split_text.extend(words[last_index:start_index])
         # Add the matched term itself
         split_text.append(" ".join(words[start_index:end_index]))
         # Update sensitive_indices to only include the start index of the term
-        sensitive_indices.append(start_index)
+        sensitive_indices.append(start_index-reduce_index_by)
         sensitive_terms.append(term)
         last_index = end_index
+        reduce_index_by += end_index-1-start_index
     # Add any remaining words after the last matched term
     split_text.extend(words[last_index:])
     
@@ -173,34 +187,45 @@ def find_sensitive_terms(text, language='german'):
 
 def create_marked_html(text, term_indices):
     """
-    inputs
-        text: list of strings, can be turned into a text string by appending elements separated by a space
-        indices: indices of the sensitive terms within the text list that are to be marked
+    Generates HTML with sensitive terms highlighted, including an additional white space after highlights,
+    and considering punctuation.
+    
+    Parameters:
+    - text: List of strings, representing words and punctuation from the original text.
+    - term_indices: Indices of the sensitive terms within the text list to be marked.
 
-    returns:
-        marked_html: html containing the text in the format needed to display it with highlights
+    Returns:
+    - marked_html: HTML string with sensitive terms highlighted, and extra spaces after highlights.
     """
 
     marked_html = ""
-    skip_next = False  # Flag to skip the next item if it's punctuation immediately after a highlighted word
-
-    for i, word in enumerate(text):
-        if skip_next:
-            # Skip this iteration if the previous word was highlighted and followed by punctuation
-            skip_next = False
-            continue
-
-        if i in term_indices or (i + 1 in term_indices and word[-1] in ",.!?;:"):
-            # Highlight this word and, if the next item is punctuation, include it in the highlight
-            if i + 1 < len(text) and text[i + 1] in ",.!?;:":  # Check if next is punctuation
-                marked_html += "<mark>{}{}</mark> ".format(word, text[i + 1])
-                skip_next = True  # Skip the next item since it's punctuation included in the current highlight
+    i = 0
+    while i < len(text):
+        word = text[i]
+        if i in term_indices:
+            # Highlight this word
+            marked_html += "<mark>{}</mark>".format(word)  # Remove the space after </mark> here
+            if i + 1 < len(text) and text[i + 1] in ",.!?;:":
+                marked_html += "{}".format(text[i + 1])  # Directly append punctuation without a space
+                if i + 2 < len(text) and text[i + 2] not in ",.!?;:":
+                    marked_html += " "  # Add a space after punctuation if next term is not punctuation
+                i += 1  # Increment to skip the punctuation since it's already handled
             else:
-                marked_html += "<mark>{}</mark> ".format(word)
+                marked_html += " "  # Add space after the highlighted term if not followed by punctuation
         else:
-            marked_html += "{} ".format(word)
+            # For non-highlighted terms, just add the word and a space (if not punctuation)
+            marked_html += word
+            if i + 1 < len(text) and text[i + 1] not in ",.!?;:":
+                marked_html += " "  # Only add space if the next term is not punctuation
+            
+        i += 1  # Move to the next word
 
     return marked_html.strip()
+
+
+
+
+
 
     """if len(term_indices) == 0:
         return text
