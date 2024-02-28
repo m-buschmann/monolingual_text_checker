@@ -78,14 +78,13 @@ def insert_data():
                     if not Term.query.filter_by(id=potential_new_id).first():
                         term_id = potential_new_id
                         break
-
             try:
                 term = Term(
                     id=term_id,
-                    term=item['lemma'],
-                    description=definition,
+                    term=bytes(item['lemma'], "utf-8").decode("utf-8"), 
+                    description= bytes(definition, "utf-8").decode("utf-8"), 
                     language=language,
-                    alternatives_list=json.dumps(item.get('translations', []))
+                    alternatives_list= json.dumps(item.get('translations', []), ensure_ascii=False) 
                 )
                 db.session.add(term)
                 db.session.commit()
