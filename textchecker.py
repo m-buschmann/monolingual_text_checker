@@ -89,52 +89,68 @@ def auto_detect_language(text):
         return 'unknown'
 
 def find_sensitive_terms(text, language='german'):
-    stemmer = SnowballStemmer(language)
-    words = nltk.word_tokenize(text)
-    words_lower = [word.lower() for word in words]
-    stemmed_words = [stemmer.stem(word) for word in words_lower]
-    stemmed_text = " ".join(stemmed_words)
+    """
+    Identify and extract sensitive terms from the given text using stemming and approximate matching.
     
-    # Fetch terms from the database and sort them by word count (descending)
+    This function processes a given text to find sensitive terms predefined in a database. It employs stemming to normalize both the input text and the sensitive terms for matching in a specified language. It sorts the terms by word count in descending order to prioritize matching longer terms first. The function also checks for approximate matches to catch typos or different spellings. Finally, it returns the indices of sensitive terms within the text, the terms themselves, and the text split into segments with sensitive terms isolated.
+    
+    Parameters:
+    - text (str): The text to be analyzed for sensitive terms.
+    - language (str, optional): The language used for stemming. Defaults to 'german'.
+    
+    Returns:
+    - tuple: A tuple containing three elements:
+        1. A list of indices where sensitive terms start in the original text.
+        2. A list of sensitive term objects that were matched.
+        3. The original text split into segments, with sensitive terms isolated.
+    """
+    # Initialize the stemmer for the specified language
+    stemmer = SnowballStemmer(language)
+
+    # Tokenize and stem the input text
+    words = nltk.word_tokenize(text)
+    words_lower = [word.lower() for word in words] # Lowercase all words for consistent matching
+    stemmed_words = [stemmer.stem(word) for word in words_lower]
+    stemmed_text = " ".join(stemmed_words) # Rejoin the stemmed words into a single string
+    
+    # Fetch predefined sensitive terms from the database, sorted by their length (descending)
     terms = Term.query.filter().all()
     sorted_terms = sorted(terms, key=lambda t: len(t.term.split()), reverse=True)
 
-    matched_terms_details = []
-    covered_indices = set()  # Keep track of indices already covered by a match
-    print(stemmed_text)
+    matched_terms_details = [] # To store details of matched terms
+    covered_indices = set()  # Track indices in the text that are already covered by a match
 
+    # Iterate over each term to find matches in the stemmed text
     for term in sorted_terms:
         stemmed_term = " ".join([stemmer.stem(word) for word in term.term.split()])
         
+        # Find all occurrences of the stemmed term in the stemmed text
         start_pos = 0
         while True:
-            print("stemmed_term", stemmed_term)
             term_index = stemmed_text.find(stemmed_term, start_pos)
             if term_index == -1:
-                break
+                break # Exit the loop if no more occurrences are found
+            # Calculate the start and end word indices in the original text
             word_index = len(stemmed_text[:term_index].split())
             end_word_index = word_index + len(stemmed_term.split())
-            print(term.term, term_index, word_index, end_word_index, covered_indices)
 
-            print([index in covered_indices for index in range(word_index, end_word_index)])
-            # Check if any of the words in the term are already covered
+            # Append matched term details if it doesn't overlap with previously covered indices
             if not any(index in covered_indices for index in range(word_index, end_word_index)):
-                print("here", term.term)
                 matched_terms_details.append((word_index, end_word_index, term))
-                # Mark these indices as covered
+                # Mark indices as covered
                 covered_indices.update(range(word_index, end_word_index))
 
-            print("details:", matched_terms_details)
+            # Prepare for the next search iteration
             start_pos = term_index + len(stemmed_term)  # Update start_pos to search for next occurrence
 
 
-            # Check for approximate matches for typos or different spellings
+            # Check for approximate matches for each word to account for typos or different spellings
             for index, word in enumerate(stemmed_words):
                 if index in covered_indices:  # Skip if index is already covered
                     continue
-                possible_terms = [stemmer.stem(term.term) for term in sorted_terms]
                 close_matches = difflib.get_close_matches(word, [term.term for term in sorted_terms], n=1, cutoff=0.8)
                 if close_matches:
+                    # Process each close match found
                     close_match_stemmed = close_matches[0]
                     # Find the term object from sorted_terms that matches the close_match_term_string
                     for possible_term_object in sorted_terms:
@@ -142,42 +158,41 @@ def find_sensitive_terms(text, language='german'):
                             term_object = possible_term_object
                             break
                     else:
-                        term_object = None
+                        term_object = None # No matching term object found
 
                     if term_object:
-                        # Check if this term_object is already in matched_terms_details based on object identity
+                        # Check if this term object is not yet processed and add its details
                         for matched_term in matched_terms_details:
-                            #print(matched_term)
-                            if term_object == matched_term[2]:  # matched_term[2] is the term object
+                            if term_object == matched_term[2]:  # If the term object matches
                                 # Check if the index range of the current word overlaps with the matched term
                                 if not any(index in covered_indices for index in range(matched_term[0], matched_term[1])):
                                     matched_terms_details.append((index, index + 1, term_object))
                                     covered_indices.add(index)
                                 break  # Exit the loop as we found a match
                         else:
-                            # If term_object is not found in matched_terms_details or does not overlap, add it
+                            # Add new term object if it hasn't been matched yet
                             matched_terms_details.append((index, index + 1, term_object))
                             covered_indices.add(index)
-    print("details2:",matched_terms_details)
-    # Sort matched terms by their start index to ensure correct order
+    
+    # Sort matched terms by their starting index for proper ordering
     matched_terms_details.sort(key=lambda x: x[0])
 
-    # Generate the final split text in the correct order, merging terms as needed
+    # Reconstruct the text, isolating sensitive terms and recording their indices
     split_text, sensitive_indices, sensitive_terms = [], [], []
-    last_index = 0
-    reduce_index_by = 0
+    last_index = 0 # Track the last processed index
+    reduce_index_by = 0 # Adjustment for indices due to joining terms
     for start_index, end_index, term in matched_terms_details:
         
-        # Add words before the matched term
+        # Add non-sensitive segments of the text
         split_text.extend(words[last_index:start_index])
-        # Add the matched term itself
+        # Add the matched sensitive term
         split_text.append(" ".join(words[start_index:end_index]))
-        # Update sensitive_indices to only include the start index of the term
+        # Record the index of the sensitive term
         sensitive_indices.append(start_index-reduce_index_by)
         sensitive_terms.append(term)
         last_index = end_index
         reduce_index_by += end_index-1-start_index
-    # Add any remaining words after the last matched term
+    # Add any remaining text after the last matched term
     split_text.extend(words[last_index:])
     
     print(sensitive_indices, sensitive_terms, split_text)
