@@ -32,7 +32,7 @@
     </div>
     <br>
     <button type="submit">Check</button>
-    <button type="edit_text" id="edit_text">Edit text</button>
+    <button type="button" class="edit" id="edit_text">Edit text</button>
   </form>
   <div class="mint-stripes"></div>
   <div class="purple-stripes"></div>
@@ -144,12 +144,14 @@
     console.log("hover");
     console.log(t.target);
     t.target.childNodes[1].style.visibility = "visible";
+    document.getElementById("textarea").style.visibility = "hidden";
   }
 
   function hidePopup(t){
     console.log("hover leave");
     console.log(t.target);
     t.target.childNodes[1].style.visibility = "hidden";
+    document.getElementById("textarea").style.visibility = "visible";
   }
   var modals = "";
 

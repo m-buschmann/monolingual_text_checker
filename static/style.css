@@ -73,7 +73,7 @@ h1, h3 {
 }
 
 /* Styles for the "Check" button */
-button[type="submit"], button[type="edit_text"] {
+button[type="submit"], button.edit[type="button"] {
     cursor: pointer;
     padding: 10px 20px;
     border: 2px solid #ff7f43;
@@ -82,18 +82,19 @@ button[type="submit"], button[type="edit_text"] {
     margin-left: 20px;
 }
 
-button[type="submit"]:hover, button[type="edit_text"]:hover {
+button[type="submit"]:hover, button[type="button"]:hover {
     background-color: var(--orange);
 }
 
-button[type="popup_button"] {
+button.open-modal {
   cursor: pointer;
   padding: 5px 5px;
-  border: 2px solid var(--purple);
-  background-color: #efefef;
+  border: 2px solid #be91cf;
+  background-color: #ceb9d2;
   margin-top: 10px; 
   margin-left: 10px;
 }
+
 /* Styles for the text box and highlighting */
  *, *::before, *::after {
 box-sizing: border-box;
@@ -130,6 +131,7 @@ box-sizing: border-box;
 }
 
 .highlights {
+    position: static;
     white-space: pre-wrap;
     word-wrap: break-word;
     color: transparent;
@@ -159,7 +161,8 @@ mark {
 
 /* Popup container - can be anything you want */
 .popup {
-    position: relative;
+    position: absolute;
+    z-index: 10;
     display: inline-block;
     cursor: pointer;
     -webkit-user-select: none;
@@ -173,7 +176,7 @@ mark {
     font-size: small;
     visibility: hidden;
     width: 300px;
-    background-color: #555;
+    background-color: #c3e0cd;
     color: #fff;
     text-align: center;
     border-radius: 6px;
