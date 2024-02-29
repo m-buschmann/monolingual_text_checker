@@ -21,8 +21,11 @@
       <textarea id="textarea" name="user_text" placeholder="Add a text you would like to check for sensitive terms">{{ user_text }}</textarea>
       
     </div>
+    <br>
     <div class="radio-buttons">
-      <input type="radio" id="english" name="language" value="english" checked>
+      <input type="radio" id="auto" name="language" value="auto" checked> <!-- Default to auto-detect -->
+      <label for="auto">Auto Detect Language</label>
+      <input type="radio" id="english" name="language" value="english">
       <label for="english">English</label>
       <input type="radio" id="german" name="language" value="german">
       <label for="german">German</label>
@@ -31,6 +34,8 @@
     <button type="submit">Check</button>
     <button type="button" id="edit_text">Edit text</button>
   </form>
+  <div class="mint-stripes"></div>
+  <div class="purple-stripes"></div>
   <div id="modal_container">
 
   </div>

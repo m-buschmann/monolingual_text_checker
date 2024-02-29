@@ -1237,7 +1237,9 @@
             "Mensch mit Behinderung",
             "behinderte Person",
             "Mensch mit Einschr\u00e4nkung",
-            "Mensch mit BeHinderung"
+            "Mensch mit BeHinderung", 
+            "Kr\u00fcppel",
+            "Behinderte"
         ],
         "id": 71
     },
@@ -2268,7 +2270,8 @@
         ],
         "relatedterms": [],
         "translations": [
-            "Crip"
+            "Crip",
+            "People with handicap"
         ],
         "id": 133
     },
@@ -3627,7 +3630,8 @@
         "relatedterms": [],
         "translations": [
             "Hautfarbe",
-            "Race"
+            "Race",
+            "Rasse"
         ],
         "id": 214
     },
@@ -4296,5 +4300,32 @@
             "Roma and Sinti"
         ],
         "id": 254
+    },
+    {
+        "lemma": "Rasse",
+        "lemma_lang": "de",
+        "definition": "(S.) Der Begriff Rasse ist im deutschen Sprachgebrauch problematisch, da es sich um einen biologischen Terminus handelt, der Individuen aufgrund physischer Unterschiede, wie beispielsweise der Hautfarbe, unterscheidet.",
+        "author": "Team",
+        "date": "29.2.24",
+        "guidelines": [],
+        "relatedterms": [],
+        "translations": [
+            "Race",
+            "Breed"
+        ],
+        "id": 255
+    },
+    {
+        "lemma": "Mensch mit BeHinderung",
+        "lemma_lang": "de",
+        "definition": "(S.)",
+        "author": "Team",
+        "date": "29.2.24",
+        "guidelines": [],
+        "relatedterms": [],
+        "translations": [
+            "People with handicap"
+        ],
+        "id": 256
     }
 ]

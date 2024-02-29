@@ -57,7 +57,29 @@ def insert_data():
         # Function to generate new IDs
         def generate_new_id():
             return f"{next(id_counter):020}"
+            # Step 1: Collect translation relationships
         
+        # Two terms appear together in the AlternativeTerm list if they share at least one translation, 
+        # indicating they are contextually related or interchangeable in some scenarios
+        translation_to_terms = {}  # Maps a translation to all terms that include it
+        for item in data:
+            for translation in item.get('translations', []):
+                if translation not in translation_to_terms:
+                    translation_to_terms[translation] = set()
+                translation_to_terms[translation].add(item['lemma'])
+        
+        # Convert sets to lists for JSON serialization
+        term_to_alternatives = {item['lemma']: [] for item in data}
+        for translation, terms in translation_to_terms.items():
+            for term in terms:
+                # Exclude the term itself from its alternatives list
+                term_to_alternatives[term].extend([t for t in terms if t != term])
+        
+        # Ensure unique entries
+        for term, alternatives in term_to_alternatives.items():
+            term_to_alternatives[term] = list(set(alternatives))
+
+        # Step 2: Update terms with alternatives list
         # Insert terms
         for item in data:
             language = "german" if item['lemma_lang'] == 'de' else "english"
@@ -78,13 +100,15 @@ def insert_data():
                     if not Term.query.filter_by(id=potential_new_id).first():
                         term_id = potential_new_id
                         break
+            # Update to use collected relationships for alternatives_list
             try:
+                alternatives_list = json.dumps(term_to_alternatives[item['lemma']], ensure_ascii=False)
                 term = Term(
                     id=term_id,
                     term=bytes(item['lemma'], "utf-8").decode("utf-8"), 
                     description= bytes(definition, "utf-8").decode("utf-8"), 
                     language=language,
-                    alternatives_list= json.dumps(item.get('translations', []), ensure_ascii=False) 
+                    alternatives_list=alternatives_list
                 )
                 db.session.add(term)
                 db.session.commit()
