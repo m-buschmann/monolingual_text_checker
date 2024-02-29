@@ -340,12 +340,11 @@ def create_popup_html(term, language, starting_modal_id):
     list_item = "<li><a href=\"{term_base_url}{term_id}\" class='alternative-term-link'>{term_term}</a> {alt_rating} {rate} {report}</li>"
 
     button_html = "<button type=\"button\" class=\"open-modal\" data-open=\"modal{modal_id}\">{button_text}</button>"
-    offensive_modal_html = "<div class=\"modal\" id=\"modal{modal_id}\"><div class=\"modal-dialog\"><header class=\"modal-header\"><button class=\"close-modal\" aria-label=\"close modal\" data-close>✕</button></header><section class=\"modal-content\">Do you want to mark the term \"{term}\" as offensive?<button class=\"mark-offensive\" onclick=\"mark_offensive('{term_id}')\" data-close>Yes</button><button class=\"close-modal\" aria-label=\"close modal\" data-close>No</button></section></div></div>"
+    offensive_modal_html = "<div class=\"modal\" id=\"modal{modal_id}\"><div class=\"modal-dialog\"><header class=\"modal-header\">Mark as offensive</header><section class=\"modal-content\"><p>Do you want to mark the term \"{term}\" as offensive?</p><button class=\"mark-offensive\" onclick=\"mark_offensive('{term_id}')\" data-close>Yes</button><button class=\"close-modal\" aria-label=\"close modal\" data-close>Cancel</button></section></div></div>"
     rating_modal_html = """ <div class="modal" id="modal{modal_id}">
         <div class="modal-dialog">
             <header class="modal-header">
             Rate "{alternative_term}" as alternative to "{original_term}"
-            <button class="close-modal" aria-label="close modal" data-close>✕</button>
             </header>
             <section class="modal-content">
             <p>Select how good of an alternative "{alternative_term}" is for the original term "{original_term}"</p>

@@ -264,6 +264,7 @@ mark {
   background: var(--white);
   overflow: auto;
   cursor: default;
+  font: 16px/20px 'Open Sans', sans-serif;
 }
 
 .modal-dialog > * {
@@ -272,7 +273,7 @@ mark {
 
 .modal-header,
 .modal-footer {
-  background: var(--lightgray);
+  background: var(--green);
 }
 
 .modal-header {
@@ -295,9 +296,28 @@ mark {
   transition: all 0.35s ease-in;
 }
 
+.modal button{
+  background-color: var(--green);
+  padding: 10px 20px;
+  border: 2px solid #000000;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+.modal fieldset{
+  margin-top: 10px;
+}
+.modal button .modal-close{
+  background-color: var(--orange);
+}
+
 .modal.is-visible {
   visibility: visible;
   opacity: 1;
+}
+
+.modal div {
+  margin: 5px;
 }
 
 /* Style for main term links */
