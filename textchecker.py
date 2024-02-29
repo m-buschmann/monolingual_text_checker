@@ -336,7 +336,7 @@ def report():
 def create_popup_html(term, language, starting_modal_id):
     # templates
     alternative_heading = "Alternative terms" if language=="english" else "Alternative Begriffe"
-    popup = "<div class='popuptext'><h3>{term_term}{report}</h3><p>{term_description}<p><h4>{alternative_heading}</h4>{alternative_list}</div>"
+    popup = "<div class='popuptext'><h3><a href=\"{term_base_url}{term_id}\">{term_term}</a>{report}</h3><p>{term_description}<p><h4>{alternative_heading}</h4>{alternative_list}</div>"
     alternative_list = "<ol>{list}</ol>"
     list_item = "<li><a href=\"{term_base_url}{term_id}\">{term_term}</a> {alt_rating} {rate} {report}</li>"
 
@@ -442,7 +442,7 @@ def create_popup_html(term, language, starting_modal_id):
     modal_id += 1
 
     # construct the whole popup and return it
-    return popup.format(report=report, term_term=term.term, term_description=term.description, alternative_heading=alternative_heading, alternative_list=complete_list), all_modals, modal_id
+    return popup.format(term_base_url="https://www.machtsprache.de/term/", term_id=term.id,report=report, term_term=term.term, term_description=term.description, alternative_heading=alternative_heading, alternative_list=complete_list), all_modals, modal_id
 
 if __name__ == '__main__':
     app.run(debug=True)
