@@ -220,7 +220,7 @@ def create_marked_html(text, term_indices, terms, language):
 
     marked_html = ""
     span = "{}"
-    highlight= "<mark  class='popup'>{}{}</mark>"
+    highlight= "<mark  class='popup' style=\"background-color:{color};\">{}{}</mark>"
     indices = term_indices.copy()
     text_to_add = ""
     next_marked = indices.pop(0)
@@ -255,7 +255,15 @@ def create_marked_html(text, term_indices, terms, language):
         elif text_should_be_marked:
             popups, new_modals, next_modal_id = create_popup_html(terms[term_index], language, next_modal_id)
             modals += new_modals
-            marked_html += highlight.format(text_to_add.rstrip(), popups)+" "
+            # get offensiveness rating:
+            o_ratings = len(OffensivenessRating.query.filter(OffensivenessRating.term_id==terms[term_index].id).all())
+            color = "var(--green)"
+            if o_ratings > 3: # TODO decide on proper cutoff values
+                color = "var(--orange)"
+            if o_ratings > 4:
+                color = "var(--red)"
+        
+            marked_html += highlight.format(text_to_add.rstrip(), popups, color=color)+" "
             term_index += 1
             text_to_add = ""
             if next_marked == i+1:

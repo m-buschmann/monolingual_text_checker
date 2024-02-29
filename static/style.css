@@ -7,17 +7,6 @@ html, body {
     height: 100%; /* Ensures that the body takes full height */
   }
 
-style_sensitive_word_highlight {
-    background: var(--lang-color);
-    padding: .2em;
-    font-style: italic;
-    cursor: pointer;
-    border: none;
-    display: inline;
-    font-size: inherit;
-    font-family: inherit;
-}
-
 /* class for the mint stripes */
 .mint-stripes {
   z-index: -1;
@@ -28,8 +17,8 @@ style_sensitive_word_highlight {
   height: 30%; 
   background: repeating-linear-gradient(
     -45deg,
-    #9cdcb2,
-    #9cdcb2 50px,
+    var(--green),
+    var(--green) 50px,
     transparent 50px,
     transparent 100px
   );
@@ -45,8 +34,8 @@ style_sensitive_word_highlight {
     height: 50%; 
     background: repeating-linear-gradient(
       45deg,
-      #ceb9d2,
-      #ceb9d2 50px, /* Width of the colored stripe */
+      var(--purple),
+      var(--purple) 50px, /* Width of the colored stripe */
       transparent 50px, /* Width of the gap */
       transparent 100px /* Twice the width of the colored stripe for the full cycle */
     );
@@ -78,7 +67,7 @@ h1, h3 {
 }
 
 .radio-buttons input[type="radio"]:checked + label {
-    background-color: #68cda9;
+    background-color: var(--green);
     color: #fff;
 }
 
@@ -93,7 +82,7 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-    background-color: #ffc99e;
+    background-color: var(--orange);
 }
 
 /* Styles for the text box and highlighting */
@@ -153,7 +142,7 @@ textarea {
 mark {
     border-radius: 3px;
     color: transparent;
-    background-color: #9cdcb2;
+    background-color: var(--green);
 }
 
 
@@ -216,15 +205,14 @@ mark {
   :root {
 
     --lightgray: #efefef;
-  
     --blue: steelblue;
-  
     --white: #fff;
-  
     --black: rgba(0, 0, 0, 0.8);
-  
+    --purple: #ceb9d2 ;
+    --orange: #ffc99e;
+    --green: #9cdcb2;
+    --red: #DB5646;
     --bounceEasing: cubic-bezier(0.51, 0.92, 0.24, 1.15);
-  
   }
   
   * {
@@ -337,7 +325,6 @@ mark {
   .modal.is-visible {
   
     visibility: visible;
-  
     opacity: 1;
   
   }
