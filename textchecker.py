@@ -232,9 +232,11 @@ def create_marked_html(text, term_indices, terms, language):
 
     for i,word in enumerate(text):
         # add to the text until text should be marked changes
+        word =  "\"" if word == "``" else word # TODO change this in the future to not be hardcoded
         text_to_add += word + " "
-        if text[i] in ",;.:-_!?": # TODO check for all non special characters
+        if not text[i].isalpha(): # check for all non special characters
             text_to_add = text_to_add[:-1]
+            print("removing non alpha", text[i])
 
         if next_marked!=-1 and i+1>next_marked:
             next_marked = indices.pop(0) if len(indices)>0 else -1
@@ -273,7 +275,7 @@ def create_marked_html(text, term_indices, terms, language):
 
     # add the last part of the text if there is something to add
     if text_should_be_marked and text_to_add:
-        marked_html += highlight.format(text_to_add.rstrip(), terms[term_index].term, terms[term_index].description, "todo terms")
+        marked_html += highlight.format(text_to_add.rstrip(), popups, color=color)
     elif text_to_add:
         marked_html += span.format(text_to_add.rstrip())
 
@@ -429,7 +431,7 @@ def create_popup_html(term, language, starting_modal_id):
         
     # sort by rating
     sorted_indices = np.argsort(np.array(alt_mean_rating_list).flatten())
-    sorted_alternatives = np.array(alternatives_list)[sorted_indices[::-1]] # TODO: higher is better?
+    sorted_alternatives = np.array(alternatives_list)[sorted_indices[::-1]]
     
     complete_list = ""+alternative_list.format(list="".join(sorted_alternatives))
 
