@@ -173,7 +173,7 @@ mark {
 .popup .popuptext {
   font-size: small;
   visibility: hidden;
-  width: 300px;
+  width: 360px;
   background-color: #eda37b;;
   color: #2b2b2b;
   text-align: left;
@@ -183,7 +183,7 @@ mark {
   z-index: 1;
   top: 120%;
   left: 50%;
-  margin-left: -150px;
+  margin-left: -180px;
   padding-left: 20px;
   padding-right: 50px;
   overflow-x: visible;
@@ -272,6 +272,19 @@ mark {
   cursor: default;
 }
 
+.alt-item-div {
+  display: inline; 
+  align-items: center; 
+  gap: 10px;
+}
+
+.popup-inline {
+  display: inline;
+}
+
+li::marker {
+  display: inline-table;
+}
 
 
 .modal-dialog > * {
