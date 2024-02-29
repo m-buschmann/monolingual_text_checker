@@ -8569,5 +8569,69 @@
             "context-specificity",
             "tone-and-attitude"
         ]
+    },
+    {
+        "id": "MT1el1fFQgEQUT0fwnxk",
+        "relatedTerms": [],
+        "creator": {
+            "displayName": "Team",
+            "id": ""
+        },
+        "createdAt": "2022-01-28T06:22:45.151Z",
+        "value": "Rasse",
+        "variants": [],
+        "lang": "de",
+        "commentCount": 0,
+        "adminComment": {
+            "langA": "",
+            "langB": ""
+        },
+        "definition": {
+            "langA": "",
+            "langB": "(S.) Der Begriff Rasse ist im deutschen Sprachgebrauch problematisch, da es sich um einen biologischen Terminus handelt, der Individuen aufgrund physischer Unterschiede, wie beispielsweise der Hautfarbe, unterscheidet."
+        },
+        "adminTags": {
+            "hideFromList": false,
+            "showInSidebar": false,
+            "translationsAsVariants": false,
+            "notOnlyPolitical": false,
+            "hightlightLandingPage": false,
+            "disableExamples": false,
+            "enableCommentsOnTranslations": false
+        },
+        "guidelines": [
+        ]
+    },
+    {
+        "id": "MT1el24jvkgEQUT0fwnxk",
+        "relatedTerms": [],
+        "creator": {
+            "displayName": "Team",
+            "id": ""
+        },
+        "createdAt": "2022-01-28T06:22:45.151Z",
+        "value": "Mensch mit BeHinderung",
+        "variants": [],
+        "lang": "de",
+        "commentCount": 0,
+        "adminComment": {
+            "langA": "",
+            "langB": ""
+        },
+        "definition": {
+            "langA": "",
+            "langB": "(S.)"
+        },
+        "adminTags": {
+            "hideFromList": false,
+            "showInSidebar": false,
+            "translationsAsVariants": false,
+            "notOnlyPolitical": false,
+            "hightlightLandingPage": false,
+            "disableExamples": false,
+            "enableCommentsOnTranslations": false
+        },
+        "guidelines": [
+        ]
     }
 ]

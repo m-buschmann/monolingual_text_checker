@@ -59,6 +59,8 @@ def insert_data():
             return f"{next(id_counter):020}"
             # Step 1: Collect translation relationships
         
+        # Two terms appear together in the AlternativeTerm list if they share at least one translation, 
+        # indicating they are contextually related or interchangeable in some scenarios
         translation_to_terms = {}  # Maps a translation to all terms that include it
         for item in data:
             for translation in item.get('translations', []):

@@ -28,8 +28,8 @@ style_sensitive_word_highlight {
   height: 30%; 
   background: repeating-linear-gradient(
     -45deg,
-    #88efbc,
-    #88efbc 50px,
+    #9cdcb2,
+    #9cdcb2 50px,
     transparent 50px,
     transparent 100px
   );
@@ -45,8 +45,8 @@ style_sensitive_word_highlight {
     height: 50%; 
     background: repeating-linear-gradient(
       45deg,
-      #c8a2c8,
-      #c8a2c8 50px, /* Width of the colored stripe */
+      #ceb9d2,
+      #ceb9d2 50px, /* Width of the colored stripe */
       transparent 50px, /* Width of the gap */
       transparent 100px /* Twice the width of the colored stripe for the full cycle */
     );
