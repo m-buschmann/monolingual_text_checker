@@ -340,51 +340,51 @@ def report():
 def create_popup_html(term, language, starting_modal_id):
     # templates
     alternative_heading = "Alternative terms" if language=="english" else "Alternative Begriffe"
-    popup = "<div class='popuptext'><h3><a href=\"{term_base_url}{term_id}\">{term_term}</a>{report}</h3><p>{term_description}<p><h4>{alternative_heading}</h4>{alternative_list}</div>"
+    popup = "<div class='popuptext'><h3><a href=\"{term_base_url}{term_id}\" class='term-link'>{term_term}</a>{report}</h3><p>{term_description}<p><h4>{alternative_heading}</h4>{alternative_list}</div>"
     alternative_list = "<ol>{list}</ol>"
-    list_item = "<li><a href=\"{term_base_url}{term_id}\">{term_term}</a> {alt_rating} {rate} {report}</li>"
+    list_item = "<li><a href=\"{term_base_url}{term_id}\" class='alternative-term-link'>{term_term}</a> {alt_rating} {rate} {report}</li>"
 
     button_html = "<button type=\"button\" class=\"open-modal\" data-open=\"modal{modal_id}\">{button_text}</button>"
     offensive_modal_html = "<div class=\"modal\" id=\"modal{modal_id}\"><div class=\"modal-dialog\"><header class=\"modal-header\"><button class=\"close-modal\" aria-label=\"close modal\" data-close>✕</button></header><section class=\"modal-content\">Do you want to mark the term \"{term}\" as offensive?<button class=\"mark-offensive\" onclick=\"mark_offensive('{term_id}')\" data-close>Yes</button><button class=\"close-modal\" aria-label=\"close modal\" data-close>No</button></section></div></div>"
     rating_modal_html = """ <div class="modal" id="modal{modal_id}">
-  <div class="modal-dialog">
-    <header class="modal-header">
-      Rate "{alternative_term}" as alternative to "{original_term}"
-      <button class="close-modal" aria-label="close modal" data-close>✕</button>
-    </header>
-    <section class="modal-content">
-      <p>Select how good of an alternative "{alternative_term}" is for the original term "{original_term}"</p>
-      <fieldset id="rate{modal_id}">      
-        <div>
-          <input type="radio" id="1" name="alternative_rating" value="1" checked />
-          <label for="1">1 - Bad alternative, do not use</label>
+        <div class="modal-dialog">
+            <header class="modal-header">
+            Rate "{alternative_term}" as alternative to "{original_term}"
+            <button class="close-modal" aria-label="close modal" data-close>✕</button>
+            </header>
+            <section class="modal-content">
+            <p>Select how good of an alternative "{alternative_term}" is for the original term "{original_term}"</p>
+            <fieldset id="rate{modal_id}">      
+                <div>
+                <input type="radio" id="1" name="alternative_rating" value="1" checked />
+                <label for="1">1 - Bad alternative, do not use</label>
+                </div>
+            
+                <div>
+                <input type="radio" id="2" name="alternative_rating" value="2" />
+                <label for="2">2 - Inappropriate alternative</label>
+                </div>
+            
+                <div>
+                <input type="radio" id="3" name="alternative_rating" value="3" />
+                <label for="3">3 - Appropriate alternative, both terms can be used interchangibly without affecting meaning or sensitivity</label>
+                </div>
+            
+                <div>
+                <input type="radio" id="4" name="alternative_rating" value="4" />
+                <label for="4">4 - Good alternative</label>
+                </div>
+            
+                <div>
+                <input type="radio" id="5" name="alternative_rating" value="5" />
+                <label for="5">5 - Great alternative, always replace the original with this</label>
+                </div>
+            </fieldset>
+            <button class="rate-alternative" term_id={term_id} alt_id={alt_term_id} data-open={modal_id} data-close rate-alternative>Submit rating</button>
+            <button class="close-modal" aria-label="close modal" data-close>Cancel</button>
+            </section>
         </div>
-      
-        <div>
-          <input type="radio" id="2" name="alternative_rating" value="2" />
-          <label for="2">2 - Inappropriate alternative</label>
-        </div>
-      
-        <div>
-          <input type="radio" id="3" name="alternative_rating" value="3" />
-          <label for="3">3 - Appropriate alternative, both terms can be used interchangibly without affecting meaning or sensitivity</label>
-        </div>
-      
-        <div>
-          <input type="radio" id="4" name="alternative_rating" value="4" />
-          <label for="4">4 - Good alternative</label>
-        </div>
-      
-        <div>
-          <input type="radio" id="5" name="alternative_rating" value="5" />
-          <label for="5">5 - Great alternative, always replace the original with this</label>
-        </div>
-      </fieldset>
-      <button class="rate-alternative" term_id={term_id} alt_id={alt_term_id} data-open={modal_id} data-close rate-alternative>Submit rating</button>
-      <button class="close-modal" aria-label="close modal" data-close>Cancel</button>
-    </section>
-  </div>
-</div>"""
+        </div>"""
 
 
     

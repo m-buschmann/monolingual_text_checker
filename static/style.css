@@ -174,8 +174,8 @@ mark {
   font-size: small;
   visibility: hidden;
   width: 300px;
-  background-color: #61ad7c;
-  color: #fff;
+  background-color: #eda37b;;
+  color: #2b2b2b;
   text-align: center;
   border-radius: 6px;
   padding: 8px 0;
@@ -341,3 +341,14 @@ mark {
 
 }
 
+/* Style for main term links */
+.term-link {
+  color: #306141; /* Example: blue color for main term links */
+  text-decoration: underline; /* Underline to signify it's clickable */
+}
+
+/* Style for alternative term links */
+.alternative-term-link {
+  color: #396d4b; /* Example: green color for alternative term links */
+  text-decoration: none; /* No underline */
+}
