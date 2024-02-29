@@ -193,6 +193,11 @@ mark {
   list-style-position: inside;
 }
 
+.popup .popuptext ol li {
+  margin-bottom: 0.5px; /* Reduce the space between list items */
+  padding: 0.5px 0; /* Adjust padding for top and bottom as needed */
+}
+
 /* Popup arrow */
 .popup .popuptext::before {
   content: "";
@@ -313,4 +318,6 @@ mark {
 .alternative-term-link {
   color: #396d4b; /* Example: green color for alternative term links */
   text-decoration: none; /* No underline */
+  margin-top: 0.5px;
+  margin-bottom: 0.5px;
 }
