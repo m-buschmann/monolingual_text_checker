@@ -73,7 +73,7 @@ h1, h3 {
 }
 
 /* Styles for the "Check" button */
-button[type="submit"], button[type="button"] {
+button[type="submit"], button[type="edit_text"] {
     cursor: pointer;
     padding: 10px 20px;
     border: 2px solid #ff7f43;
@@ -82,7 +82,7 @@ button[type="submit"], button[type="button"] {
     margin-left: 20px;
 }
 
-button[type="submit"]:hover, button[type="button"]:hover {
+button[type="submit"]:hover, button[type="edit_text"]:hover {
     background-color: var(--orange);
 }
 
