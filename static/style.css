@@ -86,6 +86,15 @@ button[type="submit"]:hover, button.edit:hover {
     background-color: var(--orange);
 }
 
+.open-modal{
+  cursor: pointer;
+  padding: 2px 2px;
+  border: 2px solid #bd8dd7;
+  background-color: #ceb9d2;
+  margin-top: 2px; 
+  margin-left: 5px;
+}
+
 /* Styles for the text box and highlighting */
  *, *::before, *::after {
 box-sizing: border-box;
