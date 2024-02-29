@@ -87,12 +87,12 @@ button[type="submit"]:hover, button.edit:hover {
 }
 
 .open-modal{
-cursor: pointer;
-padding: 2px 2px;
-border: 2px solid #bd8dd7;
-background-color: #ceb9d2;
-margin-top: 2px; 
-margin-left: 5px;
+  cursor: pointer;
+  padding: 2px 2px;
+  border: 2px solid #bd8dd7;
+  background-color: #ceb9d2;
+  margin-top: 2px; 
+  margin-left: 5px;
 }
 
 /* Styles for the text box and highlighting */
@@ -176,7 +176,7 @@ mark {
   width: 300px;
   background-color: #eda37b;;
   color: #2b2b2b;
-  text-align: center;
+  text-align: left;
   border-radius: 6px;
   padding: 8px 0;
   position: absolute;
@@ -184,6 +184,13 @@ mark {
   top: 120%;
   left: 50%;
   margin-left: -150px;
+  padding-left: 20px;
+  padding-right: 50px;
+  overflow-x: visible;
+}
+
+.popup .popuptext ol {
+  list-style-position: inside;
 }
 
 /* Popup arrow */
@@ -195,7 +202,7 @@ mark {
   margin-left: -5px;
   border-width: 5px;
   border-style: solid;
-  border-color: #555 transparent transparent transparent;
+  border-color: #eda37b transparent transparent transparent;
   transform: scale(1, -1);
 }
 
@@ -228,117 +235,72 @@ mark {
 }
 
 * {
-
   padding: 0;
-
   margin: 0;
-
 }
 
 
 .modal { 
-
   position: fixed;
-
   top: 0;
-
   left: 0;
-
   right: 0;
-
   bottom: 0;
-
   display: flex;
-
   align-items: center;
-
   justify-content: center;
-
   padding: 1rem;
-
   background: var(--black);
-
   cursor: pointer;
-
   visibility: hidden;
-
   opacity: 0;
-
   transition: all 0.35s ease-in;
-
 }
 
 .modal-dialog {
-
   position: relative;
-
   max-width: 800px;
-
   max-height: 80vh;
-
   border-radius: 5px;
-
   background: var(--white);
-
   overflow: auto;
-
   cursor: default;
-
 }
 
 
 
 .modal-dialog > * {
-
   padding: 1rem;
-
 }
 
 .modal-header,
-
 .modal-footer {
-
   background: var(--lightgray);
-
 }
 
 .modal-header {
-
   display: flex;
-
   align-items: center;
-
   justify-content: space-between;
-
 }
 
 .modal-header .modal-close {
-
   font-size: 1.5rem;
-
 }
 
 .modal p + p {
-
   margin-top: 1rem;
-
 }
 
 .modal {
-
   visibility: hidden;
-
   opacity: 0;
-
   transition: all 0.35s ease-in;
-
 }
 
 .modal.is-visible {
-
   visibility: visible;
   opacity: 1;
-
 }
 
 /* Style for main term links */
