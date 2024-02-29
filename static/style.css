@@ -43,6 +43,7 @@ html, body {
 
 /* Style for the permanent text shown */ 
 h1, h3 {
+    margin-top: 30px;
     font-family: Courier New, monospace;
     margin-left: 40px;
     color:  #1e5166;
@@ -72,7 +73,7 @@ h1, h3 {
 }
 
 /* Styles for the "Check" button */
-button[type="submit"] {
+button[type="submit"], button.edit {
     cursor: pointer;
     padding: 10px 20px;
     border: 2px solid #ff7f43;
@@ -81,8 +82,17 @@ button[type="submit"] {
     margin-left: 20px;
 }
 
-button[type="submit"]:hover {
+button[type="submit"]:hover, button.edit:hover {
     background-color: var(--orange);
+}
+
+.open-modal{
+  cursor: pointer;
+  padding: 2px 2px;
+  border: 2px solid #bd8dd7;
+  background-color: #ceb9d2;
+  margin-top: 2px; 
+  margin-left: 5px;
 }
 
 /* Styles for the text box and highlighting */
@@ -96,7 +106,9 @@ box-sizing: border-box;
 }
 
 .highlights, textarea {
-    padding: 10px;
+    padding-top: 20px;
+    padding-left: 90px;
+    padding-right: 90px;
     font: 20px/28px 'Open Sans', sans-serif;
     letter-spacing: 1px;
 }
@@ -162,7 +174,7 @@ mark {
     font-size: small;
     visibility: hidden;
     width: 300px;
-    background-color: #555;
+    background-color: #61ad7c;
     color: #fff;
     text-align: center;
     border-radius: 6px;
