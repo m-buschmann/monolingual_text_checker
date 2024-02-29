@@ -79,14 +79,14 @@ def insert_data():
         for term, alternatives in term_to_alternatives.items():
             term_to_alternatives[term] = list(set(alternatives))
 
-        # Step 2: Update terms with alternatives list
-        # Insert terms
+        # build single terms
         for item in data:
             language = "german" if item['lemma_lang'] == 'de' else "english"
             term_id = value_to_id.get(item['lemma'])
             
             # Check if term definition exists and is not None
             term_def = value_to_def.get(item['lemma'], None)
+            # find definitions
             if term_def:
                 definition_key = "langB" if language == "german" else "langA"
                 definition = term_def.get(definition_key, "")
@@ -100,9 +100,11 @@ def insert_data():
                     if not Term.query.filter_by(id=potential_new_id).first():
                         term_id = potential_new_id
                         break
-            # Update to use collected relationships for alternatives_list
+            
             try:
+                # Update to use collected relationships for alternatives_list
                 alternatives_list = json.dumps(term_to_alternatives[item['lemma']], ensure_ascii=False)
+                # build term object
                 term = Term(
                     id=term_id,
                     term=bytes(item['lemma'], "utf-8").decode("utf-8"), 
