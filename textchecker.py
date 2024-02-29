@@ -129,10 +129,6 @@ def create_marked_html(text, term_indices, terms, language):
     returns:
         marked_html: html containing the text in the format needed to display it with highlights
     """
-
-    print("text", text)
-    print("term_indices", term_indices)
-    print("terms", terms)
     if len(term_indices) == 0:
         return text
 
@@ -149,14 +145,12 @@ def create_marked_html(text, term_indices, terms, language):
     modals = ""
 
     for i,word in enumerate(text):
-        print(i, word, next_marked, text_should_be_marked)
         # add to the text until text should be marked changes
         text_to_add += word + " "
         if text[i] in ",;.:-_!?": # TODO check for all non special characters
             text_to_add = text_to_add[:-1]
 
         if next_marked!=-1 and i+1>next_marked:
-            print("1")
             next_marked = indices.pop(0) if len(indices)>0 else -1
             #term_index += 1
             # current text is currently should be marked
@@ -166,7 +160,6 @@ def create_marked_html(text, term_indices, terms, language):
 
 
         if next_marked == i+1 and not text_should_be_marked and text_to_add:
-            print("2")
             # text should be marked next but isn't currently
             # create a span with the current text
             marked_html += span.format(text_to_add)
@@ -250,14 +243,10 @@ def create_popup_html(term, language, starting_modal_id):
     alternative_heading = "Alternative terms" if language=="english" else "Alternative Begriffe"
     popup = "<div class='popuptext'><h3>{term_term}{report}</h3><p>{term_description}<p><h4>{alternative_heading}</h4>{alternative_list}</div>"
     alternative_list = "<ol>{list}</ol>"
-    report_string = "<a href=\"{report_url}\">Report</a>"
     list_item = "<li><a href=\"{term_base_url}{term_id}\">{term_term}</a> {alt_rating} {rate} {report}</li>"
 
     button_html = "<button type=\"button\" class=\"open-modal\" data-open=\"modal{modal_id}\">{button_text}</button>"
     offensive_modal_html = "<div class=\"modal\" id=\"modal{modal_id}\"><div class=\"modal-dialog\"><header class=\"modal-header\"><button class=\"close-modal\" aria-label=\"close modal\" data-close>✕</button></header><section class=\"modal-content\">Do you want to mark the term {term} as offensive?<button class=\"mark-offensive\" onclick=\"mark_offensive('{term_id}')\" data-close>Yes</button><button class=\"close-modal\" aria-label=\"close modal\" data-close>No</button></section></div></div>"
-    #button_html.format(modal_id=1, button_text="Mark as offensive")
-    #offensive_modal_html.format(modal_id=1, term=term.term, term_id=term.id)
-
     rating_modal_html = """ <div class="modal" id="modal{modal_id}">
   <div class="modal-dialog">
     <header class="modal-header">
@@ -313,8 +302,6 @@ def create_popup_html(term, language, starting_modal_id):
 
     all_modals = ""
 
-    
-
     for alt_term in alternatives:
         # get the term object
         alternative_term_object = Term.query.get(alt_term.alternative_term_id)
@@ -322,7 +309,6 @@ def create_popup_html(term, language, starting_modal_id):
         # get the average rating for the term
         avg = AlternativeRating.query.filter(AlternativeRating.term_id==term.id, AlternativeRating.alternative_term_id==alternative_term_object.id).with_entities(func.avg(AlternativeRating.rating)).first()
         
-        print("avg", avg)
         # if there are no ratings set the average to the middle value
         a = avg[0] if avg[0] is not None else 2.5
         alt_mean_rating_list.append(a)
@@ -331,20 +317,15 @@ def create_popup_html(term, language, starting_modal_id):
 
         # get the url for the rate function
         rate_url = url_for('rate_alternative', original_id=term.id, alternative_id=alternative_term_object.id)
-        #report = report_string.format(report_url=url_for('report', term_id=alternative_term_object.id))
         report = button_html.format(modal_id=modal_id, button_text="Mark as offensive")
-        
-        print(report)
         
         # create modal and add it to the string with all modals
         modal = offensive_modal_html.format(modal_id=modal_id, term=alternative_term_object.term, term_id=alternative_term_object.id)
-        print(modal)
         all_modals = all_modals + modal
         modal_id += 1
 
         rate = button_html.format(modal_id=modal_id, button_text="Rate")
         modal = rating_modal_html.format(term_id=term.id, alt_term_id=alternative_term_object.id, modal_id=modal_id, alternative_term=alternative_term_object.term, original_term=term.term)
-        print(modal)
         all_modals = all_modals + modal
         modal_id += 1
         

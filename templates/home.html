@@ -29,7 +29,7 @@
     </div>
     <br>
     <button type="submit">Check</button>
-    <button id="edit_text">Edit text</button>
+    <button type="button" id="edit_text">Edit text</button>
   </form>
   <div id="modal_container">
 
@@ -41,33 +41,32 @@
   var backdrop = document.getElementById("backdrop");
   var modal_container = document.getElementById("modal_container");
 
-      // this function was taken from an answer on StackOverflow from user allenhwkim: https://stackoverflow.com/a/47614491
+  // this function was taken from an answer on StackOverflow from user allenhwkim: https://stackoverflow.com/a/47614491
+  function setInnerHTML(elm, html) {
+    elm.innerHTML = html;
     
-      function setInnerHTML(elm, html) {
-        elm.innerHTML = html;
+    Array.from(elm.querySelectorAll("script"))
+        .forEach( oldScriptEl => {
+        const newScriptEl = document.createElement("script");
         
-        Array.from(elm.querySelectorAll("script"))
-            .forEach( oldScriptEl => {
-            const newScriptEl = document.createElement("script");
-            
-            Array.from(oldScriptEl.attributes).forEach( attr => {
-                newScriptEl.setAttribute(attr.name, attr.value) 
-            });
-            
-            const scriptText = document.createTextNode(oldScriptEl.innerHTML);
-            newScriptEl.appendChild(scriptText);
-            
-            oldScriptEl.parentNode.replaceChild(newScriptEl, oldScriptEl);
+        Array.from(oldScriptEl.attributes).forEach( attr => {
+            newScriptEl.setAttribute(attr.name, attr.value) 
         });
-    }
+        
+        const scriptText = document.createTextNode(oldScriptEl.innerHTML);
+        newScriptEl.appendChild(scriptText);
+        
+        oldScriptEl.parentNode.replaceChild(newScriptEl, oldScriptEl);
+    });
+  }
 
   
-
   var textarea = document.getElementById("textarea");
   var edit_button= document.getElementById("edit_text");
   edit_button.addEventListener("click", (event) =>{
     console.log(textarea);
     textarea.style.pointerEvents = "all";
+    backdrop.style.visibility = "invisible";
   });
 
   textarea.addEventListener("scroll",(event) => {
@@ -96,9 +95,7 @@
     })
     .then(data => {
       console.log("data", data);
-
-
-
+      sendData();
     })
     .catch(error => {
         console.error('There was a problem with the fetch operation:', error);
@@ -129,9 +126,8 @@
     })
     .then(data => {
       console.log("data", data);
-
-
-
+      // check again to update popups
+      sendData();
     })
     .catch(error => {
         console.error('There was a problem with the fetch operation:', error);
@@ -150,24 +146,7 @@
     console.log(t.target);
     t.target.childNodes[1].style.visibility = "hidden";
   }
-  
-  // const overlay = document.getElementById("overlay");
-  // overlay.addEventListener("mouseover", function(event) {
-  //       const target = event.target;
-        
-  //       // Check if the mouseover target is a mark
-  //       if (target.classList.contains("mark")) {
-  //           // Show the popup
-  //           showPopup(event);
-  //       }
-  //   });
-
-  // // Add event listeners to handle mouseout events to hide the popup
-  // overlay.addEventListener("mouseout", function(event) {
-  //     hidePopup(event);
-  // });
   var modals = "";
-
 
   var container = document.getElementById("container");
   const form = document.querySelector("#textform");
@@ -199,9 +178,8 @@
         });
         edit_button.addEventListener("click", (event) =>{
           console.log(textarea2);
-          //textarea2.style.pointerEvents = "all";
           textarea2.style.pointerEvents = "all";
-          // textarea2.style.setProperty("background-color", "blue", "important");
+          backdrop.style.visibility = "hidden";
         });
 
         const openEls = document.querySelectorAll("[data-open]");
@@ -260,9 +238,6 @@
             document.querySelector(".modal.is-visible").classList.remove(isVisible);
           }
         });
-        
-
-
         var marks = document.querySelectorAll('.popup');
         for (var i = 0; i < marks.length; i++) {
 
@@ -271,6 +246,7 @@
           marks[i].addEventListener("mouseleave", hidePopup, marks[i]);
         }     
         textarea2.style.pointerEvents = "none";
+        backdrop.style.visibility = "visible";
        // textarea2.style.setProperty("background-color", "red");
 
     })
@@ -304,8 +280,6 @@
       document.querySelector(".modal.is-visible").classList.remove(isVisible);
     }
   });
-
-
 
 
   var marks = document.querySelectorAll('.popup');
