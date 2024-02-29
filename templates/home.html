@@ -31,11 +31,35 @@
     <button type="submit">Check</button>
     <button id="edit_text">Edit text</button>
   </form>
+  <div id="modal_container">
+
+  </div>
 
 </body>
 
 <script>
   var backdrop = document.getElementById("backdrop");
+  var modal_container = document.getElementById("modal_container");
+
+      // this function was taken from an answer on StackOverflow from user allenhwkim: https://stackoverflow.com/a/47614491
+    
+      function setInnerHTML(elm, html) {
+        elm.innerHTML = html;
+        
+        Array.from(elm.querySelectorAll("script"))
+            .forEach( oldScriptEl => {
+            const newScriptEl = document.createElement("script");
+            
+            Array.from(oldScriptEl.attributes).forEach( attr => {
+                newScriptEl.setAttribute(attr.name, attr.value) 
+            });
+            
+            const scriptText = document.createTextNode(oldScriptEl.innerHTML);
+            newScriptEl.appendChild(scriptText);
+            
+            oldScriptEl.parentNode.replaceChild(newScriptEl, oldScriptEl);
+        });
+    }
 
   
 
@@ -50,6 +74,70 @@
     var scrollTop = textarea.scrollTop;
     backdrop.scrollTop = scrollTop;
   });
+
+  async function mark_offensive(term_id) {
+    console.log("marking as offensive", term_id);
+    const data = new URLSearchParams();
+    data.append("term_id", term_id);
+
+    fetch("{{ url_for('report') }}", {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: data,
+        
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.text();
+    })
+    .then(data => {
+      console.log("data", data);
+
+
+
+    })
+    .catch(error => {
+        console.error('There was a problem with the fetch operation:', error);
+    });
+
+  }
+
+  async function rateAlternative(term_id, alt_id, rating) {
+    console.log("rating function", term_id, alt_id, rating);
+    const data = new URLSearchParams();
+    data.append("original_id", term_id);
+    data.append("alternative_id", alt_id);
+    data.append("rating", rating);
+
+    fetch("{{ url_for('rate_alternative') }}", {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: data,
+        
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.text();
+    })
+    .then(data => {
+      console.log("data", data);
+
+
+
+    })
+    .catch(error => {
+        console.error('There was a problem with the fetch operation:', error);
+    });
+
+  }
 
   function showPopup(t){
     console.log("hover");
@@ -78,6 +166,7 @@
   // overlay.addEventListener("mouseout", function(event) {
   //     hidePopup(event);
   // });
+  var modals = "";
 
 
   var container = document.getElementById("container");
@@ -95,11 +184,12 @@
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
-        return response.text();
+        return response.json();
     })
     .then(data => {
-        
-        container.innerHTML = data;
+      console.log("data", data);
+        setInnerHTML(container, data.textarea);
+
         // attatch new event listeners
         backdrop = document.getElementById("backdrop");
         var textarea2 = document.getElementById("textarea");
@@ -113,23 +203,65 @@
           textarea2.style.pointerEvents = "all";
           // textarea2.style.setProperty("background-color", "blue", "important");
         });
+
+        const openEls = document.querySelectorAll("[data-open]");
+
+        const isVisible = "is-visible";
+        setInnerHTML(modal_container, data.modals);
+
+        for(const el of openEls) {
+          el.addEventListener("click", function() {
+            const modalId = this.dataset.open;
+
+            console.log("clicked button", this, modalId);
+            document.getElementById(modalId).classList.add(isVisible);
+          });
+        }
+
+        const rateEls = document.querySelectorAll("[rate-alternative]");
+        console.log("rateels", rateEls)
+
+        for(const el of rateEls) {
+          el.addEventListener("click", function() {
+            const modalId = this.dataset.open;
+            console.log("clicked button", this, modalId);
+            console.log("mid", this.getAttribute("data-open"));
+            // get the rating
+            var f_id = 'rate'+modalId
+            console.log("fid", f_id)
+            var fieldset = document.getElementById(f_id);
+            var selectedRadioButton = fieldset.querySelector('input[name="alternative_rating"]:checked');
+            var rating = 3;
+            if (selectedRadioButton) {
+              console.log('Selected value:', selectedRadioButton.value);
+              rating = selectedRadioButton.value;
+            } else {
+              console.log('No radio button selected.');
+            }
+
+            console.log("t1");
+
+            // call rating
+            rateAlternative(this.getAttribute("term_id"), this.getAttribute("alt_id"), rating);
+            console.log("t2");
+
+          });
+        }
+
+        const closeEls = document.querySelectorAll("[data-close]");
+        for (const el of closeEls) {
+          el.addEventListener("click", function() {
+            this.parentElement.parentElement.parentElement.classList.remove(isVisible);
+          });
+        }
+
+        document.addEventListener("click", e => {
+          if (e.target == document.querySelector(".modal.is-visible")) {
+            document.querySelector(".modal.is-visible").classList.remove(isVisible);
+          }
+        });
         
 
-        // const overlay = document.getElementById("overlay");
-        // overlay.addEventListener("mouseover", function(event) {
-        //       const target = event.target;
-              
-        //       // Check if the mouseover target is a mark
-        //       if (target.classList.contains("mark")) {
-        //           // Show the popup
-        //           showPopup(event);
-        //       }
-        //   });
-
-        // // Add event listeners to handle mouseout events to hide the popup
-        // overlay.addEventListener("mouseout", function(event) {
-        //     hidePopup(event);
-        // });
 
         var marks = document.querySelectorAll('.popup');
         for (var i = 0; i < marks.length; i++) {
@@ -147,6 +279,34 @@
     });
 
   }
+
+  const openEls = document.querySelectorAll("[data-open]");
+
+  const isVisible = "is-visible";
+
+  for(const el of openEls) {
+    el.addEventListener("click", function() {
+      const modalId = this.dataset.open;
+      console.log("clicked button", this, modalId);
+      document.getElementById(modalId).classList.add(isVisible);
+    });
+  }
+
+  const closeEls = document.querySelectorAll("[data-close]");
+  for (const el of closeEls) {
+    el.addEventListener("click", function() {
+      this.parentElement.parentElement.parentElement.classList.remove(isVisible);
+    });
+  }
+
+  document.addEventListener("click", e => {
+    if (e.target == document.querySelector(".modal.is-visible")) {
+      document.querySelector(".modal.is-visible").classList.remove(isVisible);
+    }
+  });
+
+
+
 
   var marks = document.querySelectorAll('.popup');
   for (var i = 0; i < marks.length; i++) {
