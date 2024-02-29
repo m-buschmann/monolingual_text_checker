@@ -66,10 +66,10 @@ def submit():
     # Find sensitive terms in the user text
     indices, terms, split_text = find_sensitive_terms(clean_text, language)
 
-    marked_html, modals = create_marked_html(split_text, indices, terms, language)
+    marked_html, modals = create_marked_html(clean_text, split_text, indices, terms, language)
 
     # return json with the textarea template ad the modals
-    result = {"textarea": render_template("textarea.html", user_text=clean_text.lstrip(), indices=indices, terms=terms, marked_html=marked_html), 
+    result = {"textarea": render_template("textarea.html", user_text=clean_text, indices=indices, terms=terms, marked_html=marked_html), 
               "modals": modals,
               "detected": detected,
               "language": language.capitalize()}
@@ -209,10 +209,10 @@ def find_sensitive_terms(text, language='german'):
 
 
 
-def create_marked_html(text, term_indices, terms, language):
+def create_marked_html(text, split_text, term_indices, terms, language):
     """
     inputs
-        text: list of strings, can be turned into a text string by appending elements separated by a space
+        split_text: list of strings, can be turned into a text string by appending elements separated by a space
         indices: indices of the sensitive terms within the text list that are to be marked
 
     returns:
@@ -220,7 +220,7 @@ def create_marked_html(text, term_indices, terms, language):
     """
 
     if len(term_indices) == 0:
-        return text
+        return split_text
 
     marked_html = ""
     span = "{}"
@@ -229,27 +229,24 @@ def create_marked_html(text, term_indices, terms, language):
     text_to_add = ""
     next_marked = indices.pop(0)
     term_index = 0
-    term = terms[term_index]
     text_should_be_marked = True if next_marked==0 else False
     next_modal_id = 0
     modals = ""
 
-    for i,word in enumerate(text):
+
+    for i,word in enumerate(split_text):
+        # find the word in the text string, and get the previous whitespace
+        next_word_index = text.find(word)
+        whitespace = text[:next_word_index]
+        # remove the whitespace and word from the text to search for next time
+        text = text[next_word_index+len(word):]
+
         # add to the text until text should be marked changes
         word =  "\"" if word == "``" else word # TODO change this in the future to not be hardcoded
-        text_to_add += word + " "
-        if not text[i].isalpha(): # check for all non special characters
-            text_to_add = text_to_add[:-1]
-            print("removing non alpha", text[i])
+        text_to_add += whitespace + word
 
         if next_marked!=-1 and i+1>next_marked:
             next_marked = indices.pop(0) if len(indices)>0 else -1
-            #term_index += 1
-            # current text is currently should be marked
-            # create highlight
-
-        
-
 
         if next_marked == i+1 and not text_should_be_marked and text_to_add:
             # text should be marked next but isn't currently
@@ -269,7 +266,7 @@ def create_marked_html(text, term_indices, terms, language):
             if o_ratings > 4:
                 color = "var(--red)"
         
-            marked_html += highlight.format(text_to_add.rstrip(), popups, color=color)+" "
+            marked_html += whitespace + highlight.format(text_to_add.lstrip(), popups, color=color)
             term_index += 1
             text_to_add = ""
             if next_marked == i+1:
@@ -279,7 +276,7 @@ def create_marked_html(text, term_indices, terms, language):
 
     # add the last part of the text if there is something to add
     if text_should_be_marked and text_to_add:
-        marked_html += highlight.format(text_to_add.rstrip(), popups, color=color)
+        marked_html += whitespace + highlight.format(text_to_add.lstrip(), popups, color=color)
     elif text_to_add:
         marked_html += span.format(text_to_add.rstrip())
 
@@ -316,8 +313,6 @@ def rate_alternative():
 
 @app.route('/report', methods=["POST"])
 def report():
-    print("report")
-    print(request.form)
     # Handle exceptions 
     if not 'term_id' in request.form:
         return "No term_id provided", 400
@@ -342,15 +337,14 @@ def create_popup_html(term, language, starting_modal_id):
     alternative_heading = "Alternative terms" if language=="english" else "Alternative Begriffe"
     popup = "<div class='popuptext'><h3><a href=\"{term_base_url}{term_id}\" class='term-link'>{term_term}</a>{report}</h3><p>{term_description}<p><h4>{alternative_heading}</h4>{alternative_list}</div>"
     alternative_list = "<ol>{list}</ol>"
-    list_item = "<li><a href=\"{term_base_url}{term_id}\" class='alternative-term-link'>{term_term}</a> {alt_rating} {rate} {report}</li>"
-
+    list_item = "<li><div class=\"alt-item-div\"><a href=\"{term_base_url}{term_id}\" class='alternative-term-link'>{term_term}</a><div class=\"popup-inline\">{alt_rating}</div><div class=\"popup-inline\">{rate}</div><div class=\"popup-inline\">{report}</div></div></li>"
+    #list_item = """<li><div class="alt-item-div"><a href='{term_base_url}{term_id}' class='alternative-term-link'>{term_term}</a>{alt_rating}<div>{rate}</div><div>{report}</div></div></li>"""
     button_html = "<button type=\"button\" class=\"open-modal\" data-open=\"modal{modal_id}\">{button_text}</button>"
-    offensive_modal_html = "<div class=\"modal\" id=\"modal{modal_id}\"><div class=\"modal-dialog\"><header class=\"modal-header\"><button class=\"close-modal\" aria-label=\"close modal\" data-close>✕</button></header><section class=\"modal-content\">Do you want to mark the term \"{term}\" as offensive?<button class=\"mark-offensive\" onclick=\"mark_offensive('{term_id}')\" data-close>Yes</button><button class=\"close-modal\" aria-label=\"close modal\" data-close>No</button></section></div></div>"
+    offensive_modal_html = "<div class=\"modal\" id=\"modal{modal_id}\"><div class=\"modal-dialog\"><header class=\"modal-header\">Mark as offensive</header><section class=\"modal-content\"><p>Do you want to mark the term \"{term}\" as offensive?</p><button class=\"mark-offensive\" onclick=\"mark_offensive('{term_id}')\" data-close>Yes</button><button class=\"close-modal\" aria-label=\"close modal\" data-close>Cancel</button></section></div></div>"
     rating_modal_html = """ <div class="modal" id="modal{modal_id}">
         <div class="modal-dialog">
             <header class="modal-header">
             Rate "{alternative_term}" as alternative to "{original_term}"
-            <button class="close-modal" aria-label="close modal" data-close>✕</button>
             </header>
             <section class="modal-content">
             <p>Select how good of an alternative "{alternative_term}" is for the original term "{original_term}"</p>

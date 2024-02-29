@@ -45,7 +45,7 @@ background: repeating-linear-gradient(
 h1, h3 {
   margin-top: 30px;
   font-family: Courier New, monospace;
-  margin-left: 40px;
+  margin-left: 180px;
   color:  #1e5166;
 }
 
@@ -58,13 +58,16 @@ h1, h3 {
   display: none;
 }
 
+#button_container {
+  margin-left: 180px;
+}
+
 .radio-buttons label {
   cursor: pointer;
   padding: 10px 20px;
   border: 2px solid #000000;
   margin-right: 10px;
   background-color: #f0f0f0;
-  margin-left: 20px;
 }
 
 .radio-buttons input[type="radio"]:checked + label {
@@ -79,7 +82,6 @@ button[type="submit"], button.edit {
   border: 2px solid #ff7f43;
   background-color: #f0f0f0;
   margin-top: 10px; 
-  margin-left: 20px;
 }
 
 button[type="submit"]:hover, button.edit:hover {
@@ -87,12 +89,12 @@ button[type="submit"]:hover, button.edit:hover {
 }
 
 .open-modal{
-  cursor: pointer;
-  padding: 2px 2px;
-  border: 2px solid #bd8dd7;
-  background-color: #ceb9d2;
-  margin-top: 2px; 
-  margin-left: 5px;
+cursor: pointer;
+padding: 2px 2px;
+border: 2px solid var(--darkpurple);
+background-color: var(--purple);
+margin-top: 2px; 
+margin-left: 5px;
 }
 
 /* Styles for the text box and highlighting */
@@ -101,14 +103,11 @@ box-sizing: border-box;
 } 
 
 .container, .backdrop, textarea {
-  width: 90%;
   height: 280px;
 }
 
 .highlights, textarea {
-  padding-top: 20px;
-  padding-left: 90px;
-  padding-right: 90px;
+  padding: 20px;
   font: 20px/28px 'Open Sans', sans-serif;
   letter-spacing: 1px;
 }
@@ -117,43 +116,49 @@ box-sizing: border-box;
   display: block;
   transform: translateZ(0);
   -webkit-text-size-adjust: none;
-  margin-left: 20px;
+  width: 100%;
 }
 
 .backdrop {
   position: absolute;
-  z-index: 1;
-  border: 2px solid black;
-  background-color: #fff;
+  z-index: 3;
+  border: 2px solid transparent;
+  background-color: transparent;
   overflow: auto;
   pointer-events: none;
   transition: transform 1s;
+  padding-left: 180px;
+  padding-right: 180px;
+  width: 100%;
 }
 
 .highlights {
   white-space: pre-wrap;
   word-wrap: break-word;
-  color: transparent;
+  color: black;
+  background-color: transparent;
   pointer-events: all;
 }
 
 textarea {
   display: block;
   position: absolute;
-  z-index: 2;
-  margin: 0;
+  z-index: 0;
   border: 2px solid black;
   border-radius: 0;
-  background-color: transparent;
+  background-color: white;
   overflow: auto;
   resize: none;
   transition: transform 1s;
   pointer-events: all;
+  margin-left: 180px;
+  margin-right: 180px;
+  width: calc(100% - 360px);
 }
 
 mark {
   border-radius: 3px;
-  color: transparent;
+  color: black;
   background-color: var(--green);
 }
 
@@ -173,8 +178,8 @@ mark {
 .popup .popuptext {
   font-size: small;
   visibility: hidden;
-  width: 300px;
-  background-color: #eda37b;;
+  width: 360px;
+  background-color: var(--orange);
   color: #2b2b2b;
   text-align: left;
   border-radius: 6px;
@@ -183,7 +188,7 @@ mark {
   z-index: 1;
   top: 120%;
   left: 50%;
-  margin-left: -150px;
+  margin-left: -180px;
   padding-left: 20px;
   padding-right: 50px;
   overflow-x: visible;
@@ -193,6 +198,11 @@ mark {
   list-style-position: inside;
 }
 
+.popup .popuptext ol li {
+  margin-bottom: 0.5px; /* Reduce the space between list items */
+  padding: 0.5px 0; /* Adjust padding for top and bottom as needed */
+}
+
 /* Popup arrow */
 .popup .popuptext::before {
   content: "";
@@ -200,9 +210,9 @@ mark {
   top: -10px;
   left: 50%;
   margin-left: -5px;
-  border-width: 5px;
+  border-width: 8px;
   border-style: solid;
-  border-color: #eda37b transparent transparent transparent;
+  border-color: var(--orange) transparent transparent transparent;
   transform: scale(1, -1);
 }
 
@@ -222,12 +232,12 @@ mark {
 }
 
 :root {
-
   --lightgray: #efefef;
   --blue: steelblue;
   --white: #fff;
   --black: rgba(0, 0, 0, 0.8);
   --purple: #ceb9d2 ;
+  --darkpurple: #bd8dd7;
   --orange: #ffc99e;
   --green: #9cdcb2;
   --red: #DB5646;
@@ -265,8 +275,22 @@ mark {
   background: var(--white);
   overflow: auto;
   cursor: default;
+  font: 16px/20px 'Open Sans', sans-serif;
 }
 
+.alt-item-div {
+  display: inline; 
+  align-items: center; 
+  gap: 10px;
+}
+
+.popup-inline {
+  display: inline;
+}
+
+li::marker {
+  display: inline-table;
+}
 
 
 .modal-dialog > * {
@@ -275,7 +299,7 @@ mark {
 
 .modal-header,
 .modal-footer {
-  background: var(--lightgray);
+  background: var(--green);
 }
 
 .modal-header {
@@ -298,9 +322,28 @@ mark {
   transition: all 0.35s ease-in;
 }
 
+.modal button{
+  background-color: var(--green);
+  padding: 10px 20px;
+  border: 2px solid #000000;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+.modal fieldset{
+  margin-top: 10px;
+}
+.modal button .modal-close{
+  background-color: var(--orange);
+}
+
 .modal.is-visible {
   visibility: visible;
   opacity: 1;
+}
+
+.modal div {
+  margin: 5px;
 }
 
 /* Style for main term links */
@@ -313,4 +356,6 @@ mark {
 .alternative-term-link {
   color: #396d4b; /* Example: green color for alternative term links */
   text-decoration: none; /* No underline */
+  margin-top: 0.5px;
+  margin-bottom: 0.5px;
 }
