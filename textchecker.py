@@ -1,7 +1,5 @@
 import json
 from flask import Flask, request, render_template, url_for
-import json
-from flask import Flask, request, render_template, url_for
 from sqlalchemy import func, desc, select
 import nltk
 from nltk.stem import SnowballStemmer
@@ -58,9 +56,7 @@ def submit():
     user_text = request.form['user_text']
     language = request.form.get('language', 'auto') # Default to auto-detect
     detected = 0
-    detected = 0
     if language == 'auto':
-        detected = 1
         detected = 1
         language = auto_detect_language(user_text)
     
@@ -77,16 +73,8 @@ def submit():
               "modals": modals,
               "detected": detected,
               "language": language.capitalize()}
-    marked_html, modals = create_marked_html(split_text, indices, terms, language)
-
-    # return json with the textarea template ad the modals
-    result = {"textarea": render_template("textarea.html", user_text=clean_text.lstrip(), indices=indices, terms=terms, marked_html=marked_html), 
-              "modals": modals,
-              "detected": detected,
-              "language": language.capitalize()}
     
     # when we have the html, we can use this line to return the results
-    return json.dumps(result)
     return json.dumps(result)
 
 def auto_detect_language(text):
@@ -222,17 +210,7 @@ def find_sensitive_terms(text, language='german'):
 
 
 def create_marked_html(text, term_indices, terms, language):
-def create_marked_html(text, term_indices, terms, language):
     """
-    inputs
-        text: list of strings, can be turned into a text string by appending elements separated by a space
-        indices: indices of the sensitive terms within the text list that are to be marked
-
-    returns:
-        marked_html: html containing the text in the format needed to display it with highlights
-    """
-
-    if len(term_indices) == 0:
     inputs
         text: list of strings, can be turned into a text string by appending elements separated by a space
         indices: indices of the sensitive terms within the text list that are to be marked
@@ -247,23 +225,17 @@ def create_marked_html(text, term_indices, terms, language):
     marked_html = ""
     span = "{}"
     highlight= "<mark  class='popup' style=\"background-color:{color};\">{}{}</mark>"
-    highlight= "<mark  class='popup' style=\"background-color:{color};\">{}{}</mark>"
     indices = term_indices.copy()
     text_to_add = ""
     next_marked = indices.pop(0)
     term_index = 0
     term = terms[term_index]
-    term_index = 0
-    term = terms[term_index]
     text_should_be_marked = True if next_marked==0 else False
-    next_modal_id = 0
-    modals = ""
     next_modal_id = 0
     modals = ""
 
     for i,word in enumerate(text):
         # add to the text until text should be marked changes
-        word =  "\"" if word == "``" else word # TODO change this in the future to not be hardcoded
         word =  "\"" if word == "``" else word # TODO change this in the future to not be hardcoded
         text_to_add += word + " "
         if not text[i].isalpha(): # check for all non special characters
@@ -278,15 +250,8 @@ def create_marked_html(text, term_indices, terms, language):
 
         
 
-            #term_index += 1
-            # current text is currently should be marked
-            # create highlight
-
-        
-
 
         if next_marked == i+1 and not text_should_be_marked and text_to_add:
-            # text should be marked next but isn't currently
             # text should be marked next but isn't currently
             # create a span with the current text
             marked_html += span.format(text_to_add)
