@@ -22,17 +22,19 @@
       
     </div>
     <br>
-    <div class="radio-buttons">
-      <input type="radio" id="auto" name="language" value="auto" checked> <!-- Default to auto-detect -->
-      <label id="detect_label" for="auto">Auto Detect Language</label>
-      <input type="radio" id="english" name="language" value="english">
-      <label for="english">English</label>
-      <input type="radio" id="german" name="language" value="german">
-      <label for="german">German</label>
+    <div id="button_container">
+      <div class="radio-buttons">
+        <input type="radio" id="auto" name="language" value="auto" checked> <!-- Default to auto-detect -->
+        <label id="detect_label" for="auto">Auto Detect Language</label>
+        <input type="radio" id="english" name="language" value="english">
+        <label for="english">English</label>
+        <input type="radio" id="german" name="language" value="german">
+        <label for="german">German</label>
+      </div>
+      <br>
+      <button type="submit">Check</button>
+      <button type="button" class="edit" id="edit_text">Edit text</button>
     </div>
-    <br>
-    <button type="submit">Check</button>
-    <button type="button" class="edit" id="edit_text">Edit text</button>
   </form>
   <div class="mint-stripes"></div>
   <div class="purple-stripes"></div>
@@ -70,6 +72,7 @@
   edit_button.addEventListener("click", (event) =>{
     textarea.style.pointerEvents = "all";
     backdrop.style.visibility = "invisible";
+    textarea2.style.color = "black";
   });
 
   textarea.addEventListener("scroll",(event) => {
@@ -185,7 +188,9 @@
         });
         edit_button.addEventListener("click", (event) =>{
           textarea2.style.pointerEvents = "all";
+          textarea2.style.color = "black";
           backdrop.style.visibility = "hidden";
+          backdrop.style.zIndex = "1";
         });
 
         const openEls = document.querySelectorAll("[data-open]");
@@ -235,7 +240,9 @@
           marks[i].addEventListener("mouseleave", hidePopup, marks[i]);
         }     
         textarea2.style.pointerEvents = "none";
+        textarea2.style.color = "transparent";
         backdrop.style.visibility = "visible";
+        backdrop.style.zIndex = "2";
 
     })
     .catch(error => {
