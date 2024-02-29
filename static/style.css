@@ -52,6 +52,7 @@ style_sensitive_word_highlight {
     );
   }
 
+
 /* Styles for the language buttons */
 .radio-buttons {
     display: flex;
@@ -68,6 +69,7 @@ style_sensitive_word_highlight {
     margin-right: 10px;
     background-color: #f0f0f0;
     margin-left: 20px;
+    font-family: Courier New, monospace;
 }
 
 .radio-buttons input[type="radio"]:checked + label {
@@ -79,14 +81,15 @@ style_sensitive_word_highlight {
 button[type="submit"] {
     cursor: pointer;
     padding: 10px 20px;
-    border: 2px solid #ff7f43;
-    background-color: #f0f0f0;
+    border: 2px solid #eda37b;
+    background-color: #eda37b;
     margin-top: 10px; 
     margin-left: 20px;
+    font-family: Courier New, monospace;
 }
 
 button[type="submit"]:hover {
-    background-color: #ffc99e;
+    background-color: #eda37b;
 }
 
 /* Styles for the text box and highlighting */
