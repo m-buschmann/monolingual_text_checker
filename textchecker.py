@@ -55,7 +55,9 @@ def home():
 def submit():
     user_text = request.form['user_text']
     language = request.form.get('language', 'auto') # Default to auto-detect
+    detected = 0
     if language == 'auto':
+        detected = 1
         language = auto_detect_language(user_text)
     
     # sanitize input
@@ -67,8 +69,10 @@ def submit():
     marked_html, modals = create_marked_html(split_text, indices, terms, language)
 
     # return json with the textarea template ad the modals
-    result = {"textarea": render_template("textarea.html", user_text=clean_text, indices=indices, terms=terms, marked_html=marked_html), 
-              "modals": modals}
+    result = {"textarea": render_template("textarea.html", user_text=clean_text.lstrip(), indices=indices, terms=terms, marked_html=marked_html), 
+              "modals": modals,
+              "detected": detected,
+              "language": language.capitalize()}
     
     # when we have the html, we can use this line to return the results
     return json.dumps(result)

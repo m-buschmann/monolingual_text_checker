@@ -24,7 +24,7 @@
     <br>
     <div class="radio-buttons">
       <input type="radio" id="auto" name="language" value="auto" checked> <!-- Default to auto-detect -->
-      <label for="auto">Auto Detect Language</label>
+      <label id="detect_label" for="auto">Auto Detect Language</label>
       <input type="radio" id="english" name="language" value="english">
       <label for="english">English</label>
       <input type="radio" id="german" name="language" value="german">
@@ -155,6 +155,7 @@
 
   var container = document.getElementById("container");
   const form = document.querySelector("#textform");
+  var auto_detect_label = document.getElementById("detect_label");
   async function sendData() {
     // Associate the FormData object with the form element
     const formData = new FormData(form);
@@ -171,8 +172,14 @@
         return response.json();
     })
     .then(data => {
-      console.log("data", data);
+        console.log("data", data);
         setInnerHTML(container, data.textarea);
+
+        if(data.detected == 1){
+          var lang = data.language;
+          console.log("label", auto_detect_label)
+          auto_detect_label.textContent = lang + " - Detected"
+        }
 
         // attatch new event listeners
         backdrop = document.getElementById("backdrop");
