@@ -65,11 +65,9 @@
     });
   }
 
-  
   var textarea = document.getElementById("textarea");
   var edit_button= document.getElementById("edit_text");
   edit_button.addEventListener("click", (event) =>{
-    console.log(textarea);
     textarea.style.pointerEvents = "all";
     backdrop.style.visibility = "invisible";
   });
@@ -78,9 +76,12 @@
     var scrollTop = textarea.scrollTop;
     backdrop.scrollTop = scrollTop;
   });
+  backdrop.addEventListener("scroll",(event) => {
+    var scrollTop = backdrop.scrollTop;
+    textarea.scrollTop = scrollTop;
+  });
 
   async function mark_offensive(term_id) {
-    console.log("marking as offensive", term_id);
     const data = new URLSearchParams();
     data.append("term_id", term_id);
 
@@ -99,7 +100,6 @@
         return response.text();
     })
     .then(data => {
-      console.log("data", data);
       sendData();
     })
     .catch(error => {
@@ -109,7 +109,6 @@
   }
 
   async function rateAlternative(term_id, alt_id, rating) {
-    console.log("rating function", term_id, alt_id, rating);
     const data = new URLSearchParams();
     data.append("original_id", term_id);
     data.append("alternative_id", alt_id);
@@ -130,7 +129,6 @@
         return response.text();
     })
     .then(data => {
-      console.log("data", data);
       // check again to update popups
       sendData();
     })
@@ -141,25 +139,20 @@
   }
 
   function showPopup(t){
-    console.log("hover");
-    console.log(t.target);
     t.target.childNodes[1].style.visibility = "visible";
   }
 
   function hidePopup(t){
-    console.log("hover leave");
-    console.log(t.target);
     t.target.childNodes[1].style.visibility = "hidden";
   }
+  
   var modals = "";
-
   var container = document.getElementById("container");
   const form = document.querySelector("#textform");
   var auto_detect_label = document.getElementById("detect_label");
   async function sendData() {
     // Associate the FormData object with the form element
     const formData = new FormData(form);
-    console.log(formData)
 
     fetch("{{ url_for('submit') }}", {
         method: 'POST',
@@ -172,24 +165,25 @@
         return response.json();
     })
     .then(data => {
-        console.log("data", data);
         setInnerHTML(container, data.textarea);
 
         if(data.detected == 1){
           var lang = data.language;
-          console.log("label", auto_detect_label)
           auto_detect_label.textContent = lang + " - Detected"
         }
 
-        // attatch new event listeners
+        // attach new event listeners
         backdrop = document.getElementById("backdrop");
         var textarea2 = document.getElementById("textarea");
         textarea2.addEventListener("scroll",(event) => {
           var scrollTop = textarea2.scrollTop;
           backdrop.scrollTop = scrollTop;
         });
+        backdrop.addEventListener("scroll",(event) => {
+          var scrollTop = backdrop.scrollTop;
+          textarea2.scrollTop = scrollTop;
+        });
         edit_button.addEventListener("click", (event) =>{
-          console.log(textarea2);
           textarea2.style.pointerEvents = "all";
           backdrop.style.visibility = "hidden";
         });
@@ -202,39 +196,24 @@
         for(const el of openEls) {
           el.addEventListener("click", function() {
             const modalId = this.dataset.open;
-
-            console.log("clicked button", this, modalId);
             document.getElementById(modalId).classList.add(isVisible);
           });
         }
 
         const rateEls = document.querySelectorAll("[rate-alternative]");
-        console.log("rateels", rateEls)
-
         for(const el of rateEls) {
           el.addEventListener("click", function() {
             const modalId = this.dataset.open;
-            console.log("clicked button", this, modalId);
-            console.log("mid", this.getAttribute("data-open"));
             // get the rating
             var f_id = 'rate'+modalId
-            console.log("fid", f_id)
             var fieldset = document.getElementById(f_id);
             var selectedRadioButton = fieldset.querySelector('input[name="alternative_rating"]:checked');
             var rating = 3;
             if (selectedRadioButton) {
-              console.log('Selected value:', selectedRadioButton.value);
               rating = selectedRadioButton.value;
-            } else {
-              console.log('No radio button selected.');
             }
-
-            console.log("t1");
-
-            // call rating
+            // call rating function
             rateAlternative(this.getAttribute("term_id"), this.getAttribute("alt_id"), rating);
-            console.log("t2");
-
           });
         }
 
@@ -252,14 +231,11 @@
         });
         var marks = document.querySelectorAll('.popup');
         for (var i = 0; i < marks.length; i++) {
-
-          console.log("mark", marks[i]);
           marks[i].addEventListener("mouseenter", showPopup, marks[i]);
           marks[i].addEventListener("mouseleave", hidePopup, marks[i]);
         }     
         textarea2.style.pointerEvents = "none";
         backdrop.style.visibility = "visible";
-       // textarea2.style.setProperty("background-color", "red");
 
     })
     .catch(error => {
@@ -269,13 +245,11 @@
   }
 
   const openEls = document.querySelectorAll("[data-open]");
-
   const isVisible = "is-visible";
 
   for(const el of openEls) {
     el.addEventListener("click", function() {
       const modalId = this.dataset.open;
-      console.log("clicked button", this, modalId);
       document.getElementById(modalId).classList.add(isVisible);
     });
   }
@@ -293,13 +267,12 @@
     }
   });
 
-
   var marks = document.querySelectorAll('.popup');
   for (var i = 0; i < marks.length; i++) {
-    console.log("mark", marks[i]);
     marks[i].addEventListener("mouseenter", showPopup, marks[i]);
     marks[i].addEventListener("mouseleave", hidePopup, marks[i]);
   }   
+
   // Take over form submission
   form.addEventListener("submit", (event) => {
     event.preventDefault();
