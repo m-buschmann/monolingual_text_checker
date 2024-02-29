@@ -4,56 +4,6 @@
   <meta charset="UTF-8">
   <title>Monolingual Text Checker</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-  <style>
-    html, body {
-      height: 100%; /* This ensures that the body takes up at least the height of the viewport */
-      margin: 100; 
-      position: relative; /* Enables absolute positioning relative to the body */
-    }
-  </style>
-  <title>Monolingual Text Checker</title>
-  <style>
-    
-    .text-box {
-      width: 90%;
-      height: 200px; 
-    }
-    
-    /* Styles for the language buttons */
-    .radio-buttons {
-      display: flex;
-    }
-
-    .radio-buttons input[type="radio"] {
-      display: none;
-    }
-
-    .radio-buttons label {
-      cursor: pointer;
-      padding: 10px 20px;
-      border: 2px solid #000000;
-      margin-right: 10px;
-      background-color: #f0f0f0;
-    }
-
-    .radio-buttons input[type="radio"]:checked + label {
-      background-color: #68cda9;
-      color: #fff;
-    }
-
-    /* Styles for the "Check" button */
-    button[type="submit"] {
-      cursor: pointer;
-      padding: 10px 20px;
-      border: 2px solid #ff7f43;
-      background-color: #f0f0f0;
-      margin-top: 10px; 
-    }
-
-    button[type="submit"]:hover {
-      background-color: #ffc99e;
-    }
-  </style>
 </head>
 <body>
   <h1>Monolingual Text Checker</h1>
@@ -74,7 +24,7 @@
     <br>
     <div class="radio-buttons">
       <input type="radio" id="auto" name="language" value="auto" checked> <!-- Default to auto-detect -->
-      <label for="auto">Auto Detect Language</label>
+      <label id="detect_label" for="auto">Auto Detect Language</label>
       <input type="radio" id="english" name="language" value="english">
       <label for="english">English</label>
       <input type="radio" id="german" name="language" value="german">
@@ -82,57 +32,278 @@
     </div>
     <br>
     <button type="submit">Check</button>
+    <button type="button" class="edit" id="edit_text">Edit text</button>
   </form>
   <div class="mint-stripes"></div>
   <div class="purple-stripes"></div>
-  <script>
-    var backdrop = document.getElementById("backdrop");
-    var textarea = document.getElementById("textarea");
-    textarea.addEventListener("scroll",(event) => {
-      var scrollTop = textarea.scrollTop;
-      backdrop.scrollTop = scrollTop;
-    });
-  
-    var container = document.getElementById("container");
-    const form = document.querySelector("#textform");
-    async function sendData() {
-      // Associate the FormData object with the form element
-      const formData = new FormData(form);
-      console.log(formData)
-  
-      fetch("{{ url_for('submit') }}", {
-          method: 'POST',
-          body: formData,
-      })
-      .then(response => {
-          if (!response.ok) {
-              throw new Error('Network response was not ok');
-          }
-          return response.text();
-      })
-      .then(data => {
-          
-          container.innerHTML = data;
-          // attatch new event listeners
-          backdrop = document.getElementById("backdrop");
-          textarea = document.getElementById("textarea");
-          textarea.addEventListener("scroll",(event) => {
-            var scrollTop = textarea.scrollTop;
-            backdrop.scrollTop = scrollTop;
-          });
-  
-      })
-      .catch(error => {
-          console.error('There was a problem with the fetch operation:', error);
-      });
-  
-    }
-  
-    // Take over form submission
-    form.addEventListener("submit", (event) => {
-      event.preventDefault();
-      sendData();
-    });
-  </script>
+  <div id="modal_container">
+
+  </div>
+
 </body>
+
+<script>
+  var backdrop = document.getElementById("backdrop");
+  var modal_container = document.getElementById("modal_container");
+
+  // this function was taken from an answer on StackOverflow from user allenhwkim: https://stackoverflow.com/a/47614491
+  function setInnerHTML(elm, html) {
+    elm.innerHTML = html;
+    
+    Array.from(elm.querySelectorAll("script"))
+        .forEach( oldScriptEl => {
+        const newScriptEl = document.createElement("script");
+        
+        Array.from(oldScriptEl.attributes).forEach( attr => {
+            newScriptEl.setAttribute(attr.name, attr.value) 
+        });
+        
+        const scriptText = document.createTextNode(oldScriptEl.innerHTML);
+        newScriptEl.appendChild(scriptText);
+        
+        oldScriptEl.parentNode.replaceChild(newScriptEl, oldScriptEl);
+    });
+  }
+
+  
+  var textarea = document.getElementById("textarea");
+  var edit_button= document.getElementById("edit_text");
+  edit_button.addEventListener("click", (event) =>{
+    console.log(textarea);
+    textarea.style.pointerEvents = "all";
+    backdrop.style.visibility = "invisible";
+  });
+
+  textarea.addEventListener("scroll",(event) => {
+    var scrollTop = textarea.scrollTop;
+    backdrop.scrollTop = scrollTop;
+  });
+
+  async function mark_offensive(term_id) {
+    console.log("marking as offensive", term_id);
+    const data = new URLSearchParams();
+    data.append("term_id", term_id);
+
+    fetch("{{ url_for('report') }}", {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: data,
+        
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.text();
+    })
+    .then(data => {
+      console.log("data", data);
+      sendData();
+    })
+    .catch(error => {
+        console.error('There was a problem with the fetch operation:', error);
+    });
+
+  }
+
+  async function rateAlternative(term_id, alt_id, rating) {
+    console.log("rating function", term_id, alt_id, rating);
+    const data = new URLSearchParams();
+    data.append("original_id", term_id);
+    data.append("alternative_id", alt_id);
+    data.append("rating", rating);
+
+    fetch("{{ url_for('rate_alternative') }}", {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: data,
+        
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.text();
+    })
+    .then(data => {
+      console.log("data", data);
+      // check again to update popups
+      sendData();
+    })
+    .catch(error => {
+        console.error('There was a problem with the fetch operation:', error);
+    });
+
+  }
+
+  function showPopup(t){
+    console.log("hover");
+    console.log(t.target);
+    t.target.childNodes[1].style.visibility = "visible";
+  }
+
+  function hidePopup(t){
+    console.log("hover leave");
+    console.log(t.target);
+    t.target.childNodes[1].style.visibility = "hidden";
+  }
+  var modals = "";
+
+  var container = document.getElementById("container");
+  const form = document.querySelector("#textform");
+  var auto_detect_label = document.getElementById("detect_label");
+  async function sendData() {
+    // Associate the FormData object with the form element
+    const formData = new FormData(form);
+    console.log(formData)
+
+    fetch("{{ url_for('submit') }}", {
+        method: 'POST',
+        body: formData,
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log("data", data);
+        setInnerHTML(container, data.textarea);
+
+        if(data.detected == 1){
+          var lang = data.language;
+          console.log("label", auto_detect_label)
+          auto_detect_label.textContent = lang + " - Detected"
+        }
+
+        // attatch new event listeners
+        backdrop = document.getElementById("backdrop");
+        var textarea2 = document.getElementById("textarea");
+        textarea2.addEventListener("scroll",(event) => {
+          var scrollTop = textarea2.scrollTop;
+          backdrop.scrollTop = scrollTop;
+        });
+        edit_button.addEventListener("click", (event) =>{
+          console.log(textarea2);
+          textarea2.style.pointerEvents = "all";
+          backdrop.style.visibility = "hidden";
+        });
+
+        const openEls = document.querySelectorAll("[data-open]");
+
+        const isVisible = "is-visible";
+        setInnerHTML(modal_container, data.modals);
+
+        for(const el of openEls) {
+          el.addEventListener("click", function() {
+            const modalId = this.dataset.open;
+
+            console.log("clicked button", this, modalId);
+            document.getElementById(modalId).classList.add(isVisible);
+          });
+        }
+
+        const rateEls = document.querySelectorAll("[rate-alternative]");
+        console.log("rateels", rateEls)
+
+        for(const el of rateEls) {
+          el.addEventListener("click", function() {
+            const modalId = this.dataset.open;
+            console.log("clicked button", this, modalId);
+            console.log("mid", this.getAttribute("data-open"));
+            // get the rating
+            var f_id = 'rate'+modalId
+            console.log("fid", f_id)
+            var fieldset = document.getElementById(f_id);
+            var selectedRadioButton = fieldset.querySelector('input[name="alternative_rating"]:checked');
+            var rating = 3;
+            if (selectedRadioButton) {
+              console.log('Selected value:', selectedRadioButton.value);
+              rating = selectedRadioButton.value;
+            } else {
+              console.log('No radio button selected.');
+            }
+
+            console.log("t1");
+
+            // call rating
+            rateAlternative(this.getAttribute("term_id"), this.getAttribute("alt_id"), rating);
+            console.log("t2");
+
+          });
+        }
+
+        const closeEls = document.querySelectorAll("[data-close]");
+        for (const el of closeEls) {
+          el.addEventListener("click", function() {
+            this.parentElement.parentElement.parentElement.classList.remove(isVisible);
+          });
+        }
+
+        document.addEventListener("click", e => {
+          if (e.target == document.querySelector(".modal.is-visible")) {
+            document.querySelector(".modal.is-visible").classList.remove(isVisible);
+          }
+        });
+        var marks = document.querySelectorAll('.popup');
+        for (var i = 0; i < marks.length; i++) {
+
+          console.log("mark", marks[i]);
+          marks[i].addEventListener("mouseenter", showPopup, marks[i]);
+          marks[i].addEventListener("mouseleave", hidePopup, marks[i]);
+        }     
+        textarea2.style.pointerEvents = "none";
+        backdrop.style.visibility = "visible";
+       // textarea2.style.setProperty("background-color", "red");
+
+    })
+    .catch(error => {
+        console.error('There was a problem with the fetch operation:', error);
+    });
+
+  }
+
+  const openEls = document.querySelectorAll("[data-open]");
+
+  const isVisible = "is-visible";
+
+  for(const el of openEls) {
+    el.addEventListener("click", function() {
+      const modalId = this.dataset.open;
+      console.log("clicked button", this, modalId);
+      document.getElementById(modalId).classList.add(isVisible);
+    });
+  }
+
+  const closeEls = document.querySelectorAll("[data-close]");
+  for (const el of closeEls) {
+    el.addEventListener("click", function() {
+      this.parentElement.parentElement.parentElement.classList.remove(isVisible);
+    });
+  }
+
+  document.addEventListener("click", e => {
+    if (e.target == document.querySelector(".modal.is-visible")) {
+      document.querySelector(".modal.is-visible").classList.remove(isVisible);
+    }
+  });
+
+
+  var marks = document.querySelectorAll('.popup');
+  for (var i = 0; i < marks.length; i++) {
+    console.log("mark", marks[i]);
+    marks[i].addEventListener("mouseenter", showPopup, marks[i]);
+    marks[i].addEventListener("mouseleave", hidePopup, marks[i]);
+  }   
+  // Take over form submission
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    sendData();
+  });
+  </script>
 </html>
