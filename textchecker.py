@@ -344,7 +344,7 @@ def create_popup_html(term, language, starting_modal_id):
     alternative_list = "<ol>{list}</ol>"
     list_item = "<li><a href=\"{term_base_url}{term_id}\">{term_term}</a> {alt_rating} {rate} {report}</li>"
 
-    button_html = "<button type=\"button\" class=\"open-modal\" data-open=\"modal{modal_id}\">{button_text}</button>"
+    button_html = "<button type=\"popup_button\" class=\"open-modal\" data-open=\"modal{modal_id}\">{button_text}</button>"
     offensive_modal_html = "<div class=\"modal\" id=\"modal{modal_id}\"><div class=\"modal-dialog\"><header class=\"modal-header\"><button class=\"close-modal\" aria-label=\"close modal\" data-close>✕</button></header><section class=\"modal-content\">Do you want to mark the term \"{term}\" as offensive?<button class=\"mark-offensive\" onclick=\"mark_offensive('{term_id}')\" data-close>Yes</button><button class=\"close-modal\" aria-label=\"close modal\" data-close>No</button></section></div></div>"
     rating_modal_html = """ <div class="modal" id="modal{modal_id}">
   <div class="modal-dialog">

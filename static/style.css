@@ -86,6 +86,14 @@ button[type="submit"]:hover, button[type="edit_text"]:hover {
     background-color: var(--orange);
 }
 
+button[type="popup_button"] {
+  cursor: pointer;
+  padding: 5px 5px;
+  border: 2px solid var(--purple);
+  background-color: #efefef;
+  margin-top: 10px; 
+  margin-left: 10px;
+}
 /* Styles for the text box and highlighting */
  *, *::before, *::after {
 box-sizing: border-box;
