@@ -121,6 +121,7 @@ def find_sensitive_terms(text, language='german'):
     words_lower = [word.lower() for word in words] # Lowercase all words for consistent matching
     stemmed_words = [stemmer.stem(word) for word in words_lower]
     stemmed_text = " ".join(stemmed_words) # Rejoin the stemmed words into a single string
+    stemmed_text = " " + stemmed_text
     
     # Fetch predefined sensitive terms from the database, sorted by their length (descending)
     terms = Term.query.filter().all()
@@ -131,21 +132,29 @@ def find_sensitive_terms(text, language='german'):
 
     # Iterate over each term to find matches in the stemmed text
     for term in sorted_terms:
+
         stemmed_term = " ".join([stemmer.stem(word) for word in term.term.split()])
+
+        if stemmed_term == "":
+            print("empty stem term", term.term)
+            # if there is no stem we don't have to search for it, just move on to the next term
+            continue
         
         # Find all occurrences of the stemmed term in the stemmed text
         start_pos = 0
         while True:
-            term_index = stemmed_text.find(stemmed_term, start_pos)
+            term_index = stemmed_text.find(" "+stemmed_term, start_pos)
             if term_index == -1:
                 break # Exit the loop if no more occurrences are found
             # Calculate the start and end word indices in the original text
+            print("found stemmed term", stemmed_term, "at position", term_index, "of stemmed text", stemmed_text)
             word_index = len(stemmed_text[:term_index].split())
             end_word_index = word_index + len(stemmed_term.split())
 
             # Append matched term details if it doesn't overlap with previously covered indices
             if not any(index in covered_indices for index in range(word_index, end_word_index)):
                 matched_terms_details.append((word_index, end_word_index, term))
+                print("appended ", term.term, "matched terms", matched_terms_details)
                 # Mark indices as covered
                 covered_indices.update(range(word_index, end_word_index))
 
@@ -161,30 +170,37 @@ def find_sensitive_terms(text, language='german'):
                 if close_matches:
                     # Process each close match found
                     close_match_stemmed = close_matches[0]
+                    
                     # Find the term object from sorted_terms that matches the close_match_term_string
                     for possible_term_object in sorted_terms:
                         if stemmer.stem(term.term) == close_match_stemmed:
+                            print("close match", possible_term_object.term, "with ", term.term, "stemmed match", close_match_stemmed)
+                            print("close matches", close_matches)
                             term_object = possible_term_object
                             break
                     else:
                         term_object = None # No matching term object found
 
                     if term_object:
+                        
                         # Check if this term object is not yet processed and add its details
                         for matched_term in matched_terms_details:
                             if term_object == matched_term[2]:  # If the term object matches
                                 # Check if the index range of the current word overlaps with the matched term
-                                if not any(index in covered_indices for index in range(matched_term[0], matched_term[1])):
-                                    matched_terms_details.append((index, index + 1, term_object))
-                                    covered_indices.add(index)
+                                if not any(s_index in covered_indices for s_index in range(matched_term[0], matched_term[1])):
+                                    matched_terms_details.append((s_index, s_index + 1, term_object))
+                                    print("other appended ", term_object.term, "matched terms", matched_terms_details)
+                                    covered_indices.add(s_index)
                                 break  # Exit the loop as we found a match
                         else:
                             # Add new term object if it hasn't been matched yet
                             matched_terms_details.append((index, index + 1, term_object))
+                            print("55 appended ", term_object.term, "matched terms", matched_terms_details)
                             covered_indices.add(index)
     
     # Sort matched terms by their starting index for proper ordering
     matched_terms_details.sort(key=lambda x: x[0])
+    print("matched terms", matched_terms_details)
 
     # Reconstruct the text, isolating sensitive terms and recording their indices
     split_text, sensitive_indices, sensitive_terms = [], [], []
