@@ -120,16 +120,35 @@ def find_sensitive_terms(text, language='german'):
     words = nltk.word_tokenize(text)
     words_lower = [word.lower() for word in words] # Lowercase all words for consistent matching
     stemmed_words = [stemmer.stem(word) for word in words_lower]
-    stemmed_text = " ".join(stemmed_words) # Rejoin the stemmed words into a single string
-    stemmed_text = " " + stemmed_text
+   
     
     # Fetch predefined sensitive terms from the database, sorted by their length (descending)
     terms = Term.query.filter().all()
     sorted_terms = sorted(terms, key=lambda t: len(t.term.split()), reverse=True)
 
+    split_sorted_terms = [term.term.split(" ") for term in sorted_terms]
+    t  = []
+    for terms in split_sorted_terms:
+        for term in terms:
+            t.append(term)
+    split_sorted_terms = t
+    
     matched_terms_details = [] # To store details of matched terms
     covered_indices = set()  # Track indices in the text that are already covered by a match
 
+    # check for different spellings by correcting words close to the listed ones before checking
+    new_stemmed_words = []
+    for word in stemmed_words:
+        close_matches = difflib.get_close_matches(word, split_sorted_terms, n=1, cutoff=0.8)
+        if close_matches:
+            new_stemmed_words.append(stemmer.stem(close_matches[0].lower()))
+        else:
+            new_stemmed_words.append(word)
+
+    stemmed_words = new_stemmed_words
+    stemmed_text = " ".join(stemmed_words) # Rejoin the stemmed words into a single string
+    stemmed_text = " " + stemmed_text
+    
     # Iterate over each term to find matches in the stemmed text
     for term in sorted_terms:
 
@@ -160,43 +179,6 @@ def find_sensitive_terms(text, language='german'):
 
             # Prepare for the next search iteration
             start_pos = term_index + len(stemmed_term)  # Update start_pos to search for next occurrence
-
-
-            # Check for approximate matches for each word to account for typos or different spellings
-            for index, word in enumerate(stemmed_words):
-                if index in covered_indices:  # Skip if index is already covered
-                    continue
-                close_matches = difflib.get_close_matches(word, [term.term for term in sorted_terms], n=1, cutoff=0.8)
-                if close_matches:
-                    # Process each close match found
-                    close_match_stemmed = close_matches[0]
-                    
-                    # Find the term object from sorted_terms that matches the close_match_term_string
-                    for possible_term_object in sorted_terms:
-                        if stemmer.stem(term.term) == close_match_stemmed:
-                            print("close match", possible_term_object.term, "with ", term.term, "stemmed match", close_match_stemmed)
-                            print("close matches", close_matches)
-                            term_object = possible_term_object
-                            break
-                    else:
-                        term_object = None # No matching term object found
-
-                    if term_object:
-                        
-                        # Check if this term object is not yet processed and add its details
-                        for matched_term in matched_terms_details:
-                            if term_object == matched_term[2]:  # If the term object matches
-                                # Check if the index range of the current word overlaps with the matched term
-                                if not any(s_index in covered_indices for s_index in range(matched_term[0], matched_term[1])):
-                                    matched_terms_details.append((s_index, s_index + 1, term_object))
-                                    print("other appended ", term_object.term, "matched terms", matched_terms_details)
-                                    covered_indices.add(s_index)
-                                break  # Exit the loop as we found a match
-                        else:
-                            # Add new term object if it hasn't been matched yet
-                            matched_terms_details.append((index, index + 1, term_object))
-                            print("55 appended ", term_object.term, "matched terms", matched_terms_details)
-                            covered_indices.add(index)
     
     # Sort matched terms by their starting index for proper ordering
     matched_terms_details.sort(key=lambda x: x[0])
