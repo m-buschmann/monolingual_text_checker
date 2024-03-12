@@ -1,6 +1,6 @@
 # Monolingual Text Checker
 
-Expand the text checker on macht.sprache by adding a monolingual text checking tool to highlight sensitive terms and provide alternatives and additional information within the same language.
+Project Idea: Expanding the text checker on macht.sprache by adding a monolingual text checking tool to highlight sensitive terms and provide alternatives and additional information within the same language.
 
 ## Installation & Usage
 
