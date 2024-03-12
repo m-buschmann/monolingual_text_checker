@@ -24,7 +24,8 @@ Using the Monolingual text checker:
 6. If a term is offensive, you can mark it accordingly. Multiple offensive markings will result in the highlight changing color, indicating the severity of the offense.
 
 ## Files
-instance/sensitive_terms.sqlite: the database, containing tables for the sensitive terms
+### instance/sensitive_terms.sqlite:
+the database, containing tables for the sensitive terms
 
 ### static/style.css: 
     style classes for the front end
