@@ -61,6 +61,7 @@ instance/sensitive_terms.sqlite: the database, containing tables for the sensiti
 - Rating of alternative terms: We decided to deviate from the way ratings are handled on the macht.sprache website, trying to implement a more intuitive rating - a number between 1-5 - which the user can see directly next to the altrnative terms suggested, when hovering over the highlighted senstitive terms.
 - Rating a term as offensive: We decided to add a possibility of rating a term as offensive, to provide users with a way to flag terms that they find offensive or inappropriate. In our implementation we coded hard boundaries (>3 changes highlight to light red, >4 changes hightlight to red). If this feature would be integrated into the macht.sprache website, the highlight boundaries should be calculated with ratios, based on how many users the website has.
 - Which terms are detected in which language? We decided to detect both English and German terms within English text, as well as both English and German terms within German text. This approach increases the likelihood of detecting all sensitive terms, considering the prevalent use of English words in the German language.
+- Order of related terms: ordered after the rating of users, best alternative at the top
 
 
 
