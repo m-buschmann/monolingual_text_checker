@@ -32,19 +32,26 @@ instance/sensitive_terms.sqlite: the database, containing tables for the sensiti
 ### templates/home.html: 
     contains the html code for the website.Builds with options to auto-detect language or choose between English and German. Users can submit text to be analyzed, edit their input, and view highlighted sensitive terms via dynamically generated modal popups. JavaScript is used for form submission handling, scrolling synchronization between the textarea and a highlighted backdrop, and for the display and interaction with modal popups, including rating alternatives for flagged terms.
 
-templates/textarea.html: builds the text box where users input their text
+### templates/textarea.html: 
+    builds the text box where users input their text
 
-models.py: defines a set of database models for the Flask application using SQLAlchemy ORM. It includes four models: AlternativeTerm, OffensivenessRating, AlternativeRating, and Term, structured to support a system for managing terms, their alternatives, and ratings regarding their offensiveness or appropriateness.
+### models.py: 
+    defines a set of database models for the Flask application using SQLAlchemy ORM. It includes four models: AlternativeTerm, OffensivenessRating, AlternativeRating, and Term, structured to support a system for managing terms, their alternatives, and ratings regarding their offensiveness or appropriateness.
 
-modified_data.json: contains data of the terms from macht.sprache, with  lemma, lemma_lang, definition, author, date, guidelines, relatedterms, translations, id. "lemma", "translations", "lemma_lang" used to build the database.
+### modified_data.json: 
+    contains data of the terms from macht.sprache, with  lemma, lemma_lang, definition, author, date, guidelines, relatedterms, translations, id. "lemma", "translations", "lemma_lang" used to build the database.
 
-terms.json: contains data of the terms from macht.sprache, with id, relatedTerms, creator, createdAt, value, racial justice, variants, lang, commentCount, adminComment, definition, adminTags, guidelines. "id" and "definition" used to build the database. 
+### terms.json: 
+    contains data of the terms from macht.sprache, with id, relatedTerms, creator, createdAt, value, racial justice, variants, lang, commentCount, adminComment, definition, adminTags, guidelines. "id" and "definition" used to build the database. 
 
-read_data.py: Flask application that facilitates the management of sensitive terms using an SQLite database. It features functionality to import terms from two JSON files, `terms.json` and `modified_data.json`, to insert or update terms, link alternative terms, and handle their offensiveness and appropriateness ratings. The `insert_data` function processes the JSON data, ensuring terms are uniquely identified, alternatives are correctly linked, and language-specific details are accurately maintained. 
+### read_data.py: 
+    Flask application that facilitates the management of sensitive terms using an SQLite database. It features functionality to import terms from two JSON files, `terms.json` and `modified_data.json`, to insert or update terms, link alternative terms, and handle their offensiveness and appropriateness ratings. The `insert_data` function processes the JSON data, ensuring terms are uniquely identified, alternatives are correctly linked, and language-specific details are accurately maintained. 
 
-requirements.txt: list of nececesary libraries
+### requirements.txt: 
+    list of nececesary libraries
 
-textchecker.py: establishes a Flask web application to handle the text input. Employs NLTK for natural language processing to detect sensitive terms, SQLAlchemy for database interactions, and custom logic for language detection and processing user inputs. Features of the application include:
+### textchecker.py: 
+    establishes a Flask web application to handle the text input. Employs NLTK for natural language processing to detect sensitive terms, SQLAlchemy for database interactions, and custom logic for language detection and processing user inputs. Features of the application include:
 
     - Initialization of an SQLite database to store terms and their alternatives.
     - Routes for rendering a home page, submitting texts for analysis, and handling user feedback on term offensiveness and alternative ratings.
