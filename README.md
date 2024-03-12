@@ -26,10 +26,10 @@ Using the Monolingual text checker:
 ## Files
 instance/sensitive_terms.sqlite: the database, containing tables for the sensitive terms
 
-# static/style.css: 
+### static/style.css: 
     style classes for the front end
 
-# templates/home.html: 
+### templates/home.html: 
     contains the html code for the website.Builds with options to auto-detect language or choose between English and German. Users can submit text to be analyzed, edit their input, and view highlighted sensitive terms via dynamically generated modal popups. JavaScript is used for form submission handling, scrolling synchronization between the textarea and a highlighted backdrop, and for the display and interaction with modal popups, including rating alternatives for flagged terms.
 
 templates/textarea.html: builds the text box where users input their text
