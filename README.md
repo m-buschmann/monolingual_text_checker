@@ -12,7 +12,7 @@ To set up the Monolingual Text Checker on your local machine, follow these steps
 
 Accessing the Monolingual text checker from your local machine:
 1. Run the textchecker.py script. ```flask --app textchecker.py run```
-2. Access the application through a web browser by navigating to the appropriate URL (which is printed in the terminal in which the the textcherew was started).
+2. Access the application through a web browser by navigating to the appropriate URL (which is printed in the terminal in which the the textchecker was started).
 
 Using the Monolingual text checker: 
 1. Enter the text you want to check into the provided input field.
