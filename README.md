@@ -4,16 +4,15 @@ Project Idea: Expanding the text checker on macht.sprache by adding a monolingua
 
 ## Installation & Usage
 
-You can either access our monolingual text checker via this link: http://vm455.rz.uni-osnabrueck.de/user031/textchecker.wsgi/
-(the only requirement for this is that you need to be in the Wifi of the university of Osnabrück, you can also use a VPN)
+To use the monolingual text checker you can either install and run it locally or access it via the following link from within the network of the University of Osnabrück (e.g. connected to the university's WiFi or using the university VPN): http://vm455.rz.uni-osnabrueck.de/user031/textchecker.wsgi/
 
 To set up the Monolingual Text Checker on your local machine, follow these steps:
 1. Clone the project repository to your local machine and navigate to the project directory.
-2. Ensure that Python is installed on your system, then install the required Python packages listed in requirements.txt by running 'pip install -r requirements.txt'
+2. Ensure that Python is installed on your system, set up a new virtual environment (this is optional but strongly recommended), then install the required Python packages listed in requirements.txt by running ```pip install -r requirements.txt```
 
 Accessing the Monolingual text checker from your local machine:
-1. Run the textchecker.py script.
-2. Access the application through a web browser by navigating to the appropriate URL.
+1. Run the textchecker.py script. ```flask --app textchecker.py run```
+2. Access the application through a web browser by navigating to the appropriate URL (which is printed in the terminal in which the the textcherew was started).
 
 Using the Monolingual text checker: 
 1. Enter the text you want to check into the provided input field.
@@ -66,4 +65,4 @@ the database, containing tables for the sensitive terms
 
 
 
-This is where we planned our project, handled & distributed ToDos: https://github.com/users/Cl4ryty/projects/7/views/2
+This is where we planned our project, handled & distributed To-Dos: https://github.com/users/Cl4ryty/projects/7/views/2
