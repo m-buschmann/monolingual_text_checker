@@ -27,6 +27,7 @@ To set up the Monolingual Text Checker on your local machine, follow these steps
    pip install -r requirements.txt
    ```
 
+
 Accessing the Monolingual text checker from your local machine:
 1. Run the textchecker.py script.
    ```
@@ -88,6 +89,11 @@ Accessing the Monolingual text checker from your local machine:
 - Which terms are detected in which language? We decided to detect both English and German terms within English text, as well as both English and German terms within German text. This approach increases the likelihood of detecting all sensitive terms, considering the prevalent use of English words in the German language.
 - Order of related terms: ordered after the rating of users, best alternative at the top
 
+## License
+
+GPLv3: https://www.gnu.org/licenses/gpl-3.0.en.html
 
 
 This is where we planned our project, handled & distributed To-Dos: https://github.com/users/Cl4ryty/projects/7/views/2
+
+
