@@ -57,8 +57,8 @@ def insert_data():
         # Function to generate new IDs
         def generate_new_id():
             return f"{next(id_counter):020}"
-            # Step 1: Collect translation relationships
         
+        # Collect translation relationships
         # Two terms appear together in the AlternativeTerm list if they share at least one translation, 
         # indicating they are contextually related or interchangeable in some scenarios
         translation_to_terms = {}  # Maps a translation to all terms that include it

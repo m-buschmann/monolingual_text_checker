@@ -48,41 +48,21 @@
   var backdrop = document.getElementById("backdrop");
   var modal_container = document.getElementById("modal_container");
 
-  // this function was taken from an answer on StackOverflow from user allenhwkim: https://stackoverflow.com/a/47614491
-  function setInnerHTML(elm, html) {
-    elm.innerHTML = html;
-    
-    Array.from(elm.querySelectorAll("script"))
-        .forEach( oldScriptEl => {
-        const newScriptEl = document.createElement("script");
-        
-        Array.from(oldScriptEl.attributes).forEach( attr => {
-            newScriptEl.setAttribute(attr.name, attr.value) 
-        });
-        
-        const scriptText = document.createTextNode(oldScriptEl.innerHTML);
-        newScriptEl.appendChild(scriptText);
-        
-        oldScriptEl.parentNode.replaceChild(newScriptEl, oldScriptEl);
-    });
-  }
-
   var textarea = document.getElementById("textarea");
   var edit_button= document.getElementById("edit_text");
+
+  var modals = "";
+  var container = document.getElementById("container");
+  const form = document.querySelector("#textform");
+  var auto_detect_label = document.getElementById("detect_label");
+
+  // allow editing text when clicking the edit button
   edit_button.addEventListener("click", (event) =>{
     textarea.style.pointerEvents = "all";
     backdrop.style.visibility = "invisible";
-    textarea2.style.color = "black";
+    textarea.style.color = "black";
   });
 
-  textarea.addEventListener("scroll",(event) => {
-    var scrollTop = textarea.scrollTop;
-    backdrop.scrollTop = scrollTop;
-  });
-  backdrop.addEventListener("scroll",(event) => {
-    var scrollTop = backdrop.scrollTop;
-    textarea.scrollTop = scrollTop;
-  });
 
   async function mark_offensive(term_id) {
     const data = new URLSearchParams();
@@ -103,7 +83,7 @@
         return response.text();
     })
     .then(data => {
-      sendData();
+      sendData(); // run the check again to allow colors to update
     })
     .catch(error => {
         console.error('There was a problem with the fetch operation:', error);
@@ -132,7 +112,7 @@
         return response.text();
     })
     .then(data => {
-      // check again to update popups
+      // check again to update popups with the new rating
       sendData();
     })
     .catch(error => {
@@ -149,134 +129,113 @@
     t.target.childNodes[1].style.visibility = "hidden";
   }
   
-  var modals = "";
-  var container = document.getElementById("container");
-  const form = document.querySelector("#textform");
-  var auto_detect_label = document.getElementById("detect_label");
   async function sendData() {
     // Associate the FormData object with the form element
     const formData = new FormData(form);
-
-    fetch("{{ url_for('submit') }}", {
-        method: 'POST',
-        body: formData,
-    })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-        return response.json();
-    })
-    .then(data => {
-        setInnerHTML(container, data.textarea);
-
-        if(data.detected == 1){
-          var lang = data.language;
-          auto_detect_label.textContent = lang + " - Detected"
-        }
-        else{
-          auto_detect_label.textContent = "Auto Detect Language"
-        }
-
-        // attach new event listeners
-        backdrop = document.getElementById("backdrop");
-        var textarea2 = document.getElementById("textarea");
-        textarea2.addEventListener("scroll",(event) => {
-          var scrollTop = textarea2.scrollTop;
-          backdrop.scrollTop = scrollTop;
-        });
-        backdrop.addEventListener("scroll",(event) => {
-          var scrollTop = backdrop.scrollTop;
-          textarea2.scrollTop = scrollTop;
-        });
-        edit_button.addEventListener("click", (event) =>{
-          textarea2.style.pointerEvents = "all";
-          textarea2.style.color = "black";
-          backdrop.style.visibility = "hidden";
-          backdrop.style.zIndex = "1";
-        });
-
-        const openEls = document.querySelectorAll("[data-open]");
-
-        const isVisible = "is-visible";
-        setInnerHTML(modal_container, data.modals);
-
-        for(const el of openEls) {
-          el.addEventListener("click", function() {
-            const modalId = this.dataset.open;
-            document.getElementById(modalId).classList.add(isVisible);
-          });
-        }
-
-        const rateEls = document.querySelectorAll("[rate-alternative]");
-        for(const el of rateEls) {
-          el.addEventListener("click", function() {
-            const modalId = this.dataset.open;
-            // get the rating
-            var f_id = 'rate'+modalId
-            var fieldset = document.getElementById(f_id);
-            var selectedRadioButton = fieldset.querySelector('input[name="alternative_rating"]:checked');
-            var rating = 3;
-            if (selectedRadioButton) {
-              rating = selectedRadioButton.value;
-            }
-            // call rating function
-            rateAlternative(this.getAttribute("term_id"), this.getAttribute("alt_id"), rating);
-          });
-        }
-
-        const closeEls = document.querySelectorAll("[data-close]");
-        for (const el of closeEls) {
-          el.addEventListener("click", function() {
-            this.parentElement.parentElement.parentElement.classList.remove(isVisible);
-          });
-        }
-
-        document.addEventListener("click", e => {
-          if (e.target == document.querySelector(".modal.is-visible")) {
-            document.querySelector(".modal.is-visible").classList.remove(isVisible);
+    // only send request if there is text in the text box to check
+    if(!(form["user_text"].value==null || form["user_text"].value=="")){
+      fetch("{{ url_for('submit') }}", {
+          method: 'POST',
+          body: formData,
+      })
+      .then(response => {
+          if (!response.ok) {
+              throw new Error('Network response was not ok');
           }
-        });
-        var marks = document.querySelectorAll('.popup');
-        for (var i = 0; i < marks.length; i++) {
-          marks[i].addEventListener("mouseenter", showPopup, marks[i]);
-          marks[i].addEventListener("mouseleave", hidePopup, marks[i]);
-        }     
-        textarea2.style.pointerEvents = "none";
-        textarea2.style.color = "transparent";
-        backdrop.style.visibility = "visible";
-        backdrop.style.zIndex = "2";
+          return response.json(); // the response is a json with textarea, language, detected, and modal
+      })
+      .then(data => {
+          // set the marked text (textarea) as the inner HTML of the appropriate container
+          container.innerHTML = data.textarea;
 
-    })
-    .catch(error => {
-        console.error('There was a problem with the fetch operation:', error);
-    });
+          // set the text of the auto button depending on the detected language
+          if(data.detected == 1){
+            var lang = data.language;
+            auto_detect_label.textContent = lang + " - Detected"
+          }
+          else{
+            auto_detect_label.textContent = "Auto Detect Language"
+          }
+
+          const isVisible = "is-visible";
+          // put the modals in the corresponding container
+          modal_container.innerHTML = data.modals;
+
+          // attach event listeners to everything that was newly added
+          backdrop = document.getElementById("backdrop");
+          var textarea2 = document.getElementById("textarea");
+
+          // allow editing text when clicking the edit button
+          edit_button.addEventListener("click", (event) =>{
+            textarea2.style.pointerEvents = "all";
+            textarea2.style.color = "black";
+            backdrop.style.visibility = "hidden";
+            backdrop.style.zIndex = "1";
+          });
+
+          // listeners to open the modals when the rating/marking buttons are clicked
+          const openEls = document.querySelectorAll("[data-open]");
+          for(const el of openEls) {
+            el.addEventListener("click", function() {
+              const modalId = this.dataset.open;
+              document.getElementById(modalId).classList.add(isVisible);
+            });
+          }
+
+          // listeners to call the rating function when a rating is submitted
+          const rateEls = document.querySelectorAll("[rate-alternative]");
+          for(const el of rateEls) {
+            el.addEventListener("click", function() {
+              const modalId = this.dataset.open;
+              // get the rating
+              var f_id = 'rate'+modalId
+              var fieldset = document.getElementById(f_id);
+              var selectedRadioButton = fieldset.querySelector('input[name="alternative_rating"]:checked');
+              var rating = 3;
+              if (selectedRadioButton) {
+                rating = selectedRadioButton.value;
+              }
+              // call rating function
+              rateAlternative(this.getAttribute("term_id"), this.getAttribute("alt_id"), rating);
+            });
+          }
+
+          // listeners to closed modals
+          const closeEls = document.querySelectorAll("[data-close]");
+          for (const el of closeEls) {
+            el.addEventListener("click", function() {
+              this.parentElement.parentElement.parentElement.classList.remove(isVisible);
+            });
+          }
+
+          document.addEventListener("click", e => {
+            if (e.target == document.querySelector(".modal.is-visible")) {
+              document.querySelector(".modal.is-visible").classList.remove(isVisible);
+            }
+          });
+
+          // listeners to show popups when hovering over the highlighted terms
+          var marks = document.querySelectorAll('.popup');
+          for (var i = 0; i < marks.length; i++) {
+            marks[i].addEventListener("mouseenter", showPopup, marks[i]);
+            marks[i].addEventListener("mouseleave", hidePopup, marks[i]);
+          }    
+          
+          // show highlighted text and allow hovering but not editing
+          textarea2.style.pointerEvents = "none";
+          textarea2.style.color = "transparent";
+          backdrop.style.visibility = "visible";
+          backdrop.style.zIndex = "2";
+
+      })
+      .catch(error => {
+          console.error('There was a problem with the fetch operation:', error);
+      });
+    } 
 
   }
 
-  const openEls = document.querySelectorAll("[data-open]");
-  const isVisible = "is-visible";
-
-  for(const el of openEls) {
-    el.addEventListener("click", function() {
-      const modalId = this.dataset.open;
-      document.getElementById(modalId).classList.add(isVisible);
-    });
-  }
-
-  const closeEls = document.querySelectorAll("[data-close]");
-  for (const el of closeEls) {
-    el.addEventListener("click", function() {
-      this.parentElement.parentElement.parentElement.classList.remove(isVisible);
-    });
-  }
-
-  document.addEventListener("click", e => {
-    if (e.target == document.querySelector(".modal.is-visible")) {
-      document.querySelector(".modal.is-visible").classList.remove(isVisible);
-    }
-  });
-
+  // listeners to show popups when hovering over the highlighted terms
   var marks = document.querySelectorAll('.popup');
   for (var i = 0; i < marks.length; i++) {
     marks[i].addEventListener("mouseenter", showPopup, marks[i]);
