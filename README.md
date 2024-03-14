@@ -4,6 +4,15 @@ Project Idea: Expanding the text checker on macht.sprache by adding a monolingua
   
 <img width="836" alt="image" src="https://github.com/m-buschmann/monolingual_text_checker/assets/61427823/ec6a2479-7518-408c-a2c5-3d216eb462bc">
 
+## Table of Contents
+- Installation & Usage
+- Local installation
+- Using the Monolingual text checker
+- File structure
+- Important decisions made during the project implementation
+- License
+- Project plan
+
 ## Installation & Usage
 
 To use the monolingual text checker you can either install and run it locally or access it via the following link from within the network of the University of Osnabrück (e.g. connected to the university's WiFi or using the university VPN): http://vm455.rz.uni-osnabrueck.de/user031/textchecker.wsgi/
