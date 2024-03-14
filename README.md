@@ -113,6 +113,9 @@ Accessing the Monolingual text checker from your local machine:
 - Spell checking only works partially and on a basic level.
   
 ## License
+Copyright 2024 Paula Meyer, Fabia Klausing, Hannah Köster, Mathilda Buschmann
+
+Licensed under the GLP License, Version 3.0 (the "LICENSE"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
 
 GPLv3: https://www.gnu.org/licenses/gpl-3.0.en.html
 
