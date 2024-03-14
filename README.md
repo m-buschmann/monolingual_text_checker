@@ -1,20 +1,41 @@
 # Monolingual Text Checker
 
-Project Idea: Expanding the text checker on macht.sprache by adding a monolingual text checking tool to highlight sensitive terms and provide alternatives and additional information within the same language.
+Project Idea: Expanding the text checker on macht.sprache by adding a monolingual text checking tool to highlight sensitive terms and provide alternatives and additional information within the same language.  
+  
+<img width="836" alt="image" src="https://github.com/m-buschmann/monolingual_text_checker/assets/61427823/ec6a2479-7518-408c-a2c5-3d216eb462bc">
 
 ## Installation & Usage
 
 To use the monolingual text checker you can either install and run it locally or access it via the following link from within the network of the University of Osnabrück (e.g. connected to the university's WiFi or using the university VPN): http://vm455.rz.uni-osnabrueck.de/user031/textchecker.wsgi/
 
+### Local installation
 To set up the Monolingual Text Checker on your local machine, follow these steps:
-1. Clone the project repository to your local machine and navigate to the project directory.
-2. Ensure that Python is installed on your system, set up a new virtual environment (this is optional but strongly recommended), then install the required Python packages listed in requirements.txt by running ```pip install -r requirements.txt```
+1. Clone the project repository to your local machine and navigate to the project directory. 
+   ```
+   git clone https://github.com/m-buschmann/monolingual_text_checker.git
+   cd monolingual_text_checker
+   ```
+   
+2. Ensure that Python is installed on your system, if it is not already installed, follow the [official installation instructions](https://wiki.python.org/moin/BeginnersGuide/Download). The Monolingual Text Checker was tested with Python 3.10. 
+3. Set up a new virtual environment (this is optional but strongly recommended) and activate it
+   ```
+   conda create -n text_checker
+   conda activate text_checker
+   ```
+5. Install the required Python packages listed in ```requirements.txt```
+   ```
+   pip install -r requirements.txt
+   ```
 
 Accessing the Monolingual text checker from your local machine:
-1. Run the textchecker.py script. ```flask --app textchecker.py run```
-2. Access the application through a web browser by navigating to the appropriate URL (which is printed in the terminal in which the the textchecker was started).
+1. Run the textchecker.py script.
+   ```
+   flask --app textchecker.py run
+   ```
+3. Access the application through a web browser by navigating to the appropriate URL (which is printed in the terminal in which the the textchecker was started).
 
-Using the Monolingual text checker: 
+
+### Using the Monolingual text checker
 1. Enter the text you want to check into the provided input field.
 2. Select the desired language for checking, or choose the auto-detect option.
 3. Click the "Check" button to initiate the text checking process.
@@ -22,35 +43,39 @@ Using the Monolingual text checker:
 5. Rate the alternative terms based on how good of an alternative they are for the original term on a scale from 1-5.
 6. If a term is offensive, you can mark it accordingly. Multiple offensive markings will result in the highlight changing color, indicating the severity of the offense.
 
-## Files
-### instance/sensitive_terms.sqlite:
-the database, containing tables for the sensitive terms
+<img width="836" alt="image" src="https://github.com/m-buschmann/monolingual_text_checker/assets/61427823/868971be-42d1-431d-865d-d670b08ff682">
+<img width="836" alt="image" src="https://github.com/m-buschmann/monolingual_text_checker/assets/61427823/57e40d6b-8aaa-4769-a2df-da288d9dd6ed">
 
-### static/style.css: 
+
+## File structure
+-  ```instance/sensitive_terms.sqlite```:  
+          the database, containing tables for the sensitive terms
+
+-  ```static/style.css```:  
     style classes for the front end
 
-### templates/home.html: 
+-  ```templates/home.html```:  
     contains the html code for the website.Builds with options to auto-detect language or choose between English and German. Users can submit text to be analyzed, edit their input, and view highlighted sensitive terms via dynamically generated modal popups. JavaScript is used for form submission handling, scrolling synchronization between the textarea and a highlighted backdrop, and for the display and interaction with modal popups, including rating alternatives for flagged terms.
 
-### templates/textarea.html: 
+-  ```templates/textarea.html```:  
     builds the text box where users input their text
 
-### models.py: 
+-  ``` models.py```:  
     defines a set of database models for the Flask application using SQLAlchemy ORM. It includes four models: AlternativeTerm, OffensivenessRating, AlternativeRating, and Term, structured to support a system for managing terms, their alternatives, and ratings regarding their offensiveness or appropriateness.
 
-### modified_data.json: 
+-  ```modified_data.json```:  
     contains data of the terms from macht.sprache, with  lemma, lemma_lang, definition, author, date, guidelines, relatedterms, translations, id. "lemma", "translations", "lemma_lang" used to build the database.
 
-### terms.json: 
+-  ```terms.json```:  
     contains data of the terms from macht.sprache, with id, relatedTerms, creator, createdAt, value, racial justice, variants, lang, commentCount, adminComment, definition, adminTags, guidelines. "id" and "definition" used to build the database. 
 
-### read_data.py: 
+-  ```read_data.py```:  
     Flask application that facilitates the management of sensitive terms using an SQLite database. It features functionality to import terms from two JSON files, `terms.json` and `modified_data.json`, to insert or update terms, link alternative terms, and handle their offensiveness and appropriateness ratings. The `insert_data` function processes the JSON data, ensuring terms are uniquely identified, alternatives are correctly linked, and language-specific details are accurately maintained. 
 
-### requirements.txt: 
+-  ```requirements.txt```:  
     list of nececesary libraries
 
-### textchecker.py: 
+-  ```textchecker.py```:  
     establishes a Flask web application to handle the text input. Employs NLTK for natural language processing to detect sensitive terms, SQLAlchemy for database interactions, and custom logic for language detection and processing user inputs. Features of the application include:
 
     - Initialization of an SQLite database to store terms and their alternatives.
