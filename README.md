@@ -8,7 +8,8 @@ To use the monolingual text checker you can either install and run it locally or
 
 To set up the Monolingual Text Checker on your local machine, follow these steps:
 1. Clone the project repository to your local machine and navigate to the project directory.
-2. Ensure that Python is installed on your system, set up a new virtual environment (this is optional but strongly recommended), then install the required Python packages listed in requirements.txt by running ```pip install -r requirements.txt```
+2. Ensure that Python is installed on your system, set up a new virtual environment (this is optional but strongly recommended), then install the required Python packages listed in requirements.txt by running
+   ```pip install -r requirements.txt```
 
 Accessing the Monolingual text checker from your local machine:
 1. Run the textchecker.py script. ```flask --app textchecker.py run```
