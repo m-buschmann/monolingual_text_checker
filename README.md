@@ -109,8 +109,8 @@ Accessing the Monolingual text checker from your local machine:
 - The word stemmer is very basic (the NLTK SnowballStemmer). It sometimes produces incorrect word stems, leading to mismatching sensitive terms.
 - The marking of sensitive terms as offensive is done by users. This could lead to terms that are generally regarded as politically correct marked as red, and expects some degree of knowledge and interpretation of the users.
 - We used the database from macht.sprache. Some of the terms are censored by "***". Those terms cannot be detected by our algorithm. 
-- This project uses server-side processing, possibly leading to security issues
-- Spell checking only works partially (e.g not for multiple-word terms)
+- This project uses server-side processing, possibly leading to security issues.
+- Spell checking only works partially (e.g not for multiple-word terms).
   
 ## License
 
