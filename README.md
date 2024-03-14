@@ -84,7 +84,7 @@ Accessing the Monolingual text checker from your local machine:
     Flask application that facilitates the management of sensitive terms using an SQLite database. It features functionality to import terms from two JSON files, `terms.json` and `modified_data.json`, to insert or update terms, link alternative terms, and handle their offensiveness and appropriateness ratings. The `insert_data` function processes the JSON data, ensuring terms are uniquely identified, alternatives are correctly linked, and language-specific details are accurately maintained. 
 
 -  ```requirements.txt```:  
-    list of nececesary libraries
+    list of necessary libraries
 
 -  ```textchecker.py```:  
     establishes a Flask web application to handle the text input. Employs NLTK for natural language processing to detect sensitive terms, SQLAlchemy for database interactions, and custom logic for language detection and processing user inputs. Features of the application include:
@@ -94,13 +94,13 @@ Accessing the Monolingual text checker from your local machine:
     - Functions for automatic language detection, identification of sensitive terms using stemming, and creation of interactive HTML content to highlight sensitive terms and present alternatives.
 
 ## Important decisions made during the project implementation
-- Rating of alternative terms: We decided to deviate from the way ratings are handled on the macht.sprache website, trying to implement a more intuitive rating - a number between 1-5 - which the user can see directly next to the altrnative terms suggested, when hovering over the highlighted senstitive terms.
-- Rating a term as offensive: We decided to add a possibility of rating a term as offensive, to provide users with a way to flag terms that they find offensive or inappropriate. In our implementation we coded hard boundaries (>3 changes highlight to light red, >4 changes hightlight to red). If this feature would be integrated into the macht.sprache website, the highlight boundaries should be calculated with ratios, based on how many users the website has.
+- Rating of alternative terms: We decided to deviate from the way ratings are handled on the macht.sprache website, trying to implement a more intuitive rating - a number between 1-5 - which the user can see directly next to the alternative terms suggested, when hovering over the highlighted sensitive terms.
+- Rating a term as offensive: We decided to add a possibility of rating a term as offensive, to provide users with a way to flag terms that they find offensive or inappropriate. In our implementation we coded hard boundaries (>3 changes highlight to light red, >4 changes highlight to red). If this feature would be integrated into the macht.sprache website, the highlight boundaries should be calculated with ratios, based on how many users the website has.
 - Which terms are detected in which language? We decided to detect both English and German terms within English text, as well as both English and German terms within German text. This approach increases the likelihood of detecting all sensitive terms, considering the prevalent use of English words in the German language.
 - Order of related terms: ordered after the rating of users, best alternative at the top
 
 ## Limitations
-- The word stemmer is very basic (the ntltk SnowballStemmer). It sometimes produces incorrect word stems, leading to mismatching sensitive terms.
+- The word stemmer is very basic (the NLTK SnowballStemmer). It sometimes produces incorrect word stems, leading to mismatching sensitive terms.
 - The marking of sensitive terms as offensive is done by users. This could lead to terms that are generally regarded as politically correct marked as red, and expects some degree of knowledge and interpretation of the users.
 - We used the database from macht.sprache. Some of the term are censored by "***". Those terms cannot be detected by our algorithm. 
 - This project uses server-side processing, possibly leading to security issues
