@@ -10,6 +10,7 @@ Project Idea: Expanding the text checker on macht.sprache by adding a monolingua
   - Using the Monolingual text checker
 - File structure
 - Important decisions made during the project implementation
+- Limitations
 - License
 - Project plan
 
@@ -98,6 +99,13 @@ Accessing the Monolingual text checker from your local machine:
 - Which terms are detected in which language? We decided to detect both English and German terms within English text, as well as both English and German terms within German text. This approach increases the likelihood of detecting all sensitive terms, considering the prevalent use of English words in the German language.
 - Order of related terms: ordered after the rating of users, best alternative at the top
 
+## Limitations
+- The word stemmer is very basic (the ntltk SnowballStemmer). It sometimes produces incorrect word stems, leading to mismatching sensitive terms.
+- The marking of sensitive terms as offensive is done by users. This could lead to terms that are generally regarded as politically correct marked as red, and expects some degree of knowledge and interpretation of the users.
+- We used the database from macht.sprache. Some of the term are censored by "***". Those terms cannot be detected by our algorithm. 
+- This project uses server-side processing, possibly leading to security issues
+- Spell checking only works partially (e.g not for multiple-word terms)
+  
 ## License
 
 GPLv3: https://www.gnu.org/licenses/gpl-3.0.en.html
