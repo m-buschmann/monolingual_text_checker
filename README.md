@@ -71,6 +71,9 @@ Accessing the Monolingual text checker from your local machine:
 -  ```templates/textarea.html```:  
     builds the text box where users input their text
 
+- ```LICENSE```:
+    contains the license
+  
 -  ```models.py```:  
     defines a set of database models for the Flask application using SQLAlchemy ORM. It includes four models: AlternativeTerm, OffensivenessRating, AlternativeRating, and Term, structured to support a system for managing terms, their alternatives, and ratings regarding their offensiveness or appropriateness.
 
@@ -92,6 +95,9 @@ Accessing the Monolingual text checker from your local machine:
     - Initialization of an SQLite database to store terms and their alternatives.
     - Routes for rendering a home page, submitting texts for analysis, and handling user feedback on term offensiveness and alternative ratings.
     - Functions for automatic language detection, identification of sensitive terms using stemming, and creation of interactive HTML content to highlight sensitive terms and present alternatives.
+
+-  ```textchecker.wsgi```:
+  contains the wsgi file to run the application on a server
 
 ## Important decisions made during the project implementation
 - Rating of alternative terms: We decided to deviate from the way ratings are handled on the macht.sprache website, trying to implement a more intuitive rating - a number between 1-5 - which the user can see directly next to the alternative terms suggested, when hovering over the highlighted sensitive terms.
