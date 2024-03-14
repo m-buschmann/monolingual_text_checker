@@ -93,7 +93,7 @@ Accessing the Monolingual text checker from your local machine:
 
 GPLv3: https://www.gnu.org/licenses/gpl-3.0.en.html
 
-
+## Project plan
 This is where we planned our project, handled & distributed To-Dos: https://github.com/users/Cl4ryty/projects/7/views/2
 
 
