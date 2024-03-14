@@ -6,8 +6,8 @@ Project Idea: Expanding the text checker on macht.sprache by adding a monolingua
 
 ## Table of Contents
 - Installation & Usage
-- Local installation
-- Using the Monolingual text checker
+  - Local installation
+  - Using the Monolingual text checker
 - File structure
 - Important decisions made during the project implementation
 - License
