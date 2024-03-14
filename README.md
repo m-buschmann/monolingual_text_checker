@@ -70,7 +70,7 @@ Accessing the Monolingual text checker from your local machine:
 -  ```templates/textarea.html```:  
     builds the text box where users input their text
 
--  ``` models.py```:  
+-  ```models.py```:  
     defines a set of database models for the Flask application using SQLAlchemy ORM. It includes four models: AlternativeTerm, OffensivenessRating, AlternativeRating, and Term, structured to support a system for managing terms, their alternatives, and ratings regarding their offensiveness or appropriateness.
 
 -  ```modified_data.json```:  
