@@ -72,7 +72,7 @@ Accessing the Monolingual text checker from your local machine:
     builds the text box where users input their text
 
 - ```LICENSE```:
-    contains the license
+    contains the license.
   
 -  ```models.py```:  
     defines a set of database models for the Flask application using SQLAlchemy ORM. It includes four models: AlternativeTerm, OffensivenessRating, AlternativeRating, and Term, structured to support a system for managing terms, their alternatives, and ratings regarding their offensiveness or appropriateness.
